@@ -166,7 +166,7 @@ print(significant_df)
 ## Element biplots
 
 database_group_sampled <- database_group %>%
-  filter(database_group$'Site Name' %in% c("Bukhara", "Paykend", "Taraz", "Tashkent"))
+  filter(database_group$'Site Name' %in% c("Bukhara", "Paykand", "Taraz", "Tashkent"))
 
 ellipse_database_group <- database_group %>%
   filter(database_group$'NAA Group' %in% c("BUK", "BUK A", "TASH", "TAZ"))
@@ -176,7 +176,7 @@ La_vs_Fe_ellipse <- ggplot(database_group_sampled, aes(x = Fe, y = La, color = `
   stat_ellipse(data = ellipse_database_group, 
                aes(x = Fe, y = La, group = `NAA Group`, color = `NAA Group`), 
                level = 0.90, geom = "path") +
-  labs(x = "Fe (ppm, log scale)", y = "La (ppm, log scale)") +
+  labs(x = "Fe (ppm)", y = "La (ppm)") +
   scale_x_log10() +
   scale_y_log10() +
   scale_color_manual(name = "Compositional Group", values = Group_colors) +
@@ -250,10 +250,10 @@ for (i in seq_len(nrow(significant_df))) {
 }
 
 # Define the three groups to compare
-Paykend_groups <- c("PAY 1", "PAY 2", "PAY 3")
+Paykand_groups <- c("PAY 1", "PAY 2", "PAY 3")
 
 # Define all unique pairwise combinations of the three groups
-pairwise_comparisons <- combn(Paykend_groups, 2, simplify = FALSE)
+pairwise_comparisons <- combn(Paykand_groups, 2, simplify = FALSE)
 
 # Loop through each pairwise comparison
 for (pair in pairwise_comparisons) {
@@ -743,7 +743,7 @@ dev.off()
 
 
 
------------------------# Transparent Glaze PCA ---------------------------------
+#-----------------------# Transparent Glaze PCA ---------------------------------
 
 #ensure no N/A values in major elements
 
@@ -806,7 +806,7 @@ dev.off()
 ## plot by Ware
 
 ellipse_pc.dataframe <- pc.dataframe %>% 
-  filter(Ware %in% c("Samanid - Slipware", "Slipware - Karakhanid", "splashed ware", "monochrome green")) 
+  filter(Ware %in% c("Samanid - Slipware", "Slipware - Qarakhanid", "splashed ware", "monochrome green")) 
 
 g2 <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = Ware, shape = NAA)) +
   geom_point(size=2) +
