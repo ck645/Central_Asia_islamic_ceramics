@@ -13,7 +13,7 @@ library(dendextend)
 library(ggtern)
 library(RColorBrewer)
 
-setwd("~/Uzbekistan")
+setwd("~/GitHub/Central_Asia_islamic_ceramics/Scripts")
 
 shape_values <- c(18, 15, 1, 16, 2, 0, 3, 17, 4, 5, 6)
 
@@ -98,26 +98,6 @@ database_group_subset <- database_group %>%
   filter(database_group$'NAA Group' %in% c("BUK", "BUK A", "NISH", "SAMK", "TASH",  
                                            "TAZ"))
 
-#manova
-
-stats <- database_group_subset %>%
-  select(ANID, 'NAA Group', all_of(elements_Group))
-
-manova_model <- manova(cbind(Ce, Co, Cr, Cs, Eu, Fe, Hf, Ni, Rb, Sb, Sc,
-                             Sr, Ta, Tb, Th, Zn, As, La, Lu, Nd, Sm, U, Yb,
-                             Al, Ba, Ca, Dy, K, Mn, Na, Ti, V) ~ 
-                         `NAA Group`, data = stats)
-
-summary(manova_model)
-
-summary(manova_model, test = "Pillai")
-summary(manova_model, test = "Wilks")
-summary(manova_model, test = "Hotelling-Lawley")
-summary(manova_model, test = "Roy")
-
-summary.aov(manova_model)
-
-
 
 #Pairwise t-tests
 
@@ -130,9 +110,6 @@ for (element in elements_Group) {
 
 pairwise_t_test_results
 
-pairwise_t_test_results[["Al"]]
-
-# Create an empty list to collect results
 significant_elements_by_pair <- list()
 
 # Loop through each element's pairwise comparison result
@@ -140,8 +117,6 @@ for (element in names(pairwise_t_test_results)) {
   p_matrix <- as.matrix(pairwise_t_test_results[[element]]$p.value)
   row_names <- rownames(p_matrix)
   col_names <- colnames(p_matrix)
-  
-  # Loop through upper triangle of the matrix to avoid duplicates
   for (i in seq_len(nrow(p_matrix))) {
     for (j in seq_len(ncol(p_matrix))) {
       if (!is.na(p_matrix[i, j]) && p_matrix[i, j] < 0.05) {
@@ -189,48 +164,34 @@ La_vs_Fe_ellipse <- ggplot(database_group_sampled, aes(x = Fe, y = La, color = `
     legend.position = "right"
   )
 
-La_vs_Fe_ellipse
-
 # Save PNG file
-png(filename = "Figure3.png", width = 3600, height = 2400, res=300)
+png(filename = "~/GitHub/Central_Asia_islamic_ceramics/Figures/Figure3.png", width = 3600, height = 2400, res=300)
 plot(La_vs_Fe_ellipse)
 dev.off()
 
 # ---------------------------Pairwise analysis ---------------------------------
 
-setwd("~/Uzbekistan/supplementary_materials_pairwise_comparisons")
+setwd("~/GitHub/Central_Asia_islamic_ceramics/Supplementary_materials/supplementary_materials_pairwise_comparisons")
 
 # Loop through each row in significant_df
 for (i in seq_len(nrow(significant_df))) {
   pair <- significant_df$Pair[i]
   elements <- strsplit(significant_df$Elements[i], ",\\s*")[[1]]  # split element string into vector
-  
-  # Split the pair into site names
   sites <- strsplit(pair, " vs ")[[1]]
   site1 <- sites[1]
   site2 <- sites[2]
-  
-  # Filter the dataset for the two NAA groups
   database_group_site_comp <- database_group %>%
     filter(`NAA Group` %in% c(site1, site2))
-  
-  # Debug info
   print("Processing pair:")
   print(paste("Sites:", site1, "and", site2))
-  
-  # Ensure elements exist in the data
   valid_elements <- elements[elements %in% colnames(database_group_site_comp)]
   if (length(valid_elements) == 0) {
     print(paste("No valid elements for pair:", pair))
     next
   }
-  
-  # Prepare plot data
   plot_data <- database_group_site_comp %>%
     select(all_of(valid_elements), `NAA Group`) %>%
     mutate(`NAA Group` = factor(`NAA Group`, levels = c(site1, site2)))
-  
-  # Plot matrix
   scatterplot_matrix <- ggpairs(
     plot_data,
     aes(color = `NAA Group`, alpha = 0.5),
@@ -240,8 +201,6 @@ for (i in seq_len(nrow(significant_df))) {
   ) +
     scale_color_manual(name = "NAA Group", values = Group_colors) +
     scale_fill_manual(name = "NAA Group", values = Group_colors)
-  
-  # Display and save
   print(scatterplot_matrix)
   png(filename = paste0("Scatterplot_Matrix_", gsub(" vs ", "_", pair), ".png"),
       width = 4800, height = 3600, res = 300)
@@ -249,10 +208,9 @@ for (i in seq_len(nrow(significant_df))) {
   dev.off()
 }
 
-# Define the three groups to compare
+# Compare Paykand Groups
 Paykand_groups <- c("PAY 1", "PAY 2", "PAY 3")
 
-# Define all unique pairwise combinations of the three groups
 pairwise_comparisons <- combn(Paykand_groups, 2, simplify = FALSE)
 
 # Loop through each pairwise comparison
@@ -260,24 +218,16 @@ for (pair in pairwise_comparisons) {
   site1 <- pair[1]
   site2 <- pair[2]
   pair_name <- paste(site1, "vs", site2)
-  
-  # Filter the dataset for the two NAA groups
   database_group_site_comp <- database_group %>%
     filter(`NAA Group` %in% c(site1, site2))
-  
-  # Check for valid elements (columns that exist in the data)
   valid_elements <- elements_Group[elements_Group %in% colnames(database_group_site_comp)]
   if (length(valid_elements) == 0) {
     message("No valid elements found for pair: ", pair_name)
     next
   }
-  
-  # Prepare plot data
   plot_data <- database_group_site_comp %>%
     select(all_of(valid_elements), `NAA Group`) %>%
     mutate(`NAA Group` = factor(`NAA Group`, levels = c(site1, site2)))
-  
-  # Create scatterplot matrix
   scatterplot_matrix <- ggpairs(
     plot_data,
     aes(color = `NAA Group`, alpha = 0.5),
@@ -287,8 +237,6 @@ for (pair in pairwise_comparisons) {
   ) +
     scale_color_manual(name = "NAA Group", values = Group_colors) +
     scale_fill_manual(name = "NAA Group", values = Group_colors)
-  
-  # Print and save the plot
   print(scatterplot_matrix)
   png(filename = paste0("Scatterplot_Matrix_", gsub(" ", "_", site1), "_vs_", gsub(" ", "_", site2), ".png"),
       width = 4800, height = 3600, res = 300)
@@ -299,7 +247,7 @@ for (pair in pairwise_comparisons) {
 
 # -----------------------select biplots from pairwise comp----------------------
 
-setwd("~/Uzbekistan/Table_4")
+setwd("~/GitHub/Central_Asia_islamic_ceramics/Figures/Table_4")
 
 database_group_BUK_BUKA <- database_group %>%
   filter(`NAA Group` %in% c("BUK", "BUK A"))
@@ -318,7 +266,6 @@ BUK_BUKA_site_comp <- ggplot(database_group_BUK_BUKA, aes(x = Sr, y = Fe,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-BUK_BUKA_site_comp
 
 png(filename = "BUK_BUKA_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_BUKA_site_comp)
@@ -342,7 +289,6 @@ BUK_TASH_site_comp <- ggplot(database_group_BUK_TASH, aes(x = La, y = Sc,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-BUK_TASH_site_comp
 
 png(filename = "BUK_TASH_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_TASH_site_comp)
@@ -366,7 +312,6 @@ BUK_TAZ_site_comp <- ggplot(database_group_BUK_TAZ, aes(x = Sb, y = Ce,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-BUK_TAZ_site_comp
 
 png(filename = "BUK_TAZ_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_TAZ_site_comp)
@@ -391,7 +336,6 @@ BUK_SAMK_site_comp <- ggplot(database_group_BUK_SAMK, aes(x = Cr, y = Sc,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-BUK_SAMK_site_comp
 
 png(filename = "BUK_SAMK_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_SAMK_site_comp)
@@ -416,7 +360,6 @@ BUK_NISH_site_comp <- ggplot(database_group_BUK_NISH, aes(x = Th, y = Sb,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-BUK_NISH_site_comp
 
 png(filename = "BUK_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_NISH_site_comp)
@@ -441,7 +384,6 @@ BUKA_TASH_site_comp <- ggplot(database_group_BUKA_TASH, aes(x = La, y = Th,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-BUKA_TASH_site_comp
 
 png(filename = "BUKA_TASH_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUKA_TASH_site_comp)
@@ -465,7 +407,6 @@ BUKA_TAZ_site_comp <- ggplot(database_group_BUKA_TAZ, aes(x = Sr, y = Sm,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-BUKA_TAZ_site_comp
 
 png(filename = "BUKA_TAZ_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUKA_TAZ_site_comp)
@@ -490,7 +431,6 @@ BUKA_SAMK_site_comp <- ggplot(database_group_BUKA_SAMK, aes(x = Cr, y = Co,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-BUKA_SAMK_site_comp
 
 png(filename = "BUKA_SAMK_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUKA_SAMK_site_comp)
@@ -516,7 +456,6 @@ BUKA_NISH_site_comp <- ggplot(database_group_BUKA_NISH, aes(x = Cr, y = Sb,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-BUKA_NISH_site_comp
 
 png(filename = "BUKA_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUKA_NISH_site_comp)
@@ -541,7 +480,6 @@ TASH_TAZ_site_comp <- ggplot(database_group_TASH_TAZ, aes(x = Sb, y = As,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-TASH_TAZ_site_comp
 
 png(filename = "TASH_TAZ_site_comp.png", width = 1200, height = 800, res=300)
 plot(TASH_TAZ_site_comp)
@@ -567,7 +505,6 @@ TASH_SAMK_site_comp <- ggplot(database_group_TASH_SAMK, aes(x = Th, y = Cr,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-TASH_SAMK_site_comp
 
 png(filename = "TASH_SAMK_site_comp.png", width = 1200, height = 800, res=300)
 plot(TASH_SAMK_site_comp)
@@ -592,7 +529,6 @@ TASH_NISH_site_comp <- ggplot(database_group_TASH_NISH, aes(x = Th, y = Cr,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-TASH_NISH_site_comp
 
 png(filename = "TASH_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(TASH_NISH_site_comp)
@@ -619,7 +555,6 @@ SAMK_NISH_site_comp <- ggplot(database_group_SAMK_NISH, aes(x = Co, y = Sc,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-SAMK_NISH_site_comp
 
 png(filename = "SAMK_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(SAMK_NISH_site_comp)
@@ -644,7 +579,6 @@ TAZ_NISH_site_comp <- ggplot(database_group_TAZ_NISH, aes(x = Sb, y = Mn,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-TAZ_NISH_site_comp
 
 png(filename = "TAZ_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(TAZ_NISH_site_comp)
@@ -669,7 +603,6 @@ TAZ_SAMK_site_comp <- ggplot(database_group_TAZ_SAMK, aes(x = Hf, y = Mn,
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
     legend.position = "right"
   )
-TAZ_SAMK_site_comp
 
 png(filename = "TAZ_SAMK_site_comp.png", width = 1200, height = 800, res=300)
 plot(TAZ_SAMK_site_comp)
@@ -677,7 +610,7 @@ dev.off()
 
 #---------------------------Glaze compositional analysis------------------------
 
-setwd("~/Uzbekistan")
+setwd("~/GitHub/Central_Asia_islamic_ceramics/Scripts")
 
 # Importing the dataset
 T_database <- rio::import("transparent_glaze_composition.csv")
@@ -737,7 +670,7 @@ combined_ternary <- ggtern(data=O_db, aes(x=PbO, y=SiO2, z=alkali, color=Color, 
 
 plot(combined_ternary)
 
-png(filename = "Figure4.png", width = 3600, height = 2400, res=300)
+png(filename = "~/GitHub/Central_Asia_islamic_ceramics/Figures/Figure4.png", width = 3600, height = 2400, res=300)
 plot(combined_ternary)
 dev.off()
 
@@ -798,7 +731,7 @@ g4 <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = NAA)) +
   theme(legend.position = "right")
 
 
-png(filename = "Figure6a.png", width = 3600, height = 2400, res=300)
+png(filename = "~/GitHub/Central_Asia_islamic_ceramics/Figures/Figure6a.png", width = 3600, height = 2400, res=300)
 print(g4) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
 dev.off()
 
@@ -821,7 +754,7 @@ g2 <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = Ware, shape = NAA)) +
   scale_shape_manual(name = "NAA Group", values = shape_values) +
   theme(legend.position = "right")
 
-png(filename = "Figure6b.png", width = 3600, height = 2400, res=300)
+png(filename = "~/GitHub/Central_Asia_islamic_ceramics/Figures/Figure6b.png", width = 3600, height = 2400, res=300)
 print(g2) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
 dev.off()
 
