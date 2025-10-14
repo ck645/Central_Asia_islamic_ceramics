@@ -1,0 +1,512 @@
+
+ Ce 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.1331  -       -       -       -      
+NISH          0.0211  1.0000  -       -       -      
+SAMK          0.1305  0.0025  5.8e-05 -       -      
+TASH          1.2e-13 1.7e-08 3.8e-16 0.0025  -      
+TAZ - Group 3 < 2e-16 < 2e-16 < 2e-16 < 2e-16 < 2e-16
+
+P value adjustment method: bonferroni 
+
+ Co 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.0095  -       -       -       -      
+NISH          1.2e-09 1.7e-09 -       -       -      
+SAMK          < 2e-16 8.3e-06 < 2e-16 -       -      
+TASH          7.3e-10 1.0000  < 2e-16 1.1e-15 -      
+TAZ - Group 3 < 2e-16 < 2e-16 6.5e-05 < 2e-16 < 2e-16
+
+P value adjustment method: bonferroni 
+
+ Cr 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.2277  -       -       -       -      
+NISH          < 2e-16 4.1e-13 -       -       -      
+SAMK          < 2e-16 < 2e-16 2.3e-15 -       -      
+TASH          5.5e-13 1.0000  < 2e-16 < 2e-16 -      
+TAZ - Group 3 < 2e-16 1.8e-09 0.0021  < 2e-16 < 2e-16
+
+P value adjustment method: bonferroni 
+
+ Cs 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A NISH    SAMK    TASH   
+BUK A         0.093   -     -       -       -      
+NISH          1.000   0.216 -       -       -      
+SAMK          1.000   0.581 1.000   -       -      
+TASH          1.000   0.197 1.000   1.000   -      
+TAZ - Group 3 < 2e-16 1.000 1.7e-08 1.5e-06 2.1e-11
+
+P value adjustment method: bonferroni 
+
+ Eu 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK   TASH   
+BUK A         0.5460  -       -       -      -      
+NISH          1.0000  0.3259  -       -      -      
+SAMK          6.8e-10 8.8e-07 1.1e-05 -      -      
+TASH          0.0018  0.0025  0.2995  0.0135 -      
+TAZ - Group 3 < 2e-16 3.1e-10 2.5e-13 1.0000 2.4e-09
+
+P value adjustment method: bonferroni 
+
+ Fe 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.0065  -       -       -       -      
+NISH          1.0000  0.0098  -       -       -      
+SAMK          < 2e-16 5.1e-05 < 2e-16 -       -      
+TASH          < 2e-16 1.0000  4.9e-13 1.3e-07 -      
+TAZ - Group 3 < 2e-16 1.8e-11 1.1e-09 < 2e-16 < 2e-16
+
+P value adjustment method: bonferroni 
+
+ Hf 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH  
+BUK A         1.0000  -       -       -       -     
+NISH          2.4e-11 0.0019  -       -       -     
+SAMK          < 2e-16 6.7e-12 2.0e-07 -       -     
+TASH          8.7e-14 0.0026  1.0000  6.7e-10 -     
+TAZ - Group 3 < 2e-16 0.0039  1.0000  8.0e-14 1.0000
+
+P value adjustment method: bonferroni 
+
+ Ni 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK BUK A NISH SAMK TASH
+BUK A         -   -     -    -    -   
+NISH          -   -     -    -    -   
+SAMK          -   -     -    -    -   
+TASH          -   -     -    -    -   
+TAZ - Group 3 -   -     -    -    -   
+
+P value adjustment method: bonferroni 
+
+ Rb 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK   TASH  
+BUK A         1.0000  -       -       -      -     
+NISH          2.3e-11 5.9e-05 -       -      -     
+SAMK          1.0000  1.0000  2.2e-07 -      -     
+TASH          1.0000  1.0000  6.6e-08 1.0000 -     
+TAZ - Group 3 1.3e-07 0.0359  0.0029  0.0036 0.0020
+
+P value adjustment method: bonferroni 
+
+ Sb 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         1.00000 -       -       -       -      
+NISH          1.0e-12 0.00100 -       -       -      
+SAMK          0.09725 1.00000 0.00066 -       -      
+TASH          0.02364 1.00000 4.1e-05 1.00000 -      
+TAZ - Group 3 < 2e-16 4.1e-07 < 2e-16 < 2e-16 < 2e-16
+
+P value adjustment method: bonferroni 
+
+ Sc 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.0763  -       -       -       -      
+NISH          1.0000  0.2473  -       -       -      
+SAMK          < 2e-16 0.0094  1.7e-15 -       -      
+TASH          < 2e-16 0.4979  7.1e-12 0.2359  -      
+TAZ - Group 3 < 2e-16 6.2e-10 3.5e-12 < 2e-16 < 2e-16
+
+P value adjustment method: bonferroni 
+
+ Sr 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         5.9e-06 -       -       -       -      
+NISH          0.00277 0.07052 -       -       -      
+SAMK          0.91386 3.3e-07 0.00012 -       -      
+TASH          0.25670 5.6e-08 5.5e-06 1.00000 -      
+TAZ - Group 3 1.4e-05 2.2e-10 9.6e-11 1.00000 1.00000
+
+P value adjustment method: bonferroni 
+
+ Ta 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH 
+BUK A         0.173   -       -       -       -    
+NISH          1.000   0.042   -       -       -    
+SAMK          1.000   0.265   1.000   -       -    
+TASH          8.8e-13 5.9e-08 2.3e-05 2.0e-07 -    
+TAZ - Group 3 < 2e-16 5.3e-09 1.7e-07 4.7e-10 1.000
+
+P value adjustment method: bonferroni 
+
+ Tb 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK    BUK A  NISH    SAMK   TASH  
+BUK A         1.0000 -      -       -      -     
+NISH          0.0396 1.0000 -       -      -     
+SAMK          1.0000 1.0000 0.0326  -      -     
+TASH          0.0018 1.0000 5.7e-07 0.4689 -     
+TAZ - Group 3 0.1205 1.0000 2.6e-05 1.0000 0.7710
+
+P value adjustment method: bonferroni 
+
+ Th 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.15905 -       -       -       -      
+NISH          6.1e-08 1.00000 -       -       -      
+SAMK          0.74610 1.00000 0.01731 -       -      
+TASH          < 2e-16 8.5e-11 < 2e-16 < 2e-16 -      
+TAZ - Group 3 < 2e-16 < 2e-16 < 2e-16 < 2e-16 0.00011
+
+P value adjustment method: bonferroni 
+
+ Zn 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK    BUK A  NISH   SAMK   TASH  
+BUK A         1.0000 -      -      -      -     
+NISH          1.0000 1.0000 -      -      -     
+SAMK          1.0000 1.0000 1.0000 -      -     
+TASH          1.0000 1.0000 1.0000 1.0000 -     
+TAZ - Group 3 0.0067 1.0000 0.0843 1.0000 1.0000
+
+P value adjustment method: bonferroni 
+
+ As 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         1.00000 -       -       -       -      
+NISH          1.00000 1.00000 -       -       -      
+SAMK          9.4e-09 0.03021 0.00036 -       -      
+TASH          1.2e-09 0.08173 0.00090 1.00000 -      
+TAZ - Group 3 0.00624 1.00000 1.00000 0.00030 0.00038
+
+P value adjustment method: bonferroni 
+
+ La 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.45756 -       -       -       -      
+NISH          1.00000 1.00000 -       -       -      
+SAMK          0.45825 0.02717 0.06855 -       -      
+TASH          4.3e-14 1.2e-07 8.4e-12 0.00028 -      
+TAZ - Group 3 < 2e-16 < 2e-16 < 2e-16 < 2e-16 8.1e-12
+
+P value adjustment method: bonferroni 
+
+ Lu 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.42767 -       -       -       -      
+NISH          8.2e-09 1.00000 -       -       -      
+SAMK          0.53860 1.00000 0.00929 -       -      
+TASH          1.00000 0.87502 1.7e-06 1.00000 -      
+TAZ - Group 3 8.8e-07 0.00041 < 2e-16 3.1e-07 1.6e-05
+
+P value adjustment method: bonferroni 
+
+ Nd 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.21444 -       -       -       -      
+NISH          1.00000 0.65206 -       -       -      
+SAMK          0.02276 0.00143 0.04398 -       -      
+TASH          0.00047 0.00034 0.00475 1.00000 -      
+TAZ - Group 3 < 2e-16 1.8e-07 2.5e-09 0.09232 0.03832
+
+P value adjustment method: bonferroni 
+
+ Sm 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.10848 -       -       -       -      
+NISH          3.3e-07 1.00000 -       -       -      
+SAMK          1.00000 0.03792 1.6e-06 -       -      
+TASH          0.00091 0.00017 1.4e-13 0.56635 -      
+TAZ - Group 3 < 2e-16 8.1e-12 < 2e-16 8.7e-12 6.6e-09
+
+P value adjustment method: bonferroni 
+
+ U 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         1.00000 -       -       -       -      
+NISH          2.2e-07 0.01666 -       -       -      
+SAMK          0.00058 0.68693 5.1e-13 -       -      
+TASH          0.03310 1.00000 0.04945 7.0e-08 -      
+TAZ - Group 3 0.02526 1.00000 0.00140 1.5e-08 1.00000
+
+P value adjustment method: bonferroni 
+
+ Yb 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.86894 -       -       -       -      
+NISH          1.00000 1.00000 -       -       -      
+SAMK          1.00000 0.22802 1.00000 -       -      
+TASH          0.04174 0.02187 0.05237 1.00000 -      
+TAZ - Group 3 7.1e-10 0.00019 3.2e-06 0.02766 0.26631
+
+P value adjustment method: bonferroni 
+
+ Al 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         1.00000 -       -       -       -      
+NISH          4.6e-06 1.00000 -       -       -      
+SAMK          < 2e-16 0.00073 0.00066 -       -      
+TASH          1.6e-08 1.00000 1.00000 0.00013 -      
+TAZ - Group 3 0.15106 0.26288 1.7e-10 < 2e-16 9.2e-15
+
+P value adjustment method: bonferroni 
+
+ Ba 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A  NISH    SAMK    TASH  
+BUK A         1.0000  -      -       -       -     
+NISH          3.8e-06 0.1092 -       -       -     
+SAMK          1.0000  1.0000 0.0379  -       -     
+TASH          6.7e-08 0.0657 < 2e-16 2.3e-07 -     
+TAZ - Group 3 < 2e-16 0.0078 < 2e-16 1.3e-11 1.0000
+
+P value adjustment method: bonferroni 
+
+ Ca 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         1.00    -       -       -       -      
+NISH          5.3e-08 0.66    -       -       -      
+SAMK          5.9e-05 1.00    1.00    -       -      
+TASH          2.4e-08 1.00    1.00    1.00    -      
+TAZ - Group 3 < 2e-16 1.2e-07 9.0e-10 7.1e-13 < 2e-16
+
+P value adjustment method: bonferroni 
+
+ Dy 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK    BUK A  NISH   SAMK   TASH  
+BUK A         1.0000 -      -      -      -     
+NISH          1.0000 1.0000 -      -      -     
+SAMK          0.1362 0.0655 0.1438 -      -     
+TASH          1.0000 1.0000 1.0000 0.3802 -     
+TAZ - Group 3 0.0076 0.0576 0.0536 1.0000 0.1314
+
+P value adjustment method: bonferroni 
+
+ K 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH 
+BUK A         0.00081 -       -       -       -    
+NISH          0.00099 1.00000 -       -       -    
+SAMK          0.00284 1.00000 1.00000 -       -    
+TASH          1.00000 0.00782 0.05851 0.11278 -    
+TAZ - Group 3 < 2e-16 5e-12   < 2e-16 < 2e-16 3e-15
+
+P value adjustment method: bonferroni 
+
+ Mn 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.053   -       -       -       -      
+NISH          1.000   0.721   -       -       -      
+SAMK          2.3e-11 1.000   1.8e-05 -       -      
+TASH          1.000   0.331   1.000   1.8e-07 -      
+TAZ - Group 3 < 2e-16 6.3e-16 < 2e-16 < 2e-16 < 2e-16
+
+P value adjustment method: bonferroni 
+
+ Na 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         1.0e-06 -       -       -       -      
+NISH          3.5e-12 1.00000 -       -       -      
+SAMK          0.24694 0.00219 0.00042 -       -      
+TASH          0.13436 0.00060 1.3e-05 1.00000 -      
+TAZ - Group 3 1.2e-05 0.00293 6.6e-05 1.00000 1.00000
+
+P value adjustment method: bonferroni 
+
+ Ti 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A   NISH    SAMK    TASH   
+BUK A         0.35506 -       -       -       -      
+NISH          1.00000 0.03850 -       -       -      
+SAMK          0.52194 1.00000 0.02601 -       -      
+TASH          1.00000 0.15988 1.00000 0.17908 -      
+TAZ - Group 3 0.02457 0.00944 1.00000 0.00046 1.00000
+
+P value adjustment method: bonferroni 
+
+ V 
+
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  stats_clean[[element]] and stats_clean$`NAA Group` 
+
+              BUK     BUK A  NISH    SAMK    TASH   
+BUK A         1.0000  -      -       -       -      
+NISH          1.0000  0.4182 -       -       -      
+SAMK          1.0000  1.0000 1.0000  -       -      
+TASH          < 2e-16 0.1083 1.8e-13 2.1e-10 -      
+TAZ - Group 3 3.4e-05 1.0000 0.0001  0.0145  1.8e-07
+
+P value adjustment method: bonferroni 

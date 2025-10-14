@@ -211,6 +211,11 @@ png(filename = "./Figures/Figure3.png", width = 3600, height = 2400, res=300)
 plot(La_vs_Fe_ellipse)
 dev.off()
 
+
+jpeg(filename = "./Figures/Figure3.jpg", width = 3600, height = 2400, res = 300)
+plot(La_vs_Fe_ellipse)
+dev.off()
+
 # ---------------------------Pairwise analysis ---------------------------------
 
 setwd("./Supplementary_materials/supplementary_materials_pairwise_comparisons")
