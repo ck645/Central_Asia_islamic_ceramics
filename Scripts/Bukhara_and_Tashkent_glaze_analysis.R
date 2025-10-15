@@ -11,15 +11,27 @@ library(ggplot2)
 library(tidyr)
 library(ggbiplot)
 library(ggtern)
+library(devtools) 
+library("corrr")
+library(readr)
+
+
 
 #Setting shape lists for 11
 shape_values <- c(18, 15, 1, 16, 2, 0, 3, 17, 4, 5, 6)
 
-#------------Glaze compositional analysis generated in this project-------------
+Group_colors <- c(
+  "BUK" = "#CC6677", "BUK A" = "#332288", "Outlier" = "#000000", 
+  "NISH" = "#DAA520", "PAY 1" = "#999933", "PAY 2" = "#88CCEE", 
+  "PAY 3" = "#AA4499", "SAMK" = "#882255", "TASH" = "#44AA99", 
+  "TAZ - Group 3" = "#117733", "unassigned" = "#bbbbbb"
+)
+
+#--Importing and cleaning Glaze compositional analysis generated in this project----
 
 # Importing the dataset
-glaze_database <- rio::import(".Central_Asia_islamic_ceramics/Data/glaze_data.csv")
-slip_database <-  rio::import(".Central_Asia_islamic_ceramics/Data/slip_data.csv")
+glaze_database <- rio::import("./Data/glaze_data.csv")
+slip_database <-  rio::import("./Data/slip_data.csv")
 
 #cleaning the dataset
 glaze_database$Sample <- as.factor(glaze_database$Sample)
@@ -45,7 +57,14 @@ print(unique_glaze_type_per_Site, n=13)
 
 
 
-### Opaque comparison data
+
+
+
+
+# -------------------------- visualising glaze types ---------------------------
+
+### Preparing opaque glaze data in context with comparative data for ternary
+
 O_database <- rio::import("./Data/opaque_database.csv")
 
 #cleaning the dataset
@@ -105,20 +124,15 @@ plot(combined_ternary)
 dev.off()
 
 
-
-
-
-
-### Transparent glazes
+### Preparing transparent glaze data for ternary
 
 T_database <- filter(glaze_database, `Ware` %in% c('Monochrome', 'Slipware - Samanid', 
                                                    'Slipware - Qarakhanid', 'Splashed'))
 T_database <- filter(T_database, `Component` %in% c('Glaze'))
-
-
-head(T_database)
-
 T_database$Alkali <- rowSums(T_database[, c("Na2O", "MgO", "CaO", "K2O", "Al2O3")], na.rm = TRUE)
+
+
+# Opaque Glaze ternary showing glaze types
 
 transparent_ternary <- ggtern(data=T_database, aes(x=PbO, y=SiO2, z=Alkali, color=Ware, shape=`Provenance`)) +
   geom_point(size=2) +
@@ -145,112 +159,51 @@ transparent_ternary <- ggtern(data=T_database, aes(x=PbO, y=SiO2, z=Alkali, colo
 
 plot(transparent_ternary)
 
+jpeg(filename = "./Supplementary_materials/supplementary_figures/transparent_ternary.jpg", width = 3600, height = 2400, res=300)
+plot(transparent_ternary)
+dev.off()
 
 
-#biplots
+### Transparent glaze Principal Component Analysis to assess major trends 
 
-ggplot(T_database, aes(x = PbO, y = SiO2, color = Ware, shape = Provenance)) +
-  geom_point(size=2) +
-  theme_minimal() +
-  labs(title = "PbO vs SiO2", x = "PbO (%)", y = "SiO2 (%)") +
-  scale_color_brewer(name = "Ware", palette = "Set1") +
-  scale_shape_manual(name = "Group", values = c(21, 22, 23, 24, 25, 7, 8, 9)) +
-  theme(legend.position = "right")
-
-### PCA ###
-
-library(devtools) 
-library(ggbiplot) 
-library("corrr")
-library(ggbiplot)
-
-
-#ensure no N/A values in major elements
-
+#clean transparent glaze data to ensure their are no N/A values in major elements
 detection_limit_Mg <- 0.1
 replacement_value_Mg <- (2/3) * detection_limit_Mg
-
 T_database <- T_database %>%
   mutate(MgO = ifelse(is.na(MgO), replacement_value_Mg, MgO))
 
 detection_limit_Na <- 0.1
 replacement_value_Na <- (2/3) * detection_limit_Na
-
 T_database <- T_database %>%
   mutate(Na2O = ifelse(is.na(Na2O), replacement_value_Na, Na2O))
 
 detection_limit_Fe <- 0.1
 replacement_value_Fe <- (2/3) * detection_limit_Fe
-
 T_database <- T_database %>%
   mutate(FeO = ifelse(is.na(FeO), replacement_value_Fe, FeO))
 
-head(T_database)
 
-#select major elements (Pb, Si, Al, Na, Mg, Ca, Fe, K)
+#select major elements (Pb, Si, Al, Na, Mg, Ca, Fe, K) for PCA
+
 pc <- prcomp(T_database[,c("PbO", "SiO2", "Al2O3", "Na2O", "MgO", "CaO", "FeO", "K2O")],
              center = TRUE,
              scale. = TRUE) 
 
-attributes(pc) 
-
-g <- ggbiplot(pc,
-              obs.scale = 1,
-              var.scale = 1,
-              groups = T_database$Ware,
-              ellipse = TRUE, 
-              ellipse.prob = 0.90) 
-
-g <- g + scale_color_discrete(name = '') 
-
-print(g)
-
 pc.dataframe <- as.data.frame(pc$x)
-
 pc.dataframe <- data.frame(pc.dataframe, Ware = T_database$Ware, NAA = T_database$`Provenance`, Sample = T_database$`Sample`)
 
-summary(pc.dataframe$Ware)
-summary(pc.dataframe$NAA)
-
-
-# Loadings scaled for visualization
+# Create element loadings scaled for visualization
 loadings <- as.data.frame(pc$rotation)
-
 loadings_scaled <- loadings*8
-
 loadings_scaled$Variable <- rownames(loadings)
 
 # Calculate percentage contribution of each PC
 total_variance <- sum(pc$sdev^2)  # Total variance (sum of eigenvalues)
 pc_contributions <- (pc$sdev^2 / total_variance) * 100
-
-# Print the percentage contributions
 print(pc_contributions)
 
-##Plot with loadings and PC contributions -- Remember to manually change the PC % on labels
 
-
-
-ellipse_slip_pc.dataframe <- pc.dataframe %>% 
-  filter(Ware %in% c("Slipware - Samanid", "Slipware - Qarakhanid")) 
-
-g5 <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = Ware, shape = NAA)) +
-  geom_point(size=2) +
-  scale_shape_manual(values = c(16, 25, 4, 3, 5, 1, 15, 22)) +
-  stat_ellipse(data = ellipse_slip_pc.dataframe, aes(group = Ware, color = Ware), level = 0.90, geom = "path") +
-  scale_color_manual(name = "Transparent Glaze Ware",
-                    values = c("Monochrome" = "gray", "Slipware - Samanid" = "blue", "Slipware - Qarakhanid" = "red", "Splashed" = "gray")) +
-  theme_minimal() +
-  labs(title = "PCA Biplot for select elements - 90% confidence ellipses", x = "PC1 (46.29%)", y = "PC2 (15.72%)") +
-  theme(panel.grid.major = element_blank()) +
-  theme(panel.grid.minor = element_blank()) +
-  theme(legend.position = "right")
-
-print(g5) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
-
-
-
-#plot by compositional group with loadings
+#plot by paste compositional group with element loadings
 
 ellipse_NAA_pc.dataframe <- pc.dataframe %>% 
   filter(NAA %in% c("BUK", "TASH")) 
@@ -261,22 +214,20 @@ g4 <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = NAA)) +
   stat_ellipse(data = ellipse_NAA_pc.dataframe, aes(group = NAA, color = NAA), level = 0.90, geom = "path") +
   geom_segment(data = loadings_scaled, aes(x = 0, y = 0, xend = PC1, yend = PC2), arrow = arrow(length = unit(0.2, "cm")), color = "black") +
   geom_text(data = loadings_scaled, aes(x = PC1, y = PC2, label = Variable), hjust = 0.25, vjust = 1.25, size = 5, color = "black") +
-  labs(title = "PCA Biplot for select elements - 90% confidence ellipses", x = "PC1 (46.3%)", y = "PC2 (15.7%)") +
+  labs(x = "PC1 (46.3%)", y = "PC2 (15.7%)") +
   xlim(-6, 7) +
   ylim(-5, 6) +
   theme(panel.grid.major = element_blank()) +
   theme(panel.grid.minor = element_blank()) +
-  scale_color_manual(name = "NAA Group", values = Group_colors) +
+  scale_color_manual(name = "Paste Comp. Group", values = Group_colors) +
   theme(legend.position = "right")
 
-print(g4) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
-
-
-png(filename = "PCA_transparent_with_loadings.png", width = 2400, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure6a.jpg", width = 2400, height = 1600, res=300)
 print(g4) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
 dev.off()
 
 
+#plot the same data by sample Ware types
 
 ellipse_pc.dataframe <- pc.dataframe %>% 
   filter(Ware %in% c("Slipware - Samanid", "Slipware - Qarakhanid", "Splashed", "Monochrome")) 
@@ -285,7 +236,7 @@ g2 <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = Ware)) +
   geom_point(size=2) +
   theme_minimal() +
   stat_ellipse(data = ellipse_pc.dataframe, aes(group = Ware, color = Ware), level = 0.90, geom = "path") +
-  labs(title = "PCA Biplot for select elements - 90% confidence ellipses", x = "PC1 (46.3%)", y = "PC2 (15.7%)") +
+  labs(x = "PC1 (46.3%)", y = "PC2 (15.7%)") +
   xlim(-6, 7) +
   ylim(-5, 6) +
   theme(panel.grid.major = element_blank()) +
@@ -293,139 +244,119 @@ g2 <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = Ware)) +
   scale_color_brewer(name = "Ware", palette = "Set1") +
   theme(legend.position = "right")
 
-print(g2) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
-
-png(filename = "PCA_transparent_by_ware.png", width = 2400, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure6b.jpg", width = 2400, height = 1600, res=300)
 print(g2) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
 dev.off()
 
 
 
-#### ----------------------------comparative ceramics ------------------------------------
+#### -------importing and cleaning comparative ceramics datasets----------------
 
 
 # Define the folder path containing all the CSV files
-folder_path <- "~/Uzbekistan/comparative EDS data"  
+folder_path <- "./Data/comparative_EDS_data"  
 
 # Get a list of all CSV files in the folder
 csv_files <- list.files(path = folder_path, pattern = "*.csv", full.names = TRUE)
 
-# Load required libraries
-library(dplyr)
-library(readr)
 
-oxide_mapping <- read.csv("Element_to_Oxide_relabelling.csv", stringsAsFactors = FALSE)
-
-
+## joining comparative datasets
 to_num <- function(x) {
-  # strip anything that's not part of a typical numeric literal
-  x <- gsub(",", "", x)                 # remove thousands separators
-  x <- gsub("%", "", x)                 # remove percent signs if any
-  x <- gsub("[^0-9eE.+\\-]", "", x)     # keep digits, decimal, sign, exponent
+  x <- gsub(",", "", x)
+  x <- gsub("%", "", x)
+  x <- gsub("[^0-9eE.+\\-]", "", x)
   suppressWarnings(as.numeric(x))
 }
 
+# selecting non-oxide metadata
+factor_columns   <- c("Sample","Site","Region","Instrument","Glaze_or_slip_color",
+                      "Component","Ware","Incision","LIA Group","Provenance")
+metadata_columns <- c(factor_columns, "Date","Count", "Surface")
 
+#scanning files for common oxides
+all_oxides <- character(0)
 
-# Initialize empty lists to store both datasets
+for (file_path in csv_files) {
+  message(paste("Scanning columns in:", file_path))
+  df <- read.csv(file_path, check.names = FALSE, stringsAsFactors = FALSE)
+  df <- df[, colnames(df) != "", drop = FALSE]  # drop empty-name columns
+  oxides_here <- setdiff(colnames(df), c(metadata_columns, "Total"))
+  all_oxides <- union(all_oxides, oxides_here)
+}
+oxide_columns_master <- sort(all_oxides)
+
+# process, align, and create a normalized dataset
 raw_data_list <- list()
 normalized_data_list <- list()
 
 for (file_path in csv_files) {
-  print(paste("Processing file:", file_path))
-  
+  message(paste("Processing file:", file_path))
   samples <- read.csv(file_path, check.names = FALSE, stringsAsFactors = FALSE)
+  samples <- samples[, colnames(samples) != "", drop = FALSE]
   
-  print("Column names in dataset:")
-  print(colnames(samples))
-  
-  # Remove any columns with empty names
-  samples <- samples[, colnames(samples) != ""]
-  
-  # Convert only known metadata columns to character
-  factor_columns <- c("Sample","Site","Region","Instrument","Glaze_or_slip_color",
-                      "Component","Ware","Incision","LIA Group","Provenance")
   for (col in factor_columns) if (col %in% colnames(samples)) samples[[col]] <- as.character(samples[[col]])
   
-  metadata_columns <- c("Sample","Site","Region","Instrument","Glaze_or_slip_color",
-                        "Component","Ware","Incision","LIA Group","Provenance","Date","Count")
+  keep_cols <- unique(c(metadata_columns, oxide_columns_master, "Total"))
+  samples <- samples[, intersect(keep_cols, colnames(samples)), drop = FALSE]
   
-  # oxide columns present in this file
-  oxide_columns <- intersect(oxide_mapping$Oxide, colnames(samples))
+  missing_oxides <- setdiff(oxide_columns_master, colnames(samples))
+  if (length(missing_oxides)) for (m in missing_oxides) samples[[m]] <- NA_real_
   
-  print("Column names after renaming:")
-  print(colnames(samples))
-  
-  # Reorder (only existing)
-  ordered_columns <- c(metadata_columns[metadata_columns %in% colnames(samples)],
-                       oxide_mapping$Oxide[oxide_mapping$Oxide %in% colnames(samples)],
-                       intersect("Total", colnames(samples)))
+  ordered_columns <- c(
+    metadata_columns[metadata_columns %in% colnames(samples)],
+    oxide_columns_master,
+    intersect("Total", colnames(samples))
+  )
   samples <- samples[, ordered_columns, drop = FALSE]
   
-  # Save raw
+  numeric_targets <- intersect(c(oxide_columns_master, "Total"), colnames(samples))
+  samples[numeric_targets] <- lapply(samples[numeric_targets], to_num)
   raw_data_list[[file_path]] <- samples
   
-  # ----- NORMALIZATION -----
   normalized_samples <- samples
-  
-  # Ensure oxide columns AND Total are numeric
-  numeric_targets <- unique(c(oxide_columns, "Total"))
-  numeric_targets <- intersect(numeric_targets, colnames(normalized_samples))
   for (col in numeric_targets) normalized_samples[[col]] <- to_num(normalized_samples[[col]])
   
-  # Remove rows with NA or non-positive Total to avoid division problems
+  if (!"Total" %in% colnames(normalized_samples)) {
+    normalized_samples$Total <- rowSums(normalized_samples[, oxide_columns_master, drop = FALSE], na.rm = TRUE)
+  } else {
+    bad_total <- is.na(normalized_samples$Total) | !is.finite(normalized_samples$Total) | normalized_samples$Total <= 0
+    fallback  <- rowSums(normalized_samples[, oxide_columns_master, drop = FALSE], na.rm = TRUE)
+    normalized_samples$Total[bad_total] <- fallback[bad_total]
+  }
+  
   normalized_samples <- normalized_samples[!is.na(normalized_samples$Total) & normalized_samples$Total > 0, , drop = FALSE]
   
-  # Only normalize columns that actually exist (and are numeric)
-  existing_oxide_columns <- intersect(oxide_columns, colnames(normalized_samples))
-  
-  if (length(existing_oxide_columns) > 0) {
-    # Normalize to 100%
-    for (col in existing_oxide_columns) {
+  if (nrow(normalized_samples) > 0) {
+    for (col in oxide_columns_master) {
       normalized_samples[[col]] <- (normalized_samples[[col]] * 100) / normalized_samples$Total
     }
     
-    # Correction factor to force exact 100
-    row_sums <- rowSums(normalized_samples[, existing_oxide_columns, drop = FALSE], na.rm = TRUE)
-    correction_factor <- 100 / row_sums
-    correction_factor[!is.finite(correction_factor)] <- 1
-    
-    for (col in existing_oxide_columns) {
-      normalized_samples[[col]] <- normalized_samples[[col]] * correction_factor
+    row_sums <- rowSums(normalized_samples[, oxide_columns_master, drop = FALSE], na.rm = TRUE)
+    cf <- 100 / row_sums
+    cf[!is.finite(cf)] <- 1
+    for (col in oxide_columns_master) {
+      normalized_samples[[col]] <- normalized_samples[[col]] * cf
     }
+    
+    normalized_samples$Total <- 100
+    
+    round_cols <- intersect(c(oxide_columns_master, "Total"), colnames(normalized_samples))
+    normalized_samples[round_cols] <- lapply(normalized_samples[round_cols], function(v) signif(v, 3))
   }
   
-  # Recalculate total
-  if ("Total" %in% colnames(normalized_samples)) normalized_samples$Total <- 100
-  
-  # Store normalized
   normalized_data_list[[file_path]] <- normalized_samples
 }
 
-# Combine all processed data into final datasets
-raw_data_list <- lapply(raw_data_list, function(df) {
-  cols <- intersect(numeric_targets, names(df))
-  df[cols] <- lapply(df[cols], to_num)
-  df
-})
-
-comparative_raw_data <- dplyr::bind_rows(raw_data_list)
-
-comparative_normalized_data <- bind_rows(normalized_data_list)
+comparative_raw_data         <- dplyr::bind_rows(raw_data_list)
+comparative_normalized_data  <- dplyr::bind_rows(normalized_data_list)
 
 
 
-### Examining samples
-
-factor_columns <- c("Sample","Site","Region","Instrument","Glaze_or_slip_color",
-                    "Component","Ware","Incision","LIA Group","Provenance")
-
+### Cleaning data
 comparative_normalized_data$Ware <- as.factor(comparative_normalized_data$Ware)
 comparative_normalized_data$Provenance <- as.factor(comparative_normalized_data$Provenance)
 
-summary(comparative_normalized_data$Ware)
-summary(comparative_normalized_data$Provenance)
-
+# renaming same paste compositional groups
 comparative_normalized_data <- comparative_normalized_data %>%
   mutate(
     Provenance = case_when(
@@ -435,13 +366,12 @@ comparative_normalized_data <- comparative_normalized_data %>%
     Provenance = factor(Provenance)
   )
 
+# examining samples distribution by Ware
 unique_samples_per_Ware <- tapply(
   comparative_normalized_data$Sample,
   comparative_normalized_data$Ware,
   function(x) length(unique(x))
 )
-
-# Convert to data frame for a nice table
 unique_samples_per_Ware <- data.frame(
   Ware = names(unique_samples_per_Ware),
   unique_sample_count = as.integer(unique_samples_per_Ware),
@@ -451,13 +381,12 @@ unique_samples_per_Ware <- data.frame(
 unique_samples_per_Ware
 
 
-# Convert to data frame for a nice table
+# examining samples distribution by Site
 unique_samples_per_Site <- tapply(
   comparative_normalized_data$Sample,
   comparative_normalized_data$Site,
   function(x) length(unique(x))
 )
-
 unique_samples_per_Site <- data.frame(
   Site = names(unique_samples_per_Site),
   unique_sample_count = as.integer(unique_samples_per_Site),
@@ -469,30 +398,30 @@ unique_samples_per_Site
 
 
 
-### ------------------------Comparative glazes --------------------------------
+### ---------------examining Comparative ceramic datasets ----------------------
 
 Comp_Glaze <- filter(comparative_normalized_data, `Component` %in% c('Glaze'))
 Comp_Glaze <- Comp_Glaze %>% filter(!Glaze_or_slip_color == "Weathered")
+Comp_slip <- filter(comparative_normalized_data, `Component` %in% c('White Slip'))
 
+
+# calculate mean compositions for samples with multiple measurements 
 Comp_Glaze <- Comp_Glaze %>%
   group_by(Sample, Site, Region, Glaze_or_slip_color, Ware, Provenance) %>%
   summarise(
-    across(all_of(oxide_columns), ~ mean(.x, na.rm = TRUE)),
+    across(all_of(oxide_columns_master), ~ mean(.x, na.rm = TRUE)),
     Count = sum(Count, na.rm = TRUE),
     .groups = "drop"
   )
-
-Comp_slip <- filter(comparative_normalized_data, `Component` %in% c('White Slip'))
-
 Comp_slip <- Comp_slip %>%
   group_by(Sample, Site, Region, Glaze_or_slip_color, Ware, Provenance) %>%
   summarise(
-    across(all_of(oxide_columns), ~ mean(.x, na.rm = TRUE)),
+    across(all_of(oxide_columns_master), ~ mean(.x, na.rm = TRUE)),
     Count = sum(Count, na.rm = TRUE),
     .groups = "drop"
   )
 
-
+# clean averaged data
 Comp_Glaze <- Comp_Glaze %>%
   rename_with(~ gsub("_Mean$", "", .x), ends_with("_Mean")) %>%
   mutate(
@@ -500,7 +429,9 @@ Comp_Glaze <- Comp_Glaze %>%
     PbO    = coalesce(PbO, 1e-5)   
   )
 
-summary(Comp_Glaze$Ware)
+
+
+# examine the data by Ware type (transparent or opaque)
 
 opaque_set       <- c("Alkali", "Ishkor", "Lustreware", "Opaque")
 transparent_set  <- c("Slipware - Qarakhanid", "Slipware - Samanid", "Slipware", "Splashed", "Underglaze", "Monochrome")
@@ -517,36 +448,29 @@ Comp_Glaze <- Comp_Glaze %>%
     Ware_type = factor(Ware_type, levels = c("Opaque","Transparent","Other"))
   )
 
-summary(Comp_Glaze$Ware_type)
 
-Comp_Glaze$Site <- as.factor(Comp_Glaze$Site)
-
-summary(Comp_Glaze$Site)
-
-Comp_Glaze$Region <- as.factor(Comp_Glaze$Region)
-
-summary(Comp_Glaze$Region)
+# examine glaze type distribution by site
 
 unique_glaze_type_per_Site <- Comp_Glaze %>%
   group_by(Site, Ware_type) %>%
   summarise(unique_sample_count = n_distinct(Sample)) %>%
   ungroup()
-
-# View the result
 print(unique_glaze_type_per_Site, n=36)
 
 
+# Save compiled comparative datasets
 
-write.csv(Comp_Glaze, "Comp_Glaze.csv", row.names = FALSE)
-write.csv(Comp_slip, "Comp_Slip.csv", row.names = FALSE)
+write.csv(Comp_Glaze, "./Data/Comp_Glaze.csv", row.names = FALSE)
+write.csv(Comp_slip, "./Data/Comp_Slip.csv", row.names = FALSE)
 
+
+# visualising glaze typs across 
 
 Comp_glaze_ternary <- ggtern(
   data = Comp_Glaze, aes(x = PbO, y = SiO2, z = alkali, 
                          color = Ware, shape = Region)) +
   geom_point(size = 2.5, alpha = 0.7, stroke = 0.5) +
   labs(
-    title = "Glaze ternary",
     L = "PbO (%)",
     T = "SiO2 (%)",
     R = "Alkali (%)"
@@ -573,10 +497,7 @@ Comp_glaze_ternary <- ggtern(
     plot.margin = margin(0, 0, 0, 0, "cm")
   )
 
-plot(Comp_glaze_ternary)
-
-
-png(filename = "Comp_glaze_ternary.png", width = 3600, height = 2400, res=300)
+png(filename = "./Supplementary_materials/supplementary_figures/Comp_glaze_ternary.png", width = 3600, height = 2400, res=300)
 plot(Comp_glaze_ternary)
 dev.off()
 
@@ -586,7 +507,6 @@ Comp_glaze_ternary_ware_type <- ggtern(
                          color = Ware_type, shape = Region)) +
   geom_point(size = 2.5, alpha = 0.7, stroke = 0.5) +
   labs(
-    title = "Glaze ternary",
     L = "PbO (%)",
     T = "SiO2 (%)",
     R = "Alkali (%)"
@@ -612,9 +532,7 @@ Comp_glaze_ternary_ware_type <- ggtern(
     plot.margin = margin(0, 0, 0, 0, "cm")
   )
 
-plot(Comp_glaze_ternary_ware_type)
-
-png(filename = "Comp_glaze_ternary_Ware.png", width = 3600, height = 2400, res=300)
+png(filename = "./Supplementary_materials/supplementary_figures/Comp_glaze_ternary_Ware.png", width = 3600, height = 2400, res=300)
 plot(Comp_glaze_ternary_ware_type)
 dev.off()
 
@@ -684,12 +602,12 @@ Comparative_slip_norm <- Comp_PbO_removed %>%
 
 
 # Join raw and normalized data for glaze and slip
-wide3 <- Comp_Slips_glaze %>%
+wide_slip_data <- Comp_Slips_glaze %>%
   inner_join(Comparative_slip, by = c("Sample", "Site", "Region", "Ware", "Provenance")) %>%
   inner_join(Comparative_slip_norm, by = c("Sample", "Site", "Region", "Ware", "Provenance"))
 
-# Convert to numeric if necessary
-wide3 <- wide3 %>%
+# Final cleaning
+wide_slip_data <- wide_slip_data %>%
   mutate(
     across(starts_with("SiO2"), as.numeric),
     across(starts_with("Al2O3"), as.numeric),
@@ -697,208 +615,36 @@ wide3 <- wide3 %>%
     across(starts_with("CaO"), as.numeric)
   )
 
-# Preview the resulting data
-head(wide3)
+## group by provenance type (NAA group versus recovery site for comparative ceramics)
+
+provenanced_ceramics_data <- wide_slip_data
+
+provenanced_ceramics_data$Provenance <- as.factor(provenanced_ceramics_data$Provenance)
+provenanced_ceramics_data <- provenanced_ceramics_data %>% filter(Provenance %in% c("BUK", "TASH", "TAZ - Group 3", "SAMK"))
+provenanced_ceramics_data_ellipse <- provenanced_ceramics_data %>% filter(Provenance %in% c("BUK", "TASH"))
 
 
-Slip_SiO2 <- ggplot(wide3, aes(x = SiO2_norm_slip, y = SiO2_norm_glaze, color = Region, shape = Site)) +
-  geom_point() +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  labs(x = "White Slip (SiO2* wt%)",
-       y = "Glaze (SiO2* wt%)") +
-  theme_minimal()+ 
-  scale_shape_manual(name = "Site", values = c(3,8,13,17,5,6,1,2,4,16,11,9,15,7,10)) + 
-  scale_color_manual(name = "Region", values = c("#e63946", "#FF7F51",  "#ebaa14", "#6B8F7A", "black", "#9467BD",  "#8C564B", "#3A86FF")) +
-  coord_cartesian(xlim = c(50, 100), ylim = c(50, 100))+ 
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) + 
-  theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
+recovery_ceramics_data <- wide_slip_data
 
-Slip_SiO2
-
-ggsave(filename = "Slip_SiO2_in_context.png", plot = Slip_SiO2, width = 8, height = 6, dpi = 300)
-
-Slip_Al2O3 <- ggplot(wide3, aes(x = Al2O3_norm_slip, y = Al2O3_norm_glaze, color = Region, shape = Site)) +
-  geom_point() +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  labs(x = "White Slip (Al2O3* wt%)",
-       y = "Glaze (Al2O3* wt%)") +
-  theme_minimal()+ 
-  scale_shape_manual(name = "Site", values = c(3,8,13,17,5,6,1,2,4,16,11,9,15,7,10)) + 
-  scale_color_manual(name = "Region", values = c("#e63946", "#FF7F51",  "#ebaa14", "#6B8F7A", "black", "#9467BD",  "#8C564B", "#3A86FF")) +
-  coord_cartesian(xlim = c(0, 42), ylim = c(0, 42))+ 
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) + 
-  theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
-
-Slip_Al2O3 
-
-ggsave(filename = "Slip_Al2O3_in_context.png", plot = Slip_Al2O3, width = 8, height = 6, dpi = 300)
-
-
-
-Slip_CaO <- ggplot(wide3, aes(x = CaO_norm_slip, y = CaO_norm_glaze, color = Region, shape = Site)) +
-  geom_point() +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  labs(x = "White Slip (CaO* wt%)",
-       y = "Glaze (CaO* wt%)") +
-  theme_minimal()+ 
-  scale_shape_manual(name = "Site", values = c(3,8,13,17,5,6,1,2,4,16,11,9,15,7,10)) + 
-  scale_color_manual(name = "Region", values = c("#e63946", "#FF7F51",  "#ebaa14", "#6B8F7A", "black", "#9467BD",  "#8C564B", "#3A86FF")) +
-  coord_cartesian(xlim = c(0, 20), ylim = c(0, 20))+ 
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) + 
-  theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
-
-Slip_CaO 
-
-ggsave(filename = "Slip_CaO_in_context.png", plot = Slip_CaO, width = 8, height = 6, dpi = 300)
-
-
-
-Slip_K2O <- ggplot(wide3, aes(x = K2O_norm_slip, y = K2O_norm_glaze, color = Region, shape = Site)) +
-  geom_point() +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  labs(x = "White Slip (K2O* wt%)",
-       y = "Glaze (K2O* wt%)") +
-  theme_minimal()+ 
-  scale_shape_manual(name = "Site", values = c(3,8,13,17,5,6,1,2,4,16,11,9,15,7,10)) + 
-  scale_color_manual(name = "Region", values = c("#e63946", "#FF7F51",  "#ebaa14", "#6B8F7A", "black", "#9467BD",  "#8C564B", "#3A86FF")) +
-  coord_cartesian(xlim = c(0, 10), ylim = c(0, 10))+ 
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) + 
-  theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
-
-Slip_K2O 
-
-
-
-
-### provenance groups
-
-wide4 <- wide3
-
-wide4$Provenance <- as.factor(wide4$Provenance)
-summary(wide4$Provenance)
-
-wide4 <- wide4 %>% filter(Provenance %in% c("BUK", "TASH", "TAZ - Group 3", "SAMK"))
-
-
-Slip_SiO2 <- ggplot(wide4, aes(x = SiO2_norm_slip, y = SiO2_norm_glaze, color = Ware, shape = Provenance)) +
-  geom_point() +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  labs(x = "White Slip (SiO2* wt%)",
-       y = "Glaze (SiO2* wt%)") +
-  theme_minimal()+ 
-  scale_shape_manual(name = "Group", values = c(17,3, 15,8,16,15,1)) + 
-  scale_color_manual(name = "Ware", values = c("#e63946", "#3A86FF", "#ebaa14", "#9467BD")) +
-  coord_cartesian(xlim = c(60, 100), ylim = c(60, 100))+ 
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) + 
-  theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
-
-Slip_SiO2
-
-ggsave(filename = "Slip_SiO2.png", plot = Slip_SiO2, width = 8, height = 6, dpi = 300)
-
-Slip_Al2O3 <- ggplot(wide4, aes(x = Al2O3_norm_slip, y = Al2O3_norm_glaze, color = Ware, shape = Provenance)) +
-  geom_point() +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  labs(x = "White Slip (Al2O3* wt%)",
-       y = "Glaze (Al2O3* wt%)") +
-  theme_minimal()+ 
-  scale_shape_manual(name = "Group", values = c(17,3, 15,8,16,15,1)) + 
-  scale_color_manual(name = "Ware", values = c("#e63946", "#3A86FF", "#ebaa14", "#9467BD"))  +
-  coord_cartesian(xlim = c(0, 30), ylim = c(0, 30))+ 
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) + 
-  theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
-
-Slip_Al2O3 
-
-ggsave(filename = "Slip_Al2O3.png", plot = Slip_Al2O3, width = 8, height = 6, dpi = 300)
-
-
-
-Slip_CaO <- ggplot(wide4, aes(x = CaO_norm_slip, y = CaO_norm_glaze, color = Ware, shape = Provenance)) +
-  geom_point() +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  labs(x = "White Slip (CaO* wt%)",
-       y = "Glaze (CaO* wt%)") +
-  theme_minimal()+ 
-  scale_shape_manual(name = "Group", values = c(17,3, 15,8,16,15,1)) + 
-  scale_color_manual(name = "Ware", values = c("#e63946", "#3A86FF", "#ebaa14", "#9467BD"))  +
-  coord_cartesian(xlim = c(0, 10), ylim = c(0, 10))+ 
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) + 
-  theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
-
-Slip_CaO 
-
-ggsave(filename = "Slip_CaO.png", plot = Slip_CaO, width = 8, height = 6, dpi = 300)
-
-
-
-Slip_K2O <- ggplot(wide4, aes(x = K2O_norm_slip, y = K2O_norm_glaze, color = Ware, shape = Provenance)) +
-  geom_point() +
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  labs(x = "White Slip (K2O* wt%)",
-       y = "Glaze (K2O* wt%)") +
-  theme_minimal()+ 
-  scale_shape_manual(name = "Group", values = c(17,3, 15,8,16,15,1)) + 
-  scale_color_manual(name = "Ware", values =  c("#e63946", "#3A86FF", "#ebaa14", "#9467BD"))  +
-  coord_cartesian(xlim = c(0, 10), ylim = c(0, 10))+ 
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank()
-  ) + 
-  theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
-
-Slip_K2O 
-
-
-
-# comparative slips only
-
-wide5 <- wide3
-
-wide5$Site <- as.factor(wide5$Site)
-summary(wide5$Site)
-
-wide5 <- wide5 %>% filter(Site %in% c("Akhsiket", "Dandanakan", "Kuva", "Termez", "Aktobe", "Bektobe",
+recovery_ceramics_data$Site <- as.factor(recovery_ceramics_data$Site)
+recovery_ceramics_data <- recovery_ceramics_data %>% filter(Site %in% c("Akhsiket", "Dandanakan", "Kuva", "Termez", "Aktobe", "Bektobe",
                                       "Kulan", "Lower Barskhan", "Tamdy", "Taraz", "Laskhar-i Bazar",
-                                      "Bust")
-                          | Provenance == "N/A")
+                                      "Bust")| Provenance == "N/A")
 
-
-wide4_ellipse <- wide4 %>% filter(Provenance %in% c("BUK", "TASH"))
+## visualising glaze and slip interactions
 
 
 combined_plot_Al2O3 <- ggplot() +
   # Data from wide5 (slightly transparent points with Site-based shapes)
-  geom_point(data = wide5, aes(x = Al2O3_norm_slip, y = Al2O3_norm_glaze, color = Site, shape = Site),
+  geom_point(data = recovery_ceramics_data, aes(x = Al2O3_norm_slip, y = Al2O3_norm_glaze, color = Site, shape = Site),
              size = 2) + 
-  geom_point(data = wide4, aes(x = Al2O3_norm_slip, y = Al2O3_norm_glaze, color = Provenance, shape = Provenance),
+  geom_point(data = provenanced_ceramics_data, aes(x = Al2O3_norm_slip, y = Al2O3_norm_glaze, color = Provenance, shape = Provenance),
              size = 4) +  # Larger solid points
  # Slight transparency and smaller points
   # Data from wide4 (larger solid points with Provenance-based shapes)
   # Add dashed line (y = x line)
   geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  stat_ellipse(data = wide4_ellipse, 
+  stat_ellipse(data = provenanced_ceramics_data_ellipse, 
                aes(x = Al2O3_norm_slip, y = Al2O3_norm_glaze, group = Provenance, color = Provenance), 
                level = 0.90, geom = "path") +
   # Axis labels and title
@@ -917,24 +663,20 @@ combined_plot_Al2O3 <- ggplot() +
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1)
   )
 
-# Display the combined plot
-print(combined_plot_Al2O3)
-
-
-ggsave(filename = "combined_plot_Al2O3.png", plot = combined_plot_Al2O3, width = 8, height = 6, dpi = 300)
+ggsave(filename = "./Figures/Figure9a.jpg", plot = combined_plot_Al2O3, width = 8, height = 6, dpi = 300)
 
 
 
 combined_plot_SiO2 <- ggplot() +
   # Data from wide5 (slightly transparent points with Site-based shapes)
-  geom_point(data = wide5, aes(x = SiO2_norm_slip, y = SiO2_norm_glaze, color = Site, shape = Site),
+  geom_point(data = recovery_ceramics_data, aes(x = SiO2_norm_slip, y = SiO2_norm_glaze, color = Site, shape = Site),
              size = 2) +  # Slight transparency and smaller points
-   geom_point(data = wide4, aes(x = SiO2_norm_slip, y = SiO2_norm_glaze, color = Provenance, shape = Provenance),
+   geom_point(data = provenanced_ceramics_data, aes(x = SiO2_norm_slip, y = SiO2_norm_glaze, color = Provenance, shape = Provenance),
              size = 4) +  # Larger solid points
   # Data from wide4 (larger solid points with Provenance-based shapes)
   # Add dashed line (y = x line)
   geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  stat_ellipse(data = wide4_ellipse, 
+  stat_ellipse(data = provenanced_ceramics_data_ellipse, 
                aes(x = SiO2_norm_slip, y = SiO2_norm_glaze, group = Provenance, color = Provenance), 
                level = 0.90, geom = "path") +
   # Axis labels and title
@@ -953,55 +695,17 @@ combined_plot_SiO2 <- ggplot() +
     axis.line = element_line(color = "black", linewidth = 1, linetype = 1)
   )
 
-# Display the combined plot
-print(combined_plot_SiO2)
+ggsave(filename = "./Figures/Figure9b.jpg", plot = combined_plot_SiO2, width = 8, height = 6, dpi = 300)
 
 
-ggsave(filename = "combined_plot_SiO2.png", plot = combined_plot_SiO2, width = 8, height = 6, dpi = 300)
-
-
-
-combined_plot_CaO <- ggplot() +
-  # Data from wide5 (slightly transparent points with Site-based shapes)
-  geom_point(data = wide5, aes(x = CaO_norm_slip, y = CaO_norm_glaze, color = Site, shape = Site),
-             size = 2) + 
-  geom_point(data = wide4, aes(x = CaO_norm_slip, y = CaO_norm_glaze, color = Provenance, shape = Provenance),
-             size = 4) +  # Larger solid points
- # Slight transparency and smaller points
-  # Data from wide4 (larger solid points with Provenance-based shapes)
-  # Add dashed line (y = x line)
-  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  stat_ellipse(data = wide4_ellipse, 
-               aes(x = CaO_norm_slip, y = CaO_norm_glaze, group = Provenance, color = Provenance), 
-               level = 0.90, geom = "path") +
-  # Axis labels and title
-  labs(x = "White Slip (CaO* wt%)",
-       y = "Glaze (CaO* wt%)") +
-  # Customize color and shape scales
-  scale_shape_manual(name = "Provenance", values = c(8, 4, 11,1,13,9,3,10,5,6,7,2,12,14, 17, 18, 15, 16)) +
-  scale_color_manual(name = "Provenance", values = c("black", "black", "black","black", "black", "black", "black",
-                                                     "black","black", "black", "black", "black","black", "black",
-                                                     "#CC6677", "#882255", "#44AA99", "#117733" )) +
-  coord_cartesian(xlim = c(0,20), ylim = c(0, 20)) +
-  theme_minimal() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    axis.line = element_line(color = "black", linewidth = 1, linetype = 1)
-  )
-
-# Display the combined plot
-print(combined_plot_CaO)
-
-ggsave(filename = "combined_plot_CaO.png", plot = combined_plot_CaO, width = 8, height = 6, dpi = 300)
 
 
 
 combined_plot_SiO2_Al2O3 <- ggplot() +
   # Data from wide5 (slightly transparent points with Site-based shapes)
-  geom_point(data = wide5, aes(x = Raw_SiO2_slip, y = Raw_Al2O3_slip, color = Ware, shape = Site),
+  geom_point(data = recovery_ceramics_data, aes(x = Raw_SiO2_slip, y = Raw_Al2O3_slip, color = Ware, shape = Site),
              size = 2) + 
-  geom_point(data = wide4, aes(x = Raw_SiO2_slip, y = Raw_Al2O3_slip, color = Ware, shape = Provenance),
+  geom_point(data = provenanced_ceramics_data, aes(x = Raw_SiO2_slip, y = Raw_Al2O3_slip, color = Ware, shape = Provenance),
              size = 4) +  # Larger solid points
  # Slight transparency and smaller points
   # Axis labels and title
@@ -1009,8 +713,8 @@ combined_plot_SiO2_Al2O3 <- ggplot() +
        y = "Al2O3 slip (wt%)") +
   # Customize color and shape scales
   scale_shape_manual(name = "Provenance", values = c(8, 4, 11,1,13,9,3,10,5,6,7,2,12,14, 17, 18, 15, 16)) +
-  scale_color_manual(name = "Ware", values =   c("#1F77B4", "#FF7F0E",  "#2CA02C",  "#D62728", "#9467BD",
-                                                 "#8C564B", "#E377C2", "#7F7F7F", "#BCBD22", "#17BECF", "#000000", "#AEC7E8", "#FFBB78")) +
+  scale_color_manual(name = "Ware", values =   c("#1F77B4", "#FF7F0E",  "#8C564B",  "#D62728", "#9467BD",
+                                                 "#2CA02C",  "#E377C2", "#7F7F7F", "#BCBD22", "#17BECF", "#000000", "#AEC7E8", "#FFBB78")) +
   theme_minimal() +
   theme(
     panel.grid.major = element_blank(),
@@ -1021,128 +725,14 @@ combined_plot_SiO2_Al2O3 <- ggplot() +
 # Display the combined plot
 print(combined_plot_SiO2_Al2O3)
 
-ggsave(filename = "combined_plot_SiO2_Al2O3.png", plot = combined_plot_SiO2_Al2O3, width = 8, height = 6, dpi = 300)
-
-
-combined_plot_SiO2_Al2O3 <- ggplot() +
-  # Sites: all black, shown in legend as "Other site"
-  geom_point(
-    data = wide5,
-    aes(x = Raw_SiO2_slip, y = Raw_Al2O3_slip, color = "Other site", shape = Ware),
-    size = 3
-  ) +
-  # Highlighted provenances (colored)
-  geom_point(
-    data = wide4,
-    aes(x = Raw_SiO2_slip, y = Raw_Al2O3_slip, color = Provenance, shape = Ware),
-    size = 4
-  ) +
-  stat_ellipse(
-    data = wide4_ellipse,
-    aes(x = Raw_SiO2_slip, y = Raw_Al2O3_slip, group = Provenance, color = Provenance),
-    level = 0.90, geom = "path"
-  ) +
-  labs(x = "SiO2 slip (wt%)", y = "Al2O3 slip (wt%)") +
-  scale_shape_manual(name = "Ware", values = c(4, 3, 18, 17, 16, 8, 15, 9)) +
-  scale_color_manual(
-    name   = "Provenance",
-    values = c(
-      "Other site" = "black",
-      "BUK"  = "#CC6677",
-      "TASH" = "#44AA99",
-      "TAZ - Group 3"  = "#117733",
-      "SAMK" = "#882255"
-    ),
-    breaks = c("BUK","TASH","TAZ - Group 3","SAMK","Other site"),
-    labels = c("BUK","TASH","TAZ - Group 3","SAMK","Other site")
-  ) +
-  theme_minimal() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    axis.line = element_line(color = "black", linewidth = 1, linetype = 1)
-  )
-
-print(combined_plot_SiO2_Al2O3)
-
-
-
-
-
-combined_plot_CaO_Al2O3 <- ggplot() +
-  # Data from wide5 (slightly transparent points with Site-based shapes)
-  geom_point(data = wide4, aes(x = Raw_CaO_slip, y = Raw_Al2O3_slip, color = Provenance, shape = Ware),
-             size = 4) +  # Larger solid points
-  geom_point(data = wide5, aes(x = Raw_CaO_slip, y = Raw_Al2O3_slip, color = Site, shape = Ware),
-             size = 3) +  # Slight transparency and smaller points
-  # Data from wide4 (larger solid points with Provenance-based shapes)
-  stat_ellipse(data = wide4_ellipse, 
-               aes(x = Raw_CaO_slip, y = Raw_Al2O3_slip, group = Provenance, color = Provenance), 
-               level = 0.90, geom = "path") +
-  # Axis labels and title
-  labs(x = "CaO slip (wt%)",
-       y = "Al2O3 slip (wt%)") +
-  # Customize color and shape scales
-  scale_shape_manual(name = "Provenance", values = c(17, 18, 15, 16, 8, 4, 11, 1,13,9)) +
-  scale_color_manual(name = "Provenance", values = c("#CC6677", "#882255", "#44AA99", "#117733","black", "black", "black","black", "black", 
-                                                     "black","black", "black", "black","black", "black","black"
-                                                     )) +
-  theme_minimal() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    axis.line = element_line(color = "black", linewidth = 1, linetype = 1)
-  )
-
-# Display the combined plot
-print(combined_plot_CaO_Al2O3)
-
-
-combined_plot_CaO_K2O <- ggplot() +
-  # Data from wide5 (slightly transparent points with Site-based shapes)
-  geom_point(data = wide4, aes(x = Raw_CaO_slip, y = Raw_K2O_slip, color = Provenance, shape = Ware),
-             size = 4) +  # Larger solid points
-  geom_point(data = wide5, aes(x = Raw_CaO_slip, y = Raw_K2O_slip, color = Site, shape = Ware),
-             size = 3) +  # Slight transparency and smaller points
-  # Data from wide4 (larger solid points with Provenance-based shapes)
-  stat_ellipse(data = wide4_ellipse, 
-               aes(x = Raw_CaO_slip, y = Raw_K2O_slip, group = Provenance, color = Provenance), 
-               level = 0.90, geom = "path") +
-  # Axis labels and title
-  labs(x = "CaO slip (wt%)",
-       y = "K2O slip (wt%)") +
-  # Customize color and shape scales
-  scale_shape_manual(name = "Provenance", values = c(17, 18, 15, 16, 8, 4, 11, 1,13,9)) +
-  scale_color_manual(name = "Provenance", values = c("black", "black", "black","black", "black", 
-                                                     "black","black", "black", "black","black", "black","black",
-                                                     "#CC6677", "#882255", "#44AA99", "#117733")) +
-  theme_minimal() +
-  theme(
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    axis.line = element_line(color = "black", linewidth = 1, linetype = 1)
-  )
-
-# Display the combined plot
-print(combined_plot_CaO_K2O)
+ggsave(filename = "./Figures/Figure9c.jpg", plot = combined_plot_SiO2_Al2O3, width = 10, height = 10, dpi = 300)
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-### Colored slips
+### -------------------------------Colored slips--------------------------------
 
 comparative_normalized_data$Component <- as.factor(comparative_normalized_data$Component)
 

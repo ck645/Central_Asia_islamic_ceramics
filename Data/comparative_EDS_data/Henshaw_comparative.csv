@@ -1,176 +1,176 @@
-﻿Sample,Site,Region,Instrument,Component,Ware,Incision,Glaze_or_slip_color,Na2O,MgO,Al2O3,SiO2,K2O,CaO,Fe2O3,TiO2,PbO,CuO,MnO,P2O5,SO3,Cl,BaO,Cr2O5,Total
-Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.5,0.2,13,64.5,4.4,2.3,0.6,0.8,13.8,,,,,,,,100.1
-Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.7,0.2,12,62.7,4,1.8,2.4,0,16.3,,,,,,,,100.1
+﻿Sample,Site,Region,Instrument,Component,Ware,Incision,Glaze_or_slip_color,Na2O,MgO,Al2O3,SiO2,K2O,CaO,FeO,TiO2,PbO,CuO,MnO,P2O5,SO3,Cl,BaO,Cr2O3,Total
+Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.5,0.2,13,64.5,4.4,2.3,0.540000054,0.8,13.8,,,,,,,,100.0400001
+Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.7,0.2,12,62.7,4,1.8,2.160000216,0,16.3,,,,,,,,99.86000022
 Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Green,0,0,1.5,34.5,0.1,0.7,0,0,59.9,3.4,,,,,,,100.1
 Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0,0,1.4,35.2,0,0.8,0,0.4,62.2,0,,,,,,,100
-Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Red,0,0,1.5,33.4,0,1.3,1.3,0,62.5,0,,,,,,,100
-Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Yellow,0,0,1.7,33.1,0.3,0.8,0.3,0,63.9,0,,,,,,,100.1
-Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.2,3.3,14.1,56.9,4.5,11.8,7.6,0.7,,,,,,,,,100.1
-"Akhsiket 23 surface, Kiln rod green glaze",Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Kiln Furniture,,,0.2,0.6,3.2,40.3,1.8,3,1.1,,48.1,1.7,,,,,,,100
-"Akhsiket 23 surface, Kiln rod green glaze",Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Kiln Furniture,,,0.9,3.1,11,55.8,3.1,18.9,6.9,0.5,,,,,,,,,100.2
-Akhsiket 23/10a.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Underglaze,,Black,7.3,2.8,3.8,67.3,7.9,6.8,1.3,0.1,,0,1.6,0,0,1.1,,,100
-Akhsiket 23/10a.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Underglaze,,,0.9,3,12.8,58.6,3.6,15,5.3,0.5,,,,,,,,,99.7
-Akhsiket 23/10b.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,7.7,1.9,3.7,67.3,3.7,4.9,1.3,0,,7.1,1.4,0,0.2,0.9,,,100.1
-Akhsiket 23/10b.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,6.6,3.3,4.2,68.2,3.8,7.6,1.8,0,,2.1,1.8,0,0,0.3,,,99.7
-Akhsiket 23/10b.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.4,3.2,12.8,53.2,4.7,16.3,7.7,0.7,,,,,,,,,100
-Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Slipware,,,0.3,0.6,9,35,2.8,1.1,28.5,0.2,8.2,,12.3,,,,2.1,,100.1
+Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Red,0,0,1.5,33.4,0,1.3,1.170000117,0,62.5,0,,,,,,,99.87000012
+Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Yellow,0,0,1.7,33.1,0.3,0.8,0.270000027,0,63.9,0,,,,,,,100.07
+Akhsiket 15/1.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.2,3.3,14.1,56.9,4.5,11.8,6.840000684,0.7,,,,,,,,,99.34000068
+"Akhsiket 23 surface, Kiln rod green glaze",Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Kiln Furniture,,,0.2,0.6,3.2,40.3,1.8,3,0.990000099,,48.1,1.7,,,,,,,99.8900001
+"Akhsiket 23 surface, Kiln rod green glaze",Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Kiln Furniture,,,0.9,3.1,11,55.8,3.1,18.9,6.210000621,0.5,,,,,,,,,99.51000062
+Akhsiket 23/10a.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Underglaze,,Black,7.3,2.8,3.8,67.3,7.9,6.8,1.170000117,0.1,,0,1.6,0,0,1.1,,,99.87000012
+Akhsiket 23/10a.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Underglaze,,,0.9,3,12.8,58.6,3.6,15,4.770000477,0.5,,,,,,,,,99.17000048
+Akhsiket 23/10b.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,7.7,1.9,3.7,67.3,3.7,4.9,1.170000117,0,,7.1,1.4,0,0.2,0.9,,,99.97000012
+Akhsiket 23/10b.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,6.6,3.3,4.2,68.2,3.8,7.6,1.620000162,0,,2.1,1.8,0,0,0.3,,,99.52000016
+Akhsiket 23/10b.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.4,3.2,12.8,53.2,4.7,16.3,6.930000693,0.7,,,,,,,,,99.23000069
+Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Slipware,,,0.3,0.6,9,35,2.8,1.1,25.65000257,0.2,8.2,,12.3,,,,2.1,,97.25000257
 Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.5,1,16,63.2,4.9,1.4,0,0,13.1,,0,,,,0,,100.1
-Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0,0.9,13.6,48.2,3.9,1.1,14.2,1.1,13.7,,3.3,,,,0,,100
-Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,0.2,0,2.9,43.7,1.8,0.7,1.3,,49.3,,0.1,,,,,,100
+Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0,0.9,13.6,48.2,3.9,1.1,12.78000128,1.1,13.7,,3.3,,,,0,,98.58000128
+Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,0.2,0,2.9,43.7,1.8,0.7,1.170000117,,49.3,,0.1,,,,,,99.87000012
 Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0.1,0,3,41.9,1.6,0.6,0,,52.8,,0,,,,,,100
-Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,0.9,3.8,12.8,54.7,3.1,16.2,7.1,0.9,,,,,0.4,,,,99.9
+Akhsiket 23/11a.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,0.9,3.8,12.8,54.7,3.1,16.2,6.390000639,0.9,,,,,0.4,,,,99.19000064
 Akhsiket 23/11a.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Monochrome,,,0.5,0.7,18,60.3,4.3,3.3,0,0.2,12.1,,,0.7,,,,,100.1
 Akhsiket 23/11a.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Grey,0,0.1,3.3,42.9,1.1,0.3,0,,52.4,,,,,,,,100.1
-Akhsiket 23/11a.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,0.8,3.3,12.7,55.5,3.6,17.9,5.4,0.5,,,,,0.4,,,,100.1
-Akhsiket 23/11c.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,6.1,2.9,5,67.8,9.2,4.8,1.6,0,,,2,,,0.6,,,100
-Akhsiket 23/11c.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,1.1,0.5,8,79.9,5.8,1.2,2.8,0,,,0.6,,,0.2,,,100.1
-Akhsiket 23/12.10,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,1,0.5,1.9,37.8,2.6,2.9,0.8,0,49.5,3.1,,0,,,,,100.1
-Akhsiket 23/12.10,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0.7,0.7,1.9,36.7,1.9,3.5,1.1,0,49.9,3.7,,0,,,,,100.1
-Akhsiket 23/12.10,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,1.4,3.3,12,55.9,3.6,16.3,6.3,0.7,,,,,0.5,,,,100
-Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.7,0.8,12.6,71.1,3.7,4.2,0.3,0.1,6.6,,,,,,,0,100.1
-Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.7,0.5,16.2,63.2,5,1,5.4,0.7,6.8,,,,,,,0.4,99.9
-Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware,,,0.2,1,10.4,71.7,2.9,1.7,0.9,1.3,8.7,,,,,,,1.2,100
-Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Olive,0,0,2.5,36.8,0.8,0.7,0.1,,59.1,,,,,,,,100
-Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Red,0,0,2.5,36.8,0.6,0.7,0.3,,59.1,,,,,,,,100
-Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0.1,0,2.3,36.2,1.1,0.4,0.2,,59.7,,,,,,,,100
-Akhsiket 23/12.15,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0.7,1.3,21.1,50,3.4,9.2,0.4,1.1,12.6,,,,,,,,99.8
-Akhsiket 23/12.15,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Black,0.5,0.4,8.5,39.1,1.3,1,3.1,0,45.4,,0.4,,,,,,99.7
-Akhsiket 23/12.15,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0.3,0.1,4,39.4,0.9,0.8,0.5,0,54,,0,,,,,,100
-Akhsiket 23/12.15,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,1.2,3.5,12.6,54.4,3.6,17.9,5.8,0.7,,,,,,,,,99.7
-Akhsiket 23/12.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.4,0,16.1,59.6,7.4,0.5,0.6,0.5,14.9,,,,,,,,100
+Akhsiket 23/11a.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,0.8,3.3,12.7,55.5,3.6,17.9,4.860000486,0.5,,,,,0.4,,,,99.56000049
+Akhsiket 23/11c.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,6.1,2.9,5,67.8,9.2,4.8,1.440000144,0,,,2,,,0.6,,,99.84000014
+Akhsiket 23/11c.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,1.1,0.5,8,79.9,5.8,1.2,2.520000252,0,,,0.6,,,0.2,,,99.82000025
+Akhsiket 23/12.10,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,1,0.5,1.9,37.8,2.6,2.9,0.720000072,0,49.5,3.1,,0,,,,,100.0200001
+Akhsiket 23/12.10,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0.7,0.7,1.9,36.7,1.9,3.5,0.990000099,0,49.9,3.7,,0,,,,,99.9900001
+Akhsiket 23/12.10,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,1.4,3.3,12,55.9,3.6,16.3,5.670000567,0.7,,,,,0.5,,,,99.37000057
+Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.7,0.8,12.6,71.1,3.7,4.2,0.270000027,0.1,6.6,,,,,,,,100.07
+Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.7,0.5,16.2,63.2,5,1,4.860000486,0.7,6.8,,,,,,,0.330434,99.29043449
+Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware,,,0.2,1,10.4,71.7,2.9,1.7,0.810000081,1.3,8.7,,,,,,,0.991302,99.70130208
+Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Olive,0,0,2.5,36.8,0.8,0.7,0.090000009,,59.1,,,,,,,,99.99000001
+Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Red,0,0,2.5,36.8,0.6,0.7,0.270000027,,59.1,,,,,,,,99.97000003
+Akhsiket 23/12.13,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0.1,0,2.3,36.2,1.1,0.4,0.180000018,,59.7,,,,,,,,99.98000002
+Akhsiket 23/12.15,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0.7,1.3,21.1,50,3.4,9.2,0.360000036,1.1,12.6,,,,,,,,99.76000004
+Akhsiket 23/12.15,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Black,0.5,0.4,8.5,39.1,1.3,1,2.790000279,0,45.4,,0.4,,,,,,99.39000028
+Akhsiket 23/12.15,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0.3,0.1,4,39.4,0.9,0.8,0.450000045,0,54,,0,,,,,,99.95000005
+Akhsiket 23/12.15,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,1.2,3.5,12.6,54.4,3.6,17.9,5.220000522,0.7,,,,,,,,,99.12000052
+Akhsiket 23/12.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.4,0,16.1,59.6,7.4,0.5,0.540000054,0.5,14.9,,,,,,,,99.94000005
 Akhsiket 23/12.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0.2,0.1,5.3,45.9,1.2,0.9,0,0,46.5,,0,,,,,,100.1
-Akhsiket 23/12.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Brown,0.1,0.1,4.9,41.8,1.1,0.8,2.6,0,47.7,,0.9,,,,,,100
-Akhsiket 23/12.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.1,1.4,7.9,48.4,5.1,24.2,6,0.7,,,,,3.5,,,,98.3
-Akhsiket 23/13.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Slipware - Samanid,,,1.6,1.5,10.4,38.5,3.4,19,12,0.3,6.4,,2.5,0.6,0.9,,,,97.1
-Akhsiket 23/13.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Black,0.6,0,2.9,41.8,1.7,0.5,1.8,,49.3,,1.5,,,,,,100.1
+Akhsiket 23/12.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Brown,0.1,0.1,4.9,41.8,1.1,0.8,2.340000234,0,47.7,,0.9,,,,,,99.74000023
+Akhsiket 23/12.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.1,1.4,7.9,48.4,5.1,24.2,5.40000054,0.7,,,,,3.5,,,,97.70000054
+Akhsiket 23/13.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Slipware - Samanid,,,1.6,1.5,10.4,38.5,3.4,19,10.80000108,0.3,6.4,,2.5,0.6,0.9,,,,95.90000108
+Akhsiket 23/13.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Black,0.6,0,2.9,41.8,1.7,0.5,1.620000162,,49.3,,1.5,,,,,,99.92000016
 Akhsiket 23/13.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0.8,0,2.6,39.8,1.7,1,0,,54.1,,0,,,,,,100
-Akhsiket 23/13.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,1,2.7,13,58.5,2.9,13.7,4.8,0.4,,,,,2.9,,,,99.9
-Akhsiket 23/14.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,5.2,2.7,3.7,66.5,5.7,6.3,1.2,0,,6.7,1.5,0.2,0,0.4,,,100.1
-Akhsiket 23/14.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,6.6,2.5,4,69.6,6.5,6.7,1.6,0.1,,0,1.6,0,0,0.7,,,99.9
-Akhsiket 23/14.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.1,3.4,12,57,3.5,16.3,5.8,0.7,,,,,0.2,,,,100
-Akhsiket 23/14.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,5.9,1.7,5.3,70.4,5.5,3.8,0.8,0,,5.5,0.8,,,0.4,,,100.1
-Akhsiket 23/14.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,7.3,2.8,3.6,69.8,5.4,6,1,0,,2.1,1.4,,,0.6,,,100
-Akhsiket 23/14.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.9,4,12.3,57.8,2.1,15.4,5.3,0.6,,,,,0.2,,,,99.6
-Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware,,,0.9,2.2,11.8,63.2,4.7,3.7,2.2,0.9,4.7,0,0,,,,,5.8,100.1
-Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,1,1.8,16.9,61.8,6,5.2,0.2,0.2,7,0,0,,,,,0,100.1
-Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,1.1,0.1,4.2,43.4,2.6,2.2,1,,45.4,,0.1,,,,,,100.1
-Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,1,0.2,4.1,44.1,2.4,0.9,0.1,,47.2,,,,,,,,100
-Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Olive,0.7,0.3,3.1,42.7,2,0.9,0.2,,50.1,,,,,,,0.1,100.1
-Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.1,3.9,13.2,59.9,2.8,13,5.3,0.8,,,,,,,,,100
-Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware - Samanid,Y,,0.9,2.3,16.6,60.8,3.7,6.6,1.3,0.2,6.8,,0,,,,,,99.2
-Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,Y,,0.9,2.3,18.1,58.5,3.8,5.2,0.4,0.5,9.6,,0,,,,,,99.3
-Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,Y,Black,0.3,0,3.6,44.1,1.7,0.5,2.2,0,47,,0.6,0,,,,,100
-Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,Y,Transparent,0,0.4,3.6,42.7,1.5,0.5,1.4,0,49.8,,0.1,0,,,,,100
-Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,Y,Red,0.2,0,2.8,43.4,1.2,0.2,0.9,0,51.4,,0,0,,,,,100.1
-Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,Y,,1.3,3,13.4,56,2.7,15.5,6.2,0.9,,,,,0.3,,,,99.3
-Akhsiket 23/15.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,7.3,2.6,3.3,68.2,6,6,1.1,,,3,1.6,,,1,,,100.1
-Akhsiket 23/15.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,6.9,2.8,3.5,69.1,6.4,6.9,1.1,,,0.5,1.8,,,1,,,100
-Akhsiket 23/15.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.3,3.1,12.2,55.5,3.8,17.5,6.2,0.5,,,,,,,,,100.1
-Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0,1.2,9.4,72,2.9,2.2,0.5,1.3,10.5,,,0,,,,0,100
-Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware,,,0.2,1.3,10,63.9,2.7,1.2,3.4,0,13.8,,,0,,,,3.5,100
-Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.7,0,13.1,42.8,2.5,1.2,17.1,0.5,21.4,,,0.5,,,,0,99.8
-Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Olive,0,0,1.1,28.7,0,0.2,0.4,,69.6,,,,,,,,100
+Akhsiket 23/13.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,1,2.7,13,58.5,2.9,13.7,4.320000432,0.4,,,,,2.9,,,,99.42000043
+Akhsiket 23/14.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,5.2,2.7,3.7,66.5,5.7,6.3,1.080000108,0,,6.7,1.5,0.2,0,0.4,,,99.98000011
+Akhsiket 23/14.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,6.6,2.5,4,69.6,6.5,6.7,1.440000144,0.1,,0,1.6,0,0,0.7,,,99.74000014
+Akhsiket 23/14.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.1,3.4,12,57,3.5,16.3,5.220000522,0.7,,,,,0.2,,,,99.42000052
+Akhsiket 23/14.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,5.9,1.7,5.3,70.4,5.5,3.8,0.720000072,0,,5.5,0.8,,,0.4,,,100.0200001
+Akhsiket 23/14.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,7.3,2.8,3.6,69.8,5.4,6,0.90000009,0,,2.1,1.4,,,0.6,,,99.90000009
+Akhsiket 23/14.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.9,4,12.3,57.8,2.1,15.4,4.770000477,0.6,,,,,0.2,,,,99.07000048
+Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware,,,0.9,2.2,11.8,63.2,4.7,3.7,1.980000198,0.9,4.7,0,0,,,,,4.791293,98.8712932
+Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,1,1.8,16.9,61.8,6,5.2,0.180000018,0.2,7,0,0,,,,,,100.08
+Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,1.1,0.1,4.2,43.4,2.6,2.2,0.90000009,,45.4,,0.1,,,,,,100.0000001
+Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,1,0.2,4.1,44.1,2.4,0.9,0.090000009,,47.2,,,,,,,,99.99000001
+Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Olive,0.7,0.3,3.1,42.7,2,0.9,0.180000018,,50.1,,,,,,,0.0826085,100.0626085
+Akhsiket 23/14.4,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.1,3.9,13.2,59.9,2.8,13,4.770000477,0.8,,,,,,,,,99.47000048
+Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware - Samanid,Y,,0.9,2.3,16.6,60.8,3.7,6.6,1.170000117,0.2,6.8,,0,,,,,,99.07000012
+Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,Y,,0.9,2.3,18.1,58.5,3.8,5.2,0.360000036,0.5,9.6,,0,,,,,,99.26000004
+Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,Y,Black,0.3,0,3.6,44.1,1.7,0.5,1.980000198,0,47,,0.6,0,,,,,99.7800002
+Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,Y,Transparent,0,0.4,3.6,42.7,1.5,0.5,1.260000126,0,49.8,,0.1,0,,,,,99.86000013
+Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,Y,Red,0.2,0,2.8,43.4,1.2,0.2,0.810000081,0,51.4,,0,0,,,,,100.0100001
+Akhsiket 23/15.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,Y,,1.3,3,13.4,56,2.7,15.5,5.580000558,0.9,,,,,0.3,,,,98.68000056
+Akhsiket 23/15.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,7.3,2.6,3.3,68.2,6,6,0.990000099,,,3,1.6,,,1,,,99.9900001
+Akhsiket 23/15.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,6.9,2.8,3.5,69.1,6.4,6.9,0.990000099,,,0.5,1.8,,,1,,,99.8900001
+Akhsiket 23/15.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.3,3.1,12.2,55.5,3.8,17.5,5.580000558,0.5,,,,,,,,,99.48000056
+Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0,1.2,9.4,72,2.9,2.2,0.450000045,1.3,10.5,,,0,,,,,99.95000005
+Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware,,,0.2,1.3,10,63.9,2.7,1.2,3.060000306,0,13.8,,,0,,,,2.8912975,99.05129781
+Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.7,0,13.1,42.8,2.5,1.2,15.39000154,0.5,21.4,,,0.5,,,,,98.09000154
+Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Olive,0,0,1.1,28.7,0,0.2,0.360000036,,69.6,,,,,,,,99.96000004
 Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Red,0,0,0.9,29.1,0,0,0,,70,,,,,,,,100
-Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.1,3.3,12.5,56.8,3.8,15.5,6.3,0.5,,,,,,,,,99.8
-Akhsiket 23/16.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0.8,0.5,18.6,56.7,5.2,0.2,0.4,0.2,17.2,,,,,,,,99.8
-Akhsiket 23/16.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Brown,0.4,,3.1,42.3,1.5,0.5,2.4,,49,,0.7,,,,,,99.9
-Akhsiket 23/16.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0,,3,43.3,1.4,0.5,,,51.8,,,,,,,,100
-Akhsiket 23/16.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,1.3,3.7,12.8,55.5,2.4,17.4,5.8,0.7,,,,,0.3,,,,99.9
-Akhsiket 23/2 -8.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,5.1,1.4,12.1,62.9,7.5,2.4,0.7,0.3,,6.7,0.5,0,0.3,0,,,99.9
-Akhsiket 23/2 -8.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,8.1,2.5,7.1,66.9,5.8,5.7,1.8,0.3,,0,1.3,0,0.2,0.2,,,99.9
-Akhsiket 23/2 -8.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.3,3.9,13.4,57.6,2.5,15.9,5.5,,,,,,,,,,100.1
-Akhsiket 23/20.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,11.9,3,3.3,68.1,3.7,6.3,0.8,0,,1.3,1,0.1,0.1,0.5,0,0.1,100.2
-Akhsiket 23/20.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1,3.2,12.2,56.1,3.8,17.6,5.3,0.6,,,,,0.3,,,,100.1
-Akhsiket 23/20.6,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,9.8,2.7,3.1,69.3,4.1,5,1.1,0,,3,1.1,0.1,,0.8,,,100.1
-Akhsiket 23/20.6,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,8.3,2.8,3.4,70.6,5.9,4.9,1.3,0.1,,0.6,1.3,0.1,,0.8,,,100.1
-Akhsiket 23/20.6,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1,3.4,13,55.1,3.6,17.3,5.9,0.8,,,,,,,,,100.1
-Akhsiket 23/20.7,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0.9,0.2,1.6,36.8,2.5,2.8,1.2,0.1,52.6,1.3,,,,,,,100
-Akhsiket 23/20.7,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,1.1,3.5,12.6,54.8,4.2,15.7,6.1,0.6,,,,0.3,1.1,,,,100
-Akhsiket 23/2-8.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.1,1.1,20.6,62.3,2.1,7.2,5.4,1,0,,0,,0.3,,,,100.1
-Akhsiket 23/2-8.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,0.2,0,5.1,36.6,1.5,0.5,5.7,0,49.2,,1.3,,,,,,100.1
-Akhsiket 23/2-8.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0,0,3.7,35.7,0.8,0.7,0.9,0,57.9,,0,,,,,,99.7
-Akhsiket 23/2-8.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1,4.2,13.6,59.6,3.8,11.2,5.8,0.6,,,,,0.3,,,,100.1
-Akhsiket 23/2-8.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0.5,0.8,17,61.1,4.3,1.8,0.7,0.1,13.7,,,,,,,,100
-Akhsiket 23/2-8.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Black,0.1,0,4.8,37.4,1.6,0.5,11.2,0,42.1,,2.3,,,,,,100
+Akhsiket 23/16.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.1,3.3,12.5,56.8,3.8,15.5,5.670000567,0.5,,,,,,,,,99.17000057
+Akhsiket 23/16.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0.8,0.5,18.6,56.7,5.2,0.2,0.360000036,0.2,17.2,,,,,,,,99.76000004
+Akhsiket 23/16.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Brown,0.4,,3.1,42.3,1.5,0.5,2.160000216,,49,,0.7,,,,,,99.66000022
+Akhsiket 23/16.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0,,3,43.3,1.4,0.5,0,,51.8,,,,,,,,100
+Akhsiket 23/16.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,1.3,3.7,12.8,55.5,2.4,17.4,5.220000522,0.7,,,,,0.3,,,,99.32000052
+Akhsiket 23/2 -8.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,5.1,1.4,12.1,62.9,7.5,2.4,0.630000063,0.3,,6.7,0.5,0,0.3,0,,,99.83000006
+Akhsiket 23/2 -8.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,8.1,2.5,7.1,66.9,5.8,5.7,1.620000162,0.3,,0,1.3,0,0.2,0.2,,,99.72000016
+Akhsiket 23/2 -8.1,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.3,3.9,13.4,57.6,2.5,15.9,4.950000495,,,,,,,,,,99.5500005
+Akhsiket 23/20.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,11.9,3,3.3,68.1,3.7,6.3,0.720000072,0,,1.3,1,0.1,0.1,0.5,0,0.0826085,100.1026086
+Akhsiket 23/20.2,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1,3.2,12.2,56.1,3.8,17.6,4.770000477,0.6,,,,,0.3,,,,99.57000048
+Akhsiket 23/20.6,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,9.8,2.7,3.1,69.3,4.1,5,0.990000099,0,,3,1.1,0.1,,0.8,,,99.9900001
+Akhsiket 23/20.6,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,8.3,2.8,3.4,70.6,5.9,4.9,1.170000117,0.1,,0.6,1.3,0.1,,0.8,,,99.97000012
+Akhsiket 23/20.6,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1,3.4,13,55.1,3.6,17.3,5.310000531,0.8,,,,,,,,,99.51000053
+Akhsiket 23/20.7,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0.9,0.2,1.6,36.8,2.5,2.8,1.080000108,0.1,52.6,1.3,,,,,,,99.88000011
+Akhsiket 23/20.7,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,1.1,3.5,12.6,54.8,4.2,15.7,5.490000549,0.6,,,,0.3,1.1,,,,99.39000055
+Akhsiket 23/2-8.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.1,1.1,20.6,62.3,2.1,7.2,4.860000486,1,0,,0,,0.3,,,,99.56000049
+Akhsiket 23/2-8.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,0.2,0,5.1,36.6,1.5,0.5,5.130000513,0,49.2,,1.3,,,,,,99.53000051
+Akhsiket 23/2-8.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0,0,3.7,35.7,0.8,0.7,0.810000081,0,57.9,,0,,,,,,99.61000008
+Akhsiket 23/2-8.17,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1,4.2,13.6,59.6,3.8,11.2,5.220000522,0.6,,,,,0.3,,,,99.52000052
+Akhsiket 23/2-8.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0.5,0.8,17,61.1,4.3,1.8,0.630000063,0.1,13.7,,,,,,,,99.93000006
+Akhsiket 23/2-8.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Black,0.1,0,4.8,37.4,1.6,0.5,10.08000101,0,42.1,,2.3,,,,,,98.88000101
 Akhsiket 23/2-8.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0.3,0,3.4,44,1.3,0.6,0,0,50.5,,0,,,,,,100.1
-Akhsiket 23/2-8.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,0.7,3.6,12.6,56.6,3.2,16.5,6.2,0.6,,,,,,,,,100
-Akhsiket 23/2-8.5,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Monochrome,,,0.6,1.1,14,66.8,5.9,0.6,0.6,,10.3,,,,0.1,,,,100
-Akhsiket 23/2-8.5,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Grey,0.5,0,3.3,42.2,2.1,0.9,0.1,,50.8,,,,,,,,99.9
-Akhsiket 23/2-8.5,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,0.8,5.2,12.4,58.3,2.6,13.8,6,0.7,,,,,0.3,,,,100.1
-Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Monochrome,,,2.9,0,8.8,69.4,5,1.9,1.4,0.7,8,,1.1,,,,,0.7,99.9
-Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Black,0.4,0.7,4.2,45.6,2.8,2,1.9,,38.8,0,3.6,,,,,,100
-Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Transparent,0.6,0.7,3.3,48.9,2.6,2.7,1,,40.1,0,0,,,,,,99.9
-Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0.2,0.6,4.3,46.1,2.7,2.1,1.1,,41.2,1.9,0,,,,,,100.2
-Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,5.2,2.7,10.8,54.7,4,14.8,6.7,0.7,,,,,0.4,,,,100
-Akhsiket 24/26,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Underglaze,,,1.1,0.6,13.5,59.4,5.2,5.3,0.9,0.6,12.5,,0,0.4,0,,,,99.5
-Akhsiket 24/26,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Underglaze,,Black,0.5,0.1,2.5,36.2,1.1,1.1,1,0,56.8,,0.6,,,,,,99.9
-Akhsiket 24/26,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Underglaze,,Red,0.6,0.1,2.7,35.6,1,1.7,0.9,0,57.4,,0,,,,,,100
+Akhsiket 23/2-8.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,0.7,3.6,12.6,56.6,3.2,16.5,5.580000558,0.6,,,,,,,,,99.38000056
+Akhsiket 23/2-8.5,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Monochrome,,,0.6,1.1,14,66.8,5.9,0.6,0.540000054,,10.3,,,,0.1,,,,99.94000005
+Akhsiket 23/2-8.5,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Grey,0.5,0,3.3,42.2,2.1,0.9,0.090000009,,50.8,,,,,,,,99.89000001
+Akhsiket 23/2-8.5,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,0.8,5.2,12.4,58.3,2.6,13.8,5.40000054,0.7,,,,,0.3,,,,99.50000054
+Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Monochrome,,,2.9,0,8.8,69.4,5,1.9,1.260000126,0.7,8,,1.1,,,,,0.5782595,99.63825963
+Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Black,0.4,0.7,4.2,45.6,2.8,2,1.710000171,,38.8,0,3.6,,,,,,99.81000017
+Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Transparent,0.6,0.7,3.3,48.9,2.6,2.7,0.90000009,,40.1,0,0,,,,,,99.80000009
+Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0.2,0.6,4.3,46.1,2.7,2.1,0.990000099,,41.2,1.9,0,,,,,,100.0900001
+Akhsiket 24/23,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,5.2,2.7,10.8,54.7,4,14.8,6.030000603,0.7,,,,,0.4,,,,99.3300006
+Akhsiket 24/26,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Underglaze,,,1.1,0.6,13.5,59.4,5.2,5.3,0.810000081,0.6,12.5,,0,0.4,0,,,,99.41000008
+Akhsiket 24/26,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Underglaze,,Black,0.5,0.1,2.5,36.2,1.1,1.1,0.90000009,0,56.8,,0.6,,,,,,99.80000009
+Akhsiket 24/26,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Underglaze,,Red,0.6,0.1,2.7,35.6,1,1.7,0.810000081,0,57.4,,0,,,,,,99.91000008
 Akhsiket 24/26,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Underglaze,,Transparent,0.5,0,2,35.4,0.9,1,0,0,60.1,,0,,,,,,99.9
-Akhsiket 24/26,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Underglaze,,,1,2.7,12.3,56.6,4.3,16,6.4,0.8,,,,,,,,,100.1
-Akhsiket 9/2.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0.5,1.2,6.1,43.9,3.3,7.5,3.4,0.1,32,2.1,,,,,,,100.1
-Akhsiket 9/2.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,1,3,12.2,54.9,3.7,17.4,7.3,0.6,,,,,,,,,100.1
-Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.9,0.8,10.7,70.8,6.5,1.2,0.6,0.7,7.9,,,,,,,,100.1
-Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.9,0.4,16.1,55.7,6.4,0.9,6.4,0.9,12.4,,,,,,,,100.1
-Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0.7,0.1,3.8,50.9,3.2,0.3,0.2,,41,,,,,,,,100.2
-Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,0.4,0,3.8,42,2.2,0.6,4,,45.3,,1.9,,,,,,100.2
-Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Red,0.7,0,2.9,44.3,2.7,0.6,0.8,,48.1,,0,,,,,,100.1
-Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1,3.8,12,56.4,3.1,16.8,6.1,0.8,,,,,,,,,100
-Kuva 1,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,10.2,3.9,3.4,69.1,3.1,7,1,0.1,,1.2,,0.5,0.4,0.1,,,100
-Kuva 1,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.8,3.1,12,63.2,3.5,9.8,5.2,0.9,,,,0.6,0,,,,100.1
-Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.7,1.3,12.8,61.8,4.4,3.6,1.3,0.3,13.9,,,,,,,,100.1
-Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Brown Slip,Slipware,,,0.5,1.4,11.8,59.5,4.3,4.5,2.3,0.2,15.5,,,,,,,,100
-Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Brown,0,0.7,2.6,36.5,0.8,2.3,0.7,,53,0,3.4,,0,,,0,100
-Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0,0.5,2.6,38.8,1,1.4,0.5,,55.3,0,0,,0,,,0,100.1
-Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Yellow,0,0.3,2.7,37.9,0,1.1,1.3,,56.3,0.5,0,,0,,,0,100.1
-Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.5,2.8,13.4,53.5,3.6,17.9,5.2,0.7,,,,0.2,0.3,,,,99.1
-Kuva 18,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0,0.8,6.3,76.6,2,2,0.8,0,10.5,,,,1,,,,100
-Kuva 18,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Black,0,0.6,2.8,37.6,1.3,1.5,1,,53.2,,2.1,,,,,,100.1
-Kuva 18,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0,0.3,1.9,37.7,0.8,1.4,0.3,,57.6,,0,,,,,,100
-Kuva 18,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,1.2,2.8,12.9,60.6,4.3,9.1,0.8,5.5,,,,0.4,2.4,,,,100
-Kuva 19,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0,0.2,3.9,37.8,1,1.2,0.7,,50.1,5.2,,,,,,,100.1
-Kuva 19,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,1.1,3.2,12.4,58.8,3.2,14,5.6,0.7,,,,,0.9,,,,99.9
-Kuva 20,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0,0.2,5.5,83,1.5,0.2,0.3,,9.4,0,,,,,,0,100.1
-Kuva 20,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware - Samanid,,,0.1,0.6,7.3,76.9,2.4,0.4,0.8,,11.4,0,,,,,,0.2,100.1
+Akhsiket 24/26,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Underglaze,,,1,2.7,12.3,56.6,4.3,16,5.760000576,0.8,,,,,,,,,99.46000058
+Akhsiket 9/2.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0.5,1.2,6.1,43.9,3.3,7.5,3.060000306,0.1,32,2.1,,,,,,,99.76000031
+Akhsiket 9/2.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,1,3,12.2,54.9,3.7,17.4,6.570000657,0.6,,,,,,,,,99.37000066
+Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.9,0.8,10.7,70.8,6.5,1.2,0.540000054,0.7,7.9,,,,,,,,100.0400001
+Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,,,0.9,0.4,16.1,55.7,6.4,0.9,5.760000576,0.9,12.4,,,,,,,,99.46000058
+Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0.7,0.1,3.8,50.9,3.2,0.3,0.180000018,,41,,,,,,,,100.18
+Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,0.4,0,3.8,42,2.2,0.6,3.60000036,,45.3,,1.9,,,,,,99.80000036
+Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Red,0.7,0,2.9,44.3,2.7,0.6,0.720000072,,48.1,,0,,,,,,100.0200001
+Akhsiket 9/3.3,Akhsiket,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1,3.8,12,56.4,3.1,16.8,5.490000549,0.8,,,,,,,,,99.39000055
+Kuva 1,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Blue,10.2,3.9,3.4,69.1,3.1,7,0.90000009,0.1,,1.2,,0.5,0.4,0.1,,,99.90000009
+Kuva 1,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,1.8,3.1,12,63.2,3.5,9.8,4.680000468,0.9,,,,0.6,0,,,,99.58000047
+Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0.7,1.3,12.8,61.8,4.4,3.6,1.170000117,0.3,13.9,,,,,,,,99.97000012
+Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Brown Slip,Slipware,,,0.5,1.4,11.8,59.5,4.3,4.5,2.070000207,0.2,15.5,,,,,,,,99.77000021
+Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Brown,0,0.7,2.6,36.5,0.8,2.3,0.630000063,,53,0,3.4,,0,,,,99.93000006
+Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0,0.5,2.6,38.8,1,1.4,0.450000045,,55.3,0,0,,0,,,,100.05
+Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Yellow,0,0.3,2.7,37.9,0,1.1,1.170000117,,56.3,0.5,0,,0,,,,99.97000012
+Kuva 12,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,1.5,2.8,13.4,53.5,3.6,17.9,4.680000468,0.7,,,,0.2,0.3,,,,98.58000047
+Kuva 18,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0,0.8,6.3,76.6,2,2,0.720000072,0,10.5,,,,1,,,,99.92000007
+Kuva 18,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Black,0,0.6,2.8,37.6,1.3,1.5,0.90000009,,53.2,,2.1,,,,,,100.0000001
+Kuva 18,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0,0.3,1.9,37.7,0.8,1.4,0.270000027,,57.6,,0,,,,,,99.97000003
+Kuva 18,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,1.2,2.8,12.9,60.6,4.3,9.1,0.720000072,5.5,,,,0.4,2.4,,,,99.92000007
+Kuva 19,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0,0.2,3.9,37.8,1,1.2,0.630000063,,50.1,5.2,,,,,,,100.0300001
+Kuva 19,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,1.1,3.2,12.4,58.8,3.2,14,5.040000504,0.7,,,,,0.9,,,,99.3400005
+Kuva 20,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0,0.2,5.5,83,1.5,0.2,0.270000027,,9.4,0,,,,,,,100.07
+Kuva 20,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware - Samanid,,,0.1,0.6,7.3,76.9,2.4,0.4,0.720000072,,11.4,0,,,,,,0.165217,99.98521707
 Kuva 20,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0,0,1.9,39.9,0.7,0.3,0,,57.3,,,,,,,,100.1
-Kuva 20,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Olive,0,0,1.7,38.1,0.5,0.7,0.4,,58.6,,,,,,,,100
-Kuva 20,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,0.9,2.9,13.8,61.5,3.5,10.6,5.8,0.5,,,,0.2,0.4,,,,100.1
-Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0,0.8,9,66.9,3.4,1.3,1,0.1,17.5,,,,,,,,100
-Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Green,0,0,2.6,31.6,0.7,1,0.2,,61.2,2.7,0,,,,,,100
-Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Brown,0,0,2.5,32,0.8,0.9,,,62.3,,1.466666667,,,,,,99.96666667
-Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Yellow,0,0,2.7,32.5,0.8,0.9,,,63.1,,0,,,,,,100
+Kuva 20,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Olive,0,0,1.7,38.1,0.5,0.7,0.360000036,,58.6,,,,,,,,99.96000004
+Kuva 20,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,0.9,2.9,13.8,61.5,3.5,10.6,5.220000522,0.5,,,,0.2,0.4,,,,99.52000052
+Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware - Samanid,,,0,0.8,9,66.9,3.4,1.3,0.90000009,0.1,17.5,,,,,,,,99.90000009
+Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Green,0,0,2.6,31.6,0.7,1,0.180000018,,61.2,2.7,0,,,,,,99.98000002
+Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Brown,0,0,2.5,32,0.8,0.9,0,,62.3,,1.466666667,,,,,,99.96666667
+Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Yellow,0,0,2.7,32.5,0.8,0.9,0,,63.1,,0,,,,,,100
 Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Transparent,0,0,2.7,32.3,0.9,0.7,0,,63.4,0,0,,,,,,100
-Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Olive,0,0.1,2.6,31.9,0.8,0.7,0.3,,63.7,0,0,,,,,,100.1
-Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,0.7,2.9,12.8,55,3.6,14.7,8.4,1,,,,,0.9,,,,100
-Kuva 9,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Alkali,,Blue,6.6,3.2,4.3,65.7,4.4,7.2,1.9,0.1,,4.5,1.6,0.1,0.2,0.2,,,100
-Kuva 9,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Alkali,,,2.8,0.8,9.4,77.8,3.7,4.4,1.2,0,,,,,,,,,100.1
-Kuva 9,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Alkali,,,0.7,2.9,13.7,60.5,5,8.3,8,0.8,,,,,,,,,99.9
-Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,Y,,0.5,0.3,17.3,62.4,5.3,1,0,0.1,13.3,,,,,,,0,100.2
-Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,Y,,0.2,0.2,15.2,55.9,4.3,0,6.5,0,17.3,,,,,,,0.4,100
+Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware - Samanid,,Olive,0,0.1,2.6,31.9,0.8,0.7,0.270000027,,63.7,0,0,,,,,,100.07
+Kuva 6,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware - Samanid,,,0.7,2.9,12.8,55,3.6,14.7,7.560000756,1,,,,,0.9,,,,99.16000076
+Kuva 9,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Alkali,,Blue,6.6,3.2,4.3,65.7,4.4,7.2,1.710000171,0.1,,4.5,1.6,0.1,0.2,0.2,,,99.81000017
+Kuva 9,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Alkali,,,2.8,0.8,9.4,77.8,3.7,4.4,1.080000108,0,,,,,,,,,99.98000011
+Kuva 9,Kuva,Ferghana Valley,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Alkali,,,0.7,2.9,13.7,60.5,5,8.3,7.20000072,0.8,,,,,,,,,99.10000072
+Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,Y,,0.5,0.3,17.3,62.4,5.3,1,0,0.1,13.3,,,,,,,,100.2
+Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,Y,,0.2,0.2,15.2,55.9,4.3,0,5.850000585,0,17.3,,,,,,,0.330434,99.28043459
 Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,Y,Transparent,0.4,0,2.5,42.6,1.9,0.1,0,,52.5,,0,,,,,,100
-Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,Y,Red,0,0,4.1,40.2,0.7,0,0.6,,54.4,,0,,,,,,100
-Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,Y,Black,0,0,2.4,39.6,1,0,1.8,,54.9,,0.4,,,,,,100.1
-Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,Y,,0.6,2.2,11.9,58.4,3.2,15.7,6,0.5,,,,1.6,,,,,100.1
-Tashkent 15,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Monochrome,,,0.3,0.5,11.7,69.4,4.3,0.9,0.1,0.2,12.6,,,,,,,,100
-Tashkent 15,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0,0.5,3.6,37.6,1.7,2.4,1.1,,50.1,2.9,,,,,,,99.9
-Tashkent 15,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,0.8,2.4,12.5,57.1,3.1,14.1,7.5,0.6,,,,1.9,,,,,100
+Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,Y,Red,0,0,4.1,40.2,0.7,0,0.540000054,,54.4,,0,,,,,,99.94000005
+Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,Y,Black,0,0,2.4,39.6,1,0,1.620000162,,54.9,,0.4,,,,,,99.92000016
+Tashkent 10,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,Y,,0.6,2.2,11.9,58.4,3.2,15.7,5.40000054,0.5,,,,1.6,,,,,99.50000054
+Tashkent 15,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Monochrome,,,0.3,0.5,11.7,69.4,4.3,0.9,0.090000009,0.2,12.6,,,,,,,,99.99000001
+Tashkent 15,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Monochrome,,Green,0,0.5,3.6,37.6,1.7,2.4,0.990000099,,50.1,2.9,,,,,,,99.7900001
+Tashkent 15,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Monochrome,,,0.8,2.4,12.5,57.1,3.1,14.1,6.750000675,0.6,,,,1.9,,,,,99.25000068
 Tashkent 18,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Transparent,0,0,2.3,34.8,0.6,0.1,0,,62.3,,0,,,,,,100.1
-Tashkent 18,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,0,0.1,2,34.6,0.8,0.2,1.7,,60.1,,0.5,,,,,,100
-Tashkent 18,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0,0.7,18.5,64.8,3.5,4.2,0.3,0.3,7.6,,0,0.1,,,,,100
-Tashkent 18,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Slipware,,,0.3,0.3,8.6,51.3,3.8,10.3,13,0,9.4,,1.1,1.9,,,,,100
-Tashkent 18,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,0.8,2.6,12,63,3.9,10.9,6.6,0.3,,,,,,,,,100.1
-Tashkent 2,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,4.9,1.5,5.9,75.3,6.4,3.5,0.8,0.1,1.4,0,0.1,,,0.2,,,100.1
-Tashkent 2,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Green,3.7,0.9,4.7,63.7,4.4,3.3,0.3,0,16.4,2.5,0,,,0.1,,,100
-Tashkent 2,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,0.9,2.3,11.8,63.7,3.1,13.3,5.1,0,,,,,,,,,100.2
-Tashkent 24,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Slipware,Y,,0.8,0.8,11.4,48.6,3,6.8,13.4,0.5,4.5,,4.3,5.6,0.4,,,,100.1
-Tashkent 24,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,Y,,1,0.4,23.7,43.2,3.9,4.8,5.8,0,11.6,,1.8,3.9,0,,,,100.1
-Tashkent 24,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,Y,Black,0.2,0.1,2.4,37.3,1,0.4,0.7,,57.4,,0.6,,,,,,100.1
+Tashkent 18,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,,Black,0,0.1,2,34.6,0.8,0.2,1.530000153,,60.1,,0.5,,,,,,99.83000015
+Tashkent 18,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,,,0,0.7,18.5,64.8,3.5,4.2,0.270000027,0.3,7.6,,0,0.1,,,,,99.97000003
+Tashkent 18,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Slipware,,,0.3,0.3,8.6,51.3,3.8,10.3,11.70000117,0,9.4,,1.1,1.9,,,,,98.70000117
+Tashkent 18,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,,,0.8,2.6,12,63,3.9,10.9,5.940000594,0.3,,,,,,,,,99.44000059
+Tashkent 2,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,4.9,1.5,5.9,75.3,6.4,3.5,0.720000072,0.1,1.4,0,0.1,,,0.2,,,100.0200001
+Tashkent 2,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Green,3.7,0.9,4.7,63.7,4.4,3.3,0.270000027,0,16.4,2.5,0,,,0.1,,,99.97000003
+Tashkent 2,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,0.9,2.3,11.8,63.7,3.1,13.3,4.590000459,0,,,,,,,,,99.69000046
+Tashkent 24,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Black Slip,Slipware,Y,,0.8,0.8,11.4,48.6,3,6.8,12.06000121,0.5,4.5,,4.3,5.6,0.4,,,,98.76000121
+Tashkent 24,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,Y,,1,0.4,23.7,43.2,3.9,4.8,5.220000522,0,11.6,,1.8,3.9,0,,,,99.52000052
+Tashkent 24,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,Y,Black,0.2,0.1,2.4,37.3,1,0.4,0.630000063,,57.4,,0.6,,,,,,100.0300001
 Tashkent 24,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,Y,Transparent,0,0,2.1,37.3,0.7,0.3,0,,59.5,,0,,,,,,99.9
-Tashkent 24,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,Y,,0.8,2.1,12,60,3.2,14.5,4.9,0.8,,,,1.4,,,,,99.7
-Tashkent 32,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware,Y,,0,1.7,7.6,69.5,2.1,0.8,1.9,0,9.9,,,1.1,,,,5.4,100
-Tashkent 32,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,Y,,0.4,0.5,13.8,64.8,3.7,2.4,0.4,1,12,,,1,,,,0.1,100.1
-Tashkent 32,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,Y,,0.1,0.6,16.1,48.9,4,1,6.3,1.4,20,,,1.2,,,,0.5,100.1
+Tashkent 24,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,Y,,0.8,2.1,12,60,3.2,14.5,4.410000441,0.8,,,,1.4,,,,,99.21000044
+Tashkent 32,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Olive Slip,Slipware,Y,,0,1.7,7.6,69.5,2.1,0.8,1.710000171,0,9.9,,,1.1,,,,4.460859,98.87085917
+Tashkent 32,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",White Slip,Slipware,Y,,0.4,0.5,13.8,64.8,3.7,2.4,0.360000036,1,12,,,1,,,,0.0826085,100.0426085
+Tashkent 32,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Red Slip,Slipware,Y,,0.1,0.6,16.1,48.9,4,1,5.670000567,1.4,20,,,1.2,,,,0.4130425,99.38304307
 Tashkent 32,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Slipware,Y,Red,0,0,2.4,39.9,0.5,0.2,0,,56.9,,,,,,,,99.9
-Tashkent 32,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,Y,,0.8,2.6,14.1,57.5,2.5,12.8,4.8,0.5,,,,3.9,,,,,99.5
-Tashkent 4,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,4.3,1.5,3.8,73.4,4.1,3.8,0.6,0,8.4,0,0.1,0,0.1,,,,100.1
-Tashkent 4,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Green,3.3,1.1,3.7,61.7,3.6,3.8,0.3,0,15.1,7.2,0,0,0.1,,,,99.9
-Tashkent 4,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,0.9,2.2,11.5,62.4,3.2,13.7,5.4,0.8,,,,,,,,,100.1
+Tashkent 32,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Slipware,Y,,0.8,2.6,14.1,57.5,2.5,12.8,4.320000432,0.5,,,,3.9,,,,,99.02000043
+Tashkent 4,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Lilac,4.3,1.5,3.8,73.4,4.1,3.8,0.540000054,0,8.4,0,0.1,0,0.1,,,,100.0400001
+Tashkent 4,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Glaze,Ishkor,,Green,3.3,1.1,3.7,61.7,3.6,3.8,0.270000027,0,15.1,7.2,0,0,0.1,,,,99.87000003
+Tashkent 4,Tashkent,Chach,"NOT CERTAIN, but likely Philips XL30 with Oxford Instruments/Inca EDS",Body,Ishkor,,,0.9,2.2,11.5,62.4,3.2,13.7,4.860000486,0.8,,,,,,,,,99.56000049

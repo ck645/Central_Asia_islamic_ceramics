@@ -1,0 +1,118 @@
+"Sample","Site","Region","Glaze_or_slip_color","Ware","Provenance","Al2O3","As2O3","BaO","CaO","Cl","CoO","Cr2O3","CuO","FeO","K2O","MgO","MnO","MoO3","Na2O","NiO2","P2O5","PbO","Sb2O3","SiO2","SnO2","SO3","TiO2","ZnO","Count"
+"5165","Bust","Southern Afghanistan","","Slipware","Type A",33.2,NA,NA,2.01,1.71,NA,NA,NA,NA,4.43,1.21,NA,NA,1.71,NA,NA,7.04,NA,46.3,NA,NA,2.41,NA,0
+"5167","Bust","Southern Afghanistan","","Slipware","Type A",30.9,NA,NA,NA,0.498,NA,NA,NA,NA,4.25,0.697,NA,NA,1.49,NA,NA,12.1,NA,47.8,NA,NA,2.29,NA,0
+"5181","Bust","Southern Afghanistan","","Slipware","Type A",29.7,NA,NA,1.29,NA,NA,NA,NA,NA,4.96,NA,NA,NA,2.08,NA,NA,22.8,NA,37.7,NA,NA,1.49,NA,0
+"5208","Bust","Southern Afghanistan","","Slipware","Type A",28.4,NA,NA,2.03,NA,NA,NA,NA,0.912,3.04,0.527,NA,NA,2.23,NA,NA,25.3,NA,35.5,NA,NA,2.13,NA,0
+"5210","Bust","Southern Afghanistan","","Slipware","Type A",23.8,NA,NA,0.794,1.19,NA,NA,NA,NA,2.18,NA,NA,NA,0.993,NA,NA,30.8,NA,38.7,NA,NA,1.49,NA,0
+"5211","Bust","Southern Afghanistan","","Slipware","Type A",33.1,NA,NA,0.802,NA,NA,NA,NA,NA,6.52,0.602,NA,NA,3.51,NA,NA,10,NA,44.1,NA,NA,1.3,NA,0
+"5219","Laskhar-i Bazar","Southern Afghanistan","","Slipware","Type A",31.8,NA,NA,2.98,0.596,NA,NA,NA,1.79,4.17,1.19,NA,NA,1.89,NA,NA,6.95,NA,45.7,NA,NA,2.98,NA,0
+"5224","Laskhar-i Bazar","Southern Afghanistan","","Slipware","Type A",28.9,NA,NA,7.28,0.977,NA,NA,NA,NA,2.19,1.1,NA,NA,0.897,NA,NA,NA,NA,56.8,NA,NA,1.79,NA,0
+"5233","Laskhar-i Bazar","Southern Afghanistan","","Slipware","Type B",31.8,NA,NA,4.98,0.896,NA,NA,NA,NA,2.89,1.09,NA,NA,1.89,NA,NA,9.95,NA,44.8,NA,NA,1.69,NA,0
+"5248","Bust","Southern Afghanistan","","Monochrome","Type A",22.4,NA,NA,1.19,0.407,NA,NA,NA,NA,2.78,0.784,NA,NA,1.39,NA,NA,15.9,NA,53.6,NA,NA,1.59,NA,0
+"Akhsiket 15/1.1","Akhsiket","Ferghana Valley","","Slipware",NA,13,NA,NA,2.3,NA,NA,NA,NA,0.54,4.4,0.2,NA,NA,0.5,NA,NA,13.8,NA,64.5,NA,NA,0.8,NA,0
+"Akhsiket 23/11a.2","Akhsiket","Ferghana Valley","","Slipware",NA,16,NA,0,1.4,NA,NA,NA,NA,0,4.9,0.999,0,NA,0.5,NA,NA,13.1,NA,63.1,NA,NA,0,NA,0
+"Akhsiket 23/11a.3","Akhsiket","Ferghana Valley","","Monochrome",NA,18,NA,NA,3.3,NA,NA,NA,NA,0,4.3,0.699,NA,NA,0.5,NA,0.699,12.1,NA,60.2,NA,NA,0.2,NA,0
+"Akhsiket 23/12.13","Akhsiket","Ferghana Valley","","Slipware",NA,12.6,NA,NA,4.2,NA,NA,NA,NA,0.27,3.7,0.799,NA,NA,0.7,NA,NA,6.6,NA,71.1,NA,NA,0.0999,NA,0
+"Akhsiket 23/12.15","Akhsiket","Ferghana Valley","","Slipware - Samanid",NA,21.2,NA,NA,9.22,NA,NA,NA,NA,0.361,3.41,1.3,NA,NA,0.702,NA,NA,12.6,NA,50.1,NA,NA,1.1,NA,0
+"Akhsiket 23/12.2","Akhsiket","Ferghana Valley","","Slipware",NA,16.1,NA,NA,0.5,NA,NA,NA,NA,0.54,7.4,0,NA,NA,0.4,NA,NA,14.9,NA,59.6,NA,NA,0.5,NA,0
+"Akhsiket 23/14.4","Akhsiket","Ferghana Valley","","Slipware",NA,16.9,NA,NA,5.2,NA,NA,NA,0,0.18,6,1.8,0,NA,0.999,NA,NA,6.99,NA,61.8,NA,NA,0.2,NA,0
+"Akhsiket 23/15.1","Akhsiket","Ferghana Valley","","Slipware - Samanid",NA,18.2,NA,NA,5.24,NA,NA,NA,NA,0.363,3.83,2.32,0,NA,0.907,NA,NA,9.67,NA,58.9,NA,NA,0.504,NA,0
+"Akhsiket 23/16.1","Akhsiket","Ferghana Valley","","Slipware",NA,9.4,NA,NA,2.2,NA,NA,NA,NA,0.45,2.9,1.2,NA,NA,0,NA,0,10.5,NA,72,NA,NA,1.3,NA,0
+"Akhsiket 23/16.3","Akhsiket","Ferghana Valley","","Slipware - Samanid",NA,18.6,NA,NA,0.2,NA,NA,NA,NA,0.361,5.21,0.501,NA,NA,0.802,NA,NA,17.2,NA,56.8,NA,NA,0.2,NA,0
+"Akhsiket 23/2-8.3","Akhsiket","Ferghana Valley","","Slipware - Samanid",NA,17,NA,NA,1.8,NA,NA,NA,NA,0.63,4.3,0.801,NA,NA,0.5,NA,NA,13.7,NA,61.1,NA,NA,0.1,NA,0
+"Akhsiket 23/2-8.5","Akhsiket","Ferghana Valley","","Monochrome",NA,14,NA,NA,0.6,NA,NA,NA,NA,0.54,5.9,1.1,NA,NA,0.6,NA,NA,10.3,NA,66.8,NA,0.1,NA,NA,0
+"Akhsiket 24/26","Akhsiket","Ferghana Valley","","Underglaze",NA,13.6,NA,NA,5.33,NA,NA,NA,NA,0.815,5.23,0.604,0,NA,1.11,NA,0.402,12.6,NA,59.8,NA,0,0.604,NA,0
+"Akhsiket 9/3.3","Akhsiket","Ferghana Valley","","Slipware",NA,10.7,NA,NA,1.2,NA,NA,NA,NA,0.54,6.5,0.8,NA,NA,0.9,NA,NA,7.9,NA,70.8,NA,NA,0.7,NA,0
+"BKH20-58-9","Bukhara","Transoxiana","","Slipware - Samanid","BUK",22.1,NA,NA,4.76,NA,NA,NA,NA,0.788,4.67,1.26,NA,NA,0.607,NA,0.308,10.6,NA,54.3,NA,NA,0.571,NA,0
+"BKH20-87-21","Bukhara","Transoxiana","","Splashed","SAMK",10.1,NA,NA,2.27,NA,NA,NA,NA,1.1,4.27,0.822,NA,NA,0.561,NA,NA,10.4,NA,70.5,NA,NA,NA,NA,0
+"BKH20-93-15","Bukhara","Transoxiana","","Slipware - Samanid","BUK",18.3,NA,NA,1.89,NA,NA,NA,NA,2.02,3.12,0.531,NA,NA,1.06,NA,NA,22.8,NA,50.3,NA,NA,NA,NA,0
+"BKH20-94-2","Bukhara","Transoxiana","","Splashed","N/A",16,NA,NA,1.59,NA,NA,NA,0.49,1.51,4.7,0.571,NA,NA,0.807,NA,NA,16.5,NA,56.1,1.75,NA,NA,NA,0
+"BKH20-95-2","Bukhara","Transoxiana","","Slipware - Samanid","N/A",15.1,NA,NA,1.68,NA,NA,NA,NA,1.05,3.94,0.691,NA,NA,0.536,NA,NA,24.8,NA,51.6,NA,NA,0.573,NA,0
+"BKH20-99-9","Bukhara","Transoxiana","ave","Slipware - Samanid","BUK",16.9,NA,NA,1.27,NA,NA,NA,NA,1.76,3.25,0.297,NA,NA,0.367,NA,NA,15.1,NA,60.5,NA,NA,0.524,NA,0
+"BKH21-210-2","Bukhara","Transoxiana","","Slipware - Samanid","BUK",15.2,NA,NA,1.89,NA,NA,NA,NA,1.21,4.83,0.607,0.129,NA,0.744,NA,NA,20.2,NA,54.7,NA,NA,0.46,NA,0
+"BKH21-210-29","Bukhara","Transoxiana","","Slipware - Samanid","N/A",18.6,NA,NA,9.96,NA,NA,NA,NA,0.801,3.51,2.52,0.0559,NA,0.988,NA,NA,9.31,NA,54.1,NA,NA,0.186,NA,0
+"BKH22-006-g","Bukhara","Transoxiana","ave","Splashed","N/A",7.89,NA,NA,1.42,NA,NA,NA,0.813,0.65,3.32,0.822,0.217,NA,0.325,NA,NA,11.9,NA,72.6,NA,NA,NA,NA,0
+"BKH22-060-u","Bukhara","Transoxiana","ave","Splashed","N/A",15.6,NA,NA,11.4,NA,NA,NA,0.228,3.78,3.71,3.41,0.218,NA,2.28,NA,NA,4.32,NA,55,NA,NA,NA,NA,0
+"BKH22-138-al","Bukhara","Transoxiana","","Slipware - Samanid","BUK",20.9,NA,NA,1.85,NA,NA,NA,NA,1.3,5.55,0.905,NA,NA,1.84,NA,NA,9.86,NA,57.2,NA,NA,0.582,NA,0
+"BKH22-138-an","Bukhara","Transoxiana","ave","Slipware - Samanid","BUK",14.7,NA,NA,2.92,NA,NA,NA,NA,0.716,4.22,0.544,NA,NA,0.934,NA,NA,12.2,NA,63.8,NA,NA,NA,NA,0
+"BKH22-184-ad","Bukhara","Transoxiana","ave","Slipware - Samanid","BUK",17.2,NA,NA,2.5,NA,NA,0.0092,NA,1.88,4.24,0.248,NA,NA,0.414,NA,NA,26.3,NA,47.2,NA,NA,NA,NA,0
+"BKH22-222-y","Bukhara","Transoxiana","ave","Slipware - Samanid","BUK",15.9,NA,NA,1.87,NA,NA,NA,1.33,2.51,3.98,0.526,NA,NA,0.622,NA,0.622,15.8,NA,56.5,NA,NA,0.386,NA,0
+"DK15","Dandanakan","Merv Oasis","","Splashed","Quartz Biotite B",19.25,NA,NA,0.9495,NA,NA,NA,NA,0.9445,3.85,0.9495,NA,NA,0.7495,NA,2,28.1,NA,43.45,NA,NA,0.8,NA,0
+"DK16","Dandanakan","Merv Oasis","","Undetermined","Quartz Biotite B",17.8,NA,NA,0.4505,NA,NA,NA,NA,0.765,4.245,0.6,NA,NA,0.9,NA,NA,20.45,NA,54.1,NA,NA,0.7,NA,0
+"DK17","Dandanakan","Merv Oasis","","Undetermined","Quartz Biotite A",19.475,NA,NA,1.07475,NA,NA,NA,NA,1.12475,5.57,0.7245,NA,NA,0.7745,NA,NA,21.15,NA,49.025,NA,NA,1.12475,NA,0
+"DK21","Dandanakan","Merv Oasis","","Monochrome","Quartz Opaque B ",18.9,NA,NA,2.675,NA,NA,NA,NA,1.7325,6.6975,0.67475,NA,NA,1.475,NA,0.366333333333333,12.3,NA,54.5,NA,NA,0.77475,NA,0
+"K007","Lower Barskhan","Talas Valley","","Splashed","TAZ - Group 3",10.9,NA,NA,12.9,NA,0.00219,0.014,0.302,2.6,1.96,3.23,0.0462,NA,0.216,NA,1.24,19.7,NA,46.9,0.00391,NA,NA,NA,13
+"K047","Aktobe","Chu Valley","","Monochrome","KAZ2",17.5,NA,NA,8.55,NA,0.00567,0.0146,0.0329,3.14,3.49,3.91,0.101,1.89e-05,1.11,NA,0.634,14.4,NA,47.1,0.00448,NA,NA,NA,8
+"K047","Aktobe","Chu Valley","Lower","Monochrome","KAZ2",21.6,NA,NA,0.605,NA,0.0186,NA,0.109,0.731,3.35,0.847,0.00413,0.00191,0.834,NA,NA,18.7,NA,53.2,0.0102,NA,NA,NA,3
+"K047","Aktobe","Chu Valley","Upper","Monochrome","KAZ2",4.59,NA,NA,61.8,NA,0.0202,NA,0.0861,2.04,5.45,8.7,0.122,2.51e-05,1.83,NA,NA,1.84e-05,NA,15.4,0.0171,NA,NA,NA,3
+"K048","Aktobe","Chu Valley","Transparent","Underglaze","KAZ2",12,NA,NA,0.223,NA,NA,0.00856,0.00319,0.485,2.8,0.298,0.00827,NA,0.368,NA,0.156,19.3,NA,64.4,0.0084,NA,NA,NA,4
+"K071","Aktobe","Chu Valley","","Underglaze","KAZ2",17.5,NA,NA,0.609,NA,NA,0.00643,0.0573,1.04,3.15,0.82,0.0126,NA,0.497,NA,1.16,17,NA,57.6,0.00224,NA,0.531,NA,5
+"K077","Aktobe","Chu Valley","","Monochrome","KAZ2",22.5,NA,NA,1.41,NA,NA,0.00788,0.0156,1.34,2.8,0.601,0.0181,NA,0.958,NA,0.122,27.7,NA,41,0,NA,1.51,NA,2
+"K099","Bektobe","Talas Valley","Lower","Underglaze","KAZ14",27.3,NA,NA,0.621,NA,NA,0.00711,0.0227,0.49,3.6,0.39,0.0313,NA,0.953,NA,0.245,20.5,0.0173,45.7,0.014,NA,0.0939,NA,3
+"K099","Bektobe","Talas Valley","Upper","Underglaze","KAZ14",17.9,NA,NA,5.74,NA,NA,0.00665,0.0433,0.468,1.51,0.658,0.00536,NA,0.464,NA,0.134,18.7,0,54.3,0.00615,NA,0.0854,NA,3
+"K124","Lower Barskhan","Talas Valley","","Underglaze","TAZ - Group 3",19.4,NA,NA,0.87,NA,NA,0.00852,0.0041,0.409,4.55,0.53,0.00591,NA,1.6,NA,0.0482,14.5,0.0316,57.8,0.00166,NA,0.183,NA,3
+"K129","Lower Barskhan","Talas Valley","","Underglaze","TAZ - Group 3",14.8,NA,NA,0.605,NA,NA,0.0204,0.0128,0.504,5.51,0.953,0.0099,NA,0.841,NA,0.111,9.04,0.0421,67.1,0.00822,NA,0.427,NA,4
+"K134","Kulan","Chu Valley","","Underglaze","KAZ11",23.9,NA,NA,1.26,NA,NA,0.0114,0.0193,0.137,2.38,0.504,0.00431,NA,0.59,NA,0.0975,16.4,0.00703,54.5,0.00524,NA,0.113,NA,10
+"K142","Tamdy","Tianshan Piedmont","","Underglaze","KAZ10",19.8,NA,NA,0.456,NA,NA,0.00999,0.0221,1.29,5.35,0.689,0.00924,NA,1.7,NA,0.0238,8.44,0.0373,61.8,0.0133,NA,0.278,NA,5
+"K146","Tamdy","Tianshan Piedmont","","Monochrome","KAZ10",17.7,NA,NA,0.74,NA,NA,0.0084,0.398,0.416,5.54,0.507,0.00586,NA,1.61,NA,0.073,5.9,0.0329,66.7,0.011,NA,0.306,NA,3
+"K149","Bektobe","Talas Valley","","Underglaze","TAZ - Group 3",20.4,NA,NA,0.416,NA,NA,0.014,0.0247,0.389,2.67,0.358,0.0271,NA,0.494,NA,0.0159,34.2,0.000686,40.9,0.00126,NA,0.103,NA,4
+"K151","Bektobe","Talas Valley","","Underglaze","KAZ12",11.6,NA,NA,0.393,NA,NA,0.00709,0.0216,0.385,2.16,0.39,0.00903,NA,0.792,NA,0.0264,13.3,0.0162,70.5,0.0113,NA,0.302,NA,6
+"K156","Bektobe","Talas Valley","","Underglaze","KAZ12",11.4,NA,NA,1.78,NA,NA,0.00633,0.107,0.272,2.03,0.381,0.00692,NA,0.684,NA,0.119,10.6,0.00338,72.2,0.00285,NA,0.349,NA,7
+"K175","Taraz","Talas Valley","","Underglaze","TAZ - Group 3",20.8,NA,NA,0.324,NA,NA,0.0098,0.00352,0.513,4.18,0.633,0.0143,NA,0.872,NA,0.0362,18.2,0.018,54.3,0.00537,NA,0.131,NA,5
+"K176","Taraz","Talas Valley","","Underglaze","TAZ - Group 3",14.7,NA,NA,4.36,NA,NA,0.0219,0.00742,0.313,3.14,0.32,0.00555,NA,1.2,NA,0.881,11.1,0.00287,63.9,0.00347,NA,0.0702,NA,5
+"K181","Taraz","Talas Valley","","Underglaze","KAZ10",21.8,NA,NA,0.51,NA,NA,0.008,0.028,0.586,4.03,1.22,0.0113,NA,0.993,NA,0.0277,14.5,0.0169,56.2,0.00144,NA,0.15,NA,5
+"K183","Taraz","Talas Valley","Lower","Underglaze","KAZ11",13.9,NA,NA,8.17,NA,NA,0.019,0.0248,0.446,3.47,0.755,0.0109,NA,0.876,NA,5.85,14.2,0,52.1,0.00899,NA,0.121,NA,3
+"K183","Taraz","Talas Valley","Upper","Underglaze","KAZ11",7.31,NA,NA,11,NA,NA,0.0111,0,0.225,2.03,0.648,0.0343,NA,0.727,NA,8.14,8.48,0,61.3,0.00198,NA,0.0982,NA,3
+"K198","Aktobe","Chu Valley","Transparent","Monochrome","KAZ14",12.7,NA,NA,1.26,NA,NA,0.0123,0.00225,0.517,3.29,0.382,0.00936,NA,0.893,NA,0.0426,13.6,NA,67,0.00436,NA,0.296,NA,6
+"K199","Aktobe","Chu Valley","","Underglaze","KAZ14",20,NA,NA,2.16,NA,NA,0.00646,0.0216,2.51,2.05,1.22,0.0379,NA,0.841,NA,0.105,30.4,0.0112,40.5,0.00844,NA,0.146,NA,5
+"K200","Aktobe","Chu Valley","Transparent","Monochrome","KAZ2",14.9,NA,NA,0.32,NA,NA,0.0105,0.0175,0.289,2.35,0.29,0.0158,NA,0.347,NA,0.0444,21.3,0.0107,59.9,0.00337,NA,0.0815,NA,5
+"K201","Aktobe","Chu Valley","Green","Underglaze","KAZ2",21,NA,NA,0.626,NA,NA,0.00712,0.00791,0.516,3.72,0.641,0.00628,NA,0.844,NA,0.329,22.3,0.00608,49.9,0.013,NA,0.0769,NA,5
+"K203","Aktobe","Chu Valley","Lower","Underglaze","KAZ2",13.4,NA,NA,0.375,NA,NA,0.00378,0.021,0.745,3.73,0.722,0.00188,NA,0.432,NA,0.0398,16.4,0.00597,63.7,0.00109,NA,0.366,NA,3
+"K203","Aktobe","Chu Valley","Upper","Underglaze","KAZ2",14.4,NA,NA,0.919,NA,NA,0.0123,0.0174,0.807,4.1,0.776,0.00771,NA,0.546,NA,0.273,17.6,0.0144,60,0.00174,NA,0.537,NA,5
+"K212","Lower Barskhan","Talas Valley","Yellow","Monochrome","KAZ14",17.6,NA,NA,6.4,NA,NA,0.0146,0,0.325,6.13,1.16,0.0094,NA,0.876,NA,0.127,11.1,0.00412,55.9,0.0119,NA,0.331,NA,6
+"Kuva 12","Kuva","Ferghana Valley","","Slipware",NA,12.8,NA,NA,3.6,NA,NA,NA,NA,1.17,4.4,1.3,NA,NA,0.7,NA,NA,13.9,NA,61.8,NA,NA,0.3,NA,0
+"Kuva 18","Kuva","Ferghana Valley","","Slipware - Samanid",NA,6.31,NA,NA,2,NA,NA,NA,NA,0.721,2,0.801,NA,NA,0,NA,NA,10.5,NA,76.7,NA,1,0,NA,0
+"Kuva 20","Kuva","Ferghana Valley","","Slipware - Samanid",NA,5.5,NA,NA,0.2,NA,NA,NA,0,0.27,1.5,0.2,NA,NA,0,NA,NA,9.39,NA,82.9,NA,NA,NA,NA,0
+"Kuva 6","Kuva","Ferghana Valley","","Slipware - Samanid",NA,9.01,NA,NA,1.3,NA,NA,NA,NA,0.901,3.4,0.801,NA,NA,0,NA,NA,17.5,NA,67,NA,NA,0.1,NA,0
+"Kuva 9","Kuva","Ferghana Valley","","Alkali",NA,9.4,NA,NA,4.4,NA,NA,NA,NA,1.08,3.7,0.8,NA,NA,2.8,NA,NA,NA,NA,77.8,NA,NA,0,NA,0
+"TA10","Termez","Transoxiana","","Underglaze","Local Group B",16.1,NA,NA,2.32,NA,NA,NA,0.303,2.63,2.02,0.606,0.202,NA,1.52,NA,NA,18.2,NA,56.2,NA,NA,NA,NA,0
+"TA11","Termez","Transoxiana","","Slipware","Local Group B",19,NA,NA,1.1,NA,NA,NA,NA,1.1,2.2,0.699,0.0998,NA,1.1,NA,NA,21.9,NA,52.9,NA,NA,NA,NA,0
+"TA13","Termez","Transoxiana","","Underglaze","Local-regional Group C",26.4,NA,NA,1.11,NA,NA,NA,NA,1.62,4.95,0.606,NA,NA,2.02,NA,NA,20.2,NA,43.1,NA,NA,NA,NA,0
+"TA2","Termez","Transoxiana","","Underglaze","Local-regional Group C",25.3,NA,NA,1.51,NA,NA,NA,NA,0.402,5.62,0.402,NA,NA,1.61,NA,NA,8.23,NA,56.9,NA,NA,NA,NA,0
+"TA3","Termez","Transoxiana","","Slipware","Local Group B",25,NA,NA,1.31,NA,NA,NA,NA,0.505,2.62,0.202,NA,NA,1.82,NA,NA,18,NA,50.6,NA,NA,NA,NA,0
+"TA4","Termez","Transoxiana","","Splashed","Local-regional Group C",22.7,NA,NA,1.41,NA,NA,NA,0.303,0.404,3.74,0.303,NA,NA,2.32,NA,NA,16.9,NA,51.9,NA,NA,NA,NA,0
+"TA5","Termez","Transoxiana","","Underglaze","Local Group B",24.1,NA,NA,1.4,NA,NA,NA,0.1,0.903,2.81,0.301,NA,NA,2.81,NA,NA,16.2,NA,51.4,NA,NA,NA,NA,0
+"TA7","Termez","Transoxiana","","Splashed","Local Group B",18.8,NA,NA,1.91,NA,NA,NA,0.502,1,2.61,0.402,NA,NA,2.01,NA,NA,22.3,NA,50.5,NA,NA,NA,NA,0
+"TA8","Termez","Transoxiana","","Slipware","Local-regional Group C",23.1,NA,NA,0.604,NA,NA,NA,0.101,0.905,4.83,0.805,NA,NA,1.81,NA,NA,21.4,NA,46.4,NA,NA,NA,NA,0
+"TA9","Termez","Transoxiana","","Underglaze","Local Group A",24.7,NA,NA,5.65,NA,NA,NA,NA,1.31,3.83,1.01,NA,NA,0.908,NA,NA,11.3,NA,51.3,NA,NA,NA,NA,0
+"TASH008","Tashkent","Chach","","Slipware - Samanid","TASH",12.8,NA,NA,1.06,NA,NA,NA,0.212,1.01,3.01,0.661,NA,NA,0.679,NA,NA,16.6,NA,63.5,NA,NA,0.573,NA,0
+"TASH012","Tashkent","Chach","","Slipware - Samanid","TASH",12.6,NA,NA,1.87,NA,NA,NA,NA,1.14,2.96,0.882,0,NA,0.446,NA,0.365,12.8,NA,66.6,NA,NA,0.267,NA,0
+"TASH013","Tashkent","Chach","","Slipware - Samanid","TASH",13,NA,NA,1.45,NA,NA,NA,NA,1.07,3.58,1.04,0,NA,0.719,NA,0.405,12.6,NA,65.5,NA,NA,0.663,NA,0
+"TASH013","Tashkent","Chach","Not under glaze","Slipware - Samanid","TASH",13.1,NA,NA,2.06,NA,NA,NA,NA,1.54,3.59,0.9,0,NA,0.395,NA,0.698,8.63,NA,68.8,NA,NA,0.294,NA,0
+"TASH021","Tashkent","Chach","ave","Slipware - Samanid","N/A",17.3,NA,NA,4.11,NA,NA,NA,NA,0.706,4.76,0.782,0.143,NA,1.25,NA,0.858,12,NA,57.6,NA,NA,0.553,NA,0
+"TASH025","Tashkent","Chach","ave","Slipware - Qarakhanid","TASH",19.5,NA,NA,2.31,NA,NA,NA,NA,0.575,4.87,1.2,NA,NA,1.13,NA,0.189,13.1,NA,56.7,NA,NA,0.468,NA,0
+"TASH033","Tashkent","Chach","ave","Slipware - Samanid","TASH",10.8,NA,NA,0.771,NA,NA,NA,NA,0.721,2.48,0.862,NA,NA,0.489,NA,7.89,12.6,NA,62.9,NA,NA,0.514,NA,0
+"TASH034","Tashkent","Chach","ave","Slipware - Samanid","N/A",11.2,NA,NA,1.4,NA,NA,0.757,NA,0.912,3.36,0.711,NA,NA,0.538,NA,NA,12.6,NA,68,NA,NA,0.575,NA,0
+"TASH035","Tashkent","Chach","ave","Slipware - Samanid","N/A",15.8,NA,NA,6.17,NA,NA,0.146,0.0728,1.32,2.77,1.05,NA,NA,0.328,NA,1.32,4.79,NA,66,NA,NA,0.282,NA,0
+"TASH040","Tashkent","Chach","Not under glaze","Slipware - Qarakhanid","TASH",11.7,NA,NA,2.18,NA,NA,NA,NA,1.26,1.86,0.868,NA,NA,0.503,NA,NA,10.6,NA,70.2,NA,NA,0.887,NA,0
+"TASH040","Tashkent","Chach","ave","Slipware - Qarakhanid","TASH",9.41,NA,NA,3.8,NA,NA,0.0356,0.809,1.72,3.62,0.596,0.302,NA,0.294,NA,1.71,14.7,NA,63,NA,NA,NA,NA,0
+"TASH042","Tashkent","Chach","","Slipware - Qarakhanid","TASH",10.5,NA,NA,0.902,NA,NA,0.184,NA,1.69,1.58,0.423,NA,NA,0.469,NA,NA,18.7,NA,65.1,NA,NA,0.478,NA,0
+"TASH045","Tashkent","Chach","ave","Slipware - Qarakhanid","TASH",11.7,NA,NA,1,NA,NA,0.11,NA,0.991,1.74,0.853,0.128,NA,0.376,NA,NA,18.1,NA,64.5,NA,NA,0.44,NA,0
+"TASH046","Tashkent","Chach","","Slipware - Qarakhanid","N/A",11.7,NA,NA,1.06,NA,NA,NA,0.321,1.65,2.61,0.642,NA,NA,0.642,NA,NA,15.1,NA,66.3,NA,NA,NA,NA,0
+"TASH051","Tashkent","Chach","ave","Slipware - Samanid","TASH",15.2,NA,NA,5.98,NA,NA,NA,NA,1.35,2.55,0.609,NA,NA,0.646,NA,0.619,19.8,NA,52.7,NA,NA,0.528,NA,0
+"TASH052","Tashkent","Chach","","Slipware - Samanid","N/A",16.9,NA,NA,6.2,NA,NA,NA,NA,0.553,2.91,2.83,NA,NA,0.618,NA,0.313,10.5,NA,56.5,NA,NA,2.6,NA,0
+"TASH058","Tashkent","Chach","","Splashed","N/A",9.37,NA,NA,1.28,NA,NA,NA,NA,0.711,3.33,0.96,0.0277,NA,0.369,NA,NA,11.4,NA,72.6,NA,NA,NA,NA,0
+"TASH059","Tashkent","Chach","ave","Slipware - Samanid","TASH",15.3,NA,NA,2.26,NA,NA,NA,NA,0.893,4.67,0.488,NA,NA,0.368,NA,NA,9.64,NA,66.4,NA,NA,NA,NA,0
+"TASH064","Tashkent","Chach","ave","Slipware - Samanid","N/A",20.6,NA,NA,1.18,NA,NA,NA,NA,8.16,2.66,0.287,4.77,NA,0.629,NA,0.611,12.2,NA,47.6,NA,NA,1.26,NA,0
+"TAZ001","Taraz","Talas Valley","ave","Slipware - Qarakhanid","TAZ - Group 3",13.4,NA,NA,2.24,NA,NA,0.599,NA,1.47,2.31,1.05,NA,NA,0.518,NA,NA,26.3,NA,51.5,NA,NA,0.626,NA,0
+"TAZ003","Taraz","Talas Valley","ave","Slipware - Qarakhanid","TASH",21.3,NA,NA,2.94,NA,NA,0.0907,0.111,2.49,2.95,1.55,0.0302,NA,0.353,NA,NA,2.55,NA,65.7,NA,NA,NA,NA,0
+"TS4","Termez","Transoxiana","","Alkali","Local Group A",15.1,NA,NA,1.41,NA,NA,NA,NA,0.402,6.53,1,NA,NA,5.62,NA,NA,0,NA,70,NA,NA,NA,NA,0
+"TS5","Termez","Transoxiana","","Alkali","Local Group A",14.3,NA,NA,3.1,NA,NA,NA,NA,1.3,3.3,0.801,NA,NA,3.6,NA,NA,0,NA,73.6,NA,NA,NA,NA,0
+"TS6","Termez","Transoxiana","","Alkali","Local Group A",11.2,NA,NA,2.1,NA,NA,NA,0.999,0.999,6.09,0.699,NA,NA,4.6,NA,NA,0,NA,73.3,NA,NA,NA,NA,0
+"TS7","Termez","Transoxiana","","Alkali","Local Group A",12.5,NA,NA,0.3,NA,NA,NA,NA,0.2,4,0.2,NA,NA,3.7,NA,NA,0,NA,79.1,NA,NA,NA,NA,0
+"TS8","Termez","Transoxiana","","Alkali","Local Group A",2.3,NA,NA,0.5,NA,NA,NA,0.0999,2.9,2.1,0.3,NA,NA,2.1,NA,NA,0,NA,89.7,NA,NA,NA,NA,0
+"Tashkent 10","Tashkent","Chach","","Slipware",NA,17.3,NA,NA,0.998,NA,NA,NA,NA,0,5.29,0.299,NA,NA,0.499,NA,NA,13.3,NA,62.3,NA,NA,0.0998,NA,0
+"Tashkent 15","Tashkent","Chach","","Monochrome",NA,11.7,NA,NA,0.9,NA,NA,NA,NA,0.09,4.3,0.5,NA,NA,0.3,NA,NA,12.6,NA,69.4,NA,NA,0.2,NA,0
+"Tashkent 18","Tashkent","Chach","","Slipware",NA,18.5,NA,NA,4.2,NA,NA,NA,NA,0.27,3.5,0.7,0,NA,0,NA,0.1,7.6,NA,64.8,NA,NA,0.3,NA,0
+"Tashkent 24","Tashkent","Chach","","Slipware",NA,23.8,NA,NA,4.82,NA,NA,NA,NA,5.25,3.92,0.402,1.81,NA,1,NA,3.92,11.7,NA,43.4,NA,0,0,NA,0
+"Tashkent 32","Tashkent","Chach","","Slipware",NA,13.8,NA,NA,2.4,NA,NA,0.0826,NA,0.36,3.7,0.5,NA,NA,0.4,NA,1,12,NA,64.8,NA,NA,1,NA,0
