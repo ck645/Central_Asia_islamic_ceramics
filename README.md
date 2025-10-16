@@ -16,7 +16,7 @@ The repository is organised into four main directories:
 
 ## Overview
 
-The script [**Bukhara_and_Tashkent_paste_analysis.R**](Script/Bukhara_and_Tashkent_paste_analysis.R) performs the following tasks:
+The script [**Bukhara_and_Tashkent_paste_analysis.R**](Scripts/Bukhara_and_Tashkent_paste_analysis.R) performs the following tasks:
 
 *Data Import and Cleaning* the raw compositional data from [**paste_compositional_data**](Data/paste_compositional_data.csv) obtained through Neutron Activation Analysis at the University of Missouri Research Reactor. The samples' 'NAA Group' assignments were initially determined through analysis of 31 elements, using biplots, principal component analysis (PCA), hierarchical clustering, and group membership validation through Mahalanobis distance calculations based on principal components. Squared-mean Euclidean Distance (ED) calculations for determining the nearest neighbors in NAA databases were also performed. These analyses were conducted using the statistical software Gauss 8.0, relying on the MURRAP statistical regimes created by Michael Glascock (version date: Nov 14, 2022). The results of these regimes are summarized in [**Supplementary Material 1. NAA Compositional data**](Supplementary_materials/Supplementary_Material_1_%20NAA_Compositional_data.xlsx).
 
