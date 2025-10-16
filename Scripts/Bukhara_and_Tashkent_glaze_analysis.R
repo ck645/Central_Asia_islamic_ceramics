@@ -164,91 +164,6 @@ plot(transparent_ternary)
 dev.off()
 
 
-### Transparent glaze Principal Component Analysis to assess major trends 
-
-#clean transparent glaze data to ensure their are no N/A values in major elements
-detection_limit_Mg <- 0.1
-replacement_value_Mg <- (2/3) * detection_limit_Mg
-T_database <- T_database %>%
-  mutate(MgO = ifelse(is.na(MgO), replacement_value_Mg, MgO))
-
-detection_limit_Na <- 0.1
-replacement_value_Na <- (2/3) * detection_limit_Na
-T_database <- T_database %>%
-  mutate(Na2O = ifelse(is.na(Na2O), replacement_value_Na, Na2O))
-
-detection_limit_Fe <- 0.1
-replacement_value_Fe <- (2/3) * detection_limit_Fe
-T_database <- T_database %>%
-  mutate(FeO = ifelse(is.na(FeO), replacement_value_Fe, FeO))
-
-
-#select major elements (Pb, Si, Al, Na, Mg, Ca, Fe, K) for PCA
-
-pc <- prcomp(T_database[,c("PbO", "SiO2", "Al2O3", "Na2O", "MgO", "CaO", "FeO", "K2O")],
-             center = TRUE,
-             scale. = TRUE) 
-
-pc.dataframe <- as.data.frame(pc$x)
-pc.dataframe <- data.frame(pc.dataframe, Ware = T_database$Ware, NAA = T_database$`Provenance`, Sample = T_database$`Sample`)
-
-# Create element loadings scaled for visualization
-loadings <- as.data.frame(pc$rotation)
-loadings_scaled <- loadings*8
-loadings_scaled$Variable <- rownames(loadings)
-
-# Calculate percentage contribution of each PC
-total_variance <- sum(pc$sdev^2)  # Total variance (sum of eigenvalues)
-pc_contributions <- (pc$sdev^2 / total_variance) * 100
-print(pc_contributions)
-
-
-#plot by paste compositional group with element loadings
-
-ellipse_NAA_pc.dataframe <- pc.dataframe %>% 
-  filter(NAA %in% c("BUK", "TASH")) 
-
-g4 <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = NAA)) +
-  geom_point(size=2) +
-  theme_minimal() +
-  stat_ellipse(data = ellipse_NAA_pc.dataframe, aes(group = NAA, color = NAA), level = 0.90, geom = "path") +
-  geom_segment(data = loadings_scaled, aes(x = 0, y = 0, xend = PC1, yend = PC2), arrow = arrow(length = unit(0.2, "cm")), color = "black") +
-  geom_text(data = loadings_scaled, aes(x = PC1, y = PC2, label = Variable), hjust = 0.25, vjust = 1.25, size = 5, color = "black") +
-  labs(x = "PC1 (46.3%)", y = "PC2 (15.7%)") +
-  xlim(-6, 7) +
-  ylim(-5, 6) +
-  theme(panel.grid.major = element_blank()) +
-  theme(panel.grid.minor = element_blank()) +
-  scale_color_manual(name = "Paste Comp. Group", values = Group_colors) +
-  theme(legend.position = "right")
-
-jpeg(filename = "./Figures/Figure6a.jpg", width = 2400, height = 1600, res=300)
-print(g4) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
-dev.off()
-
-
-#plot the same data by sample Ware types
-
-ellipse_pc.dataframe <- pc.dataframe %>% 
-  filter(Ware %in% c("Slipware - Samanid", "Slipware - Qarakhanid", "Splashed", "Monochrome")) 
-
-g2 <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = Ware)) +
-  geom_point(size=2) +
-  theme_minimal() +
-  stat_ellipse(data = ellipse_pc.dataframe, aes(group = Ware, color = Ware), level = 0.90, geom = "path") +
-  labs(x = "PC1 (46.3%)", y = "PC2 (15.7%)") +
-  xlim(-6, 7) +
-  ylim(-5, 6) +
-  theme(panel.grid.major = element_blank()) +
-  theme(panel.grid.minor = element_blank()) +
-  scale_color_brewer(name = "Ware", palette = "Set1") +
-  theme(legend.position = "right")
-
-jpeg(filename = "./Figures/Figure6b.jpg", width = 2400, height = 1600, res=300)
-print(g2) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
-dev.off()
-
-
 
 #### -------importing and cleaning comparative ceramics datasets----------------
 
@@ -538,7 +453,139 @@ dev.off()
 
 
 
-### White slip
+### Transparent glaze Principal Component Analysis to assess major trends 
+
+Comp_Glaze_transparent <- filter(Comp_Glaze, `Ware_type` %in% c('Transparent'))
+
+Comp_Glaze_transparent <- Comp_Glaze_transparent %>%
+  filter(PbO >= 30)
+
+#clean transparent glaze data to ensure their are no N/A values in major elements
+detection_limit <- 0.1
+replacement_value <- (2/3) * detection_limit
+
+Comp_Glaze_transparent <- Comp_Glaze_transparent %>%
+  mutate(across(c(MgO, Na2O, FeO, CaO, K2O),
+                ~ ifelse(is.na(.x), replacement_value, .x)))
+
+#select major elements (Pb, Si, Al, Na, Mg, Ca, Fe, K) for PCA
+
+pc <- prcomp(Comp_Glaze_transparent[,c("PbO", "SiO2", "Al2O3", "Na2O", "MgO", "CaO", "FeO", "K2O")],
+             center = TRUE,
+             scale. = TRUE) 
+
+pc.dataframe <- as.data.frame(pc$x)
+pc.dataframe <- data.frame(pc.dataframe, Ware = Comp_Glaze_transparent$Ware, 
+                           Provenance = Comp_Glaze_transparent$Provenance, 
+                           Site = Comp_Glaze_transparent$Site, 
+                           Sample = Comp_Glaze_transparent$Sample,
+                           Region = Comp_Glaze_transparent$Region)
+
+# Create element loadings scaled for visualization
+loadings <- as.data.frame(pc$rotation)
+loadings_scaled <- loadings*8
+loadings_scaled$Variable <- rownames(loadings)
+
+# Calculate percentage contribution of each PC
+total_variance <- sum(pc$sdev^2)  # Total variance (sum of eigenvalues)
+pc_contributions <- (pc$sdev^2 / total_variance) * 100
+print(pc_contributions)
+
+##subset data for plotting
+
+NAA_pc.dataframe <- pc.dataframe %>% 
+  filter(Provenance %in% c("BUK", "TASH", "SAMK", "TAZ - Group 3"))
+
+Site_pc.dataframe <- pc.dataframe %>% 
+  filter(Site %in% c("Akhsiket", "Dandanakan", "Kuva", "Termez", "Aktobe", "Bektobe",
+                     "Kulan", "Lower Barskhan", "Tamdy", "Taraz", "Laskhar-i Bazar",
+                     "Bust")| Provenance == "N/A")
+
+ellipse_NAA_pc.dataframe <- pc.dataframe %>% 
+  filter(Provenance %in% c("BUK", "TASH")) 
+
+ellipse_region_pc.dataframe <- pc.dataframe %>% 
+  filter(Region %in% c("Chach", "Transoxiana")) 
+
+ellipse_ware_pc.dataframe <- ellipse_NAA_pc.dataframe %>% 
+  filter(Ware %in% c("Slipware - Samanid", "Slipware - Qarakhanid")) 
+
+
+#plot by paste compositional group with element loadings
+PCregion <- ggplot()+
+  geom_point(data = Site_pc.dataframe, aes(x = PC1, y = PC2, color = Region, shape = Site)) +
+  geom_point(data = NAA_pc.dataframe, aes(x = PC1, y = PC2, color = Region, shape = Provenance)) +
+  stat_ellipse(data = ellipse_region_pc.dataframe, aes(x =PC1, y = PC2, group = Region, color = Region))+
+  theme_minimal() +
+  labs(x = "PC1 (43.3%)", y = "PC2 (16.2%)") +
+  theme(panel.grid.major = element_blank()) +
+  theme(panel.grid.minor = element_blank()) +
+  scale_shape_manual(name = "Provenance", values = c(17, 15, 16, 18, 1,2,3,4,5,6,8,9,10,11,12,13,14,
+                                               7,19,20,21, 22, 23, 24, 25))+
+  scale_color_manual(name = "Region", values = c("#f0027f", "#e78ac3", "#beaed4", "#fc8d62", 
+                                                     "#386cb0", "#bf5b17", "#666666", "#7fc97f")) +
+  theme(legend.position = "right")
+
+print(PCregion) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
+
+jpeg(filename = "./Figures/Figure6a.jpg", width = 2400, height = 2000, res=300)
+print(PCregion) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
+dev.off()
+
+
+PCware <- ggplot(pc.dataframe, aes(x = PC1, y = PC2, color = Ware)) +
+  geom_point(size=2) +
+  theme_minimal() +
+  labs(x = "PC1 (43.3%)", y = "PC2 (16.2%)") +
+  theme(panel.grid.major = element_blank()) +
+  theme(panel.grid.minor = element_blank()) +
+  stat_ellipse(data = ellipse_ware_pc.dataframe, aes(x =PC1, y = PC2, group = Ware, color = Ware))+
+  scale_color_manual(name = "Ware", values = c("#E41A1C", "#999999", "#4DAF4A", "#377EB8", "#984EA3", "#FF7F00")) +
+  scale_shape_manual(name = "Ware", values = c(1, 15, 16, 17, 8, 7)) +
+  theme(legend.position = "right")
+
+print(PCware) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
+
+jpeg(filename = "./Figures/Figure6b.jpg", width = 2400, height = 1600, res=300)
+print(PCware) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))+
+  geom_segment(data = loadings_scaled, aes(x = 0, y = 0, xend = PC1, yend = PC2), arrow = arrow(length = unit(0.2, "cm")), color = "black") +
+  geom_text(data = loadings_scaled, aes(x = PC1, y = PC2, label = Variable), hjust = 0.25, vjust = 1.25, size = 5, color = "black")
+dev.off()
+
+PCComp <- ggplot() +
+  geom_point(data = pc.dataframe, aes(x = PC1, y = PC2, color = "comparative", shape = Ware)) +
+  geom_point(data = NAA_pc.dataframe, aes(x =PC1, y = PC2, color = Provenance, shape = Ware))+
+  theme_minimal() +
+  stat_ellipse(data = ellipse_NAA_pc.dataframe, aes(x =PC1, y = PC2, group = Provenance, color = Provenance))+
+  labs(x = "PC1 (43.3%)", y = "PC2 (16.2%)") +
+  theme(panel.grid.major = element_blank()) +
+  theme(panel.grid.minor = element_blank()) +
+  scale_color_manual(name = "Provenance", values = c("BUK" = "#CC6677", 
+                                                     "SAMK" =  "#882255",  
+                                                     "TASH" = "#44AA99",  
+                                                     "TAZ - Group 3" = "#117733",
+                                                     "comparative" = "gray")) +
+  scale_shape_manual(name = "Ware", values = c(1, 15, 16, 17, 8, 7)) +
+  theme(legend.position = "right")
+
+print(PCComp) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
+
+jpeg(filename = "./Figures/Figure6c.jpg", width = 2400, height = 1600, res=300)
+print(PCComp) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
+dev.off()
+
+
+
+
+
+
+
+
+
+
+
+
+### --------------------Comparative White slip ---------------------------------
 
 # renromalising data removing PbO and colorants
 
@@ -652,8 +699,8 @@ combined_plot_Al2O3 <- ggplot() +
        y = "Glaze (Al2O3* wt%)") +
   # Customize color and shape scales
   scale_shape_manual(name = "Provenance", values = c(8, 4, 11,1,13,9,3,10,5,6,7,2,12,14, 17, 18, 15, 16)) +
-  scale_color_manual(name = "Provenance", values = c("black", "black", "black","black", "black", "black", "black",
-                                                     "black","black", "black", "black", "black","black", "black",
+  scale_color_manual(name = "Provenance", values = c("gray", "gray", "gray","gray", "gray", "gray", "gray",
+                                                     "gray","gray", "gray", "gray", "gray","gray", "gray",
                                                      "#CC6677", "#882255", "#44AA99", "#117733" )) +
   coord_cartesian(xlim = c(0, 42), ylim = c(0, 42)) +
   theme_minimal() +
