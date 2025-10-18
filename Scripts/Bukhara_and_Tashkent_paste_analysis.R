@@ -2,13 +2,14 @@
 # C. Klesner
 # 2025
 
+install.packages(c("rio", "dplyr", "ggplot2", "tidyr", "GGally", "stats"))
+
 library(rio)
 library(dplyr)
 library(ggplot2)
 library(tidyr)
 library(GGally)
 library(stats)
-library(dendextend)
 
 shape_values <- c(18, 15, 1, 16, 2, 0, 3, 17, 4, 5, 6)
 
@@ -87,7 +88,7 @@ write.csv(stats_comp, "./Data/NAA_group_stats.csv", row.names = FALSE)
 
 
 
-## Paste Group statistics 
+## Paste Group statistics (will receive warnings regarding NAs, but can proceed)
 
 database_group_subset <- database_group %>%
   filter(database_group$'NAA Group' %in% c("BUK", "BUK A", "NISH", "SAMK", "TASH",  
@@ -126,7 +127,7 @@ summary.aov(manova_model_clean)
 
 
 
-# pairwise t-tests
+# pairwise t-tests (will receive warnings regarding NAs, but can proceed)
 
 pairwise_t_test_results <- list()
 for (element in elements_Group) {
@@ -218,12 +219,13 @@ dev.off()
 
 # ---------------------------Pairwise analysis ---------------------------------
 
-setwd("./Supplementary_materials/supplementary_materials_pairwise_comparisons")
+out_dir <- "Supplementary_materials/supplementary_materials_pairwise_comparisons"
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 # Loop through each row in significant_df
 for (i in seq_len(nrow(significant_df))) {
   pair <- significant_df$Pair[i]
-  elements <- strsplit(significant_df$Elements[i], ",\\s*")[[1]]  # split element string into vector
+  elements <- strsplit(significant_df$Elements[i], ",\\s*")[[1]]
   
   # Split the pair into site names
   sites <- strsplit(pair, " vs ")[[1]]
@@ -234,21 +236,11 @@ for (i in seq_len(nrow(significant_df))) {
   database_group_site_comp <- database_group %>%
     filter(`NAA Group` %in% c(site1, site2))
   
-  # Debug info
-  print("Processing pair:")
-  print(paste("Sites:", site1, "and", site2))
-  
-  # Ensure elements exist in the data
-  valid_elements <- elements[elements %in% colnames(database_group_site_comp)]
-  if (length(valid_elements) == 0) {
-    print(paste("No valid elements for pair:", pair))
-    next
-  }
-  
   # Prepare plot data
   plot_data <- database_group_site_comp %>%
-    select(all_of(valid_elements), `NAA Group`) %>%
+    select(all_of(valid_elements <- elements[elements %in% colnames(database_group_site_comp)]), `NAA Group`) %>%
     mutate(`NAA Group` = factor(`NAA Group`, levels = c(site1, site2)))
+  if (length(valid_elements) == 0) next
   
   # Plot matrix
   scatterplot_matrix <- ggpairs(
@@ -261,9 +253,8 @@ for (i in seq_len(nrow(significant_df))) {
     scale_color_manual(name = "NAA Group", values = Group_colors) +
     scale_fill_manual(name = "NAA Group", values = Group_colors)
   
-  # Display and save
-  print(scatterplot_matrix)
-  png(filename = paste0("Scatterplot_Matrix_", gsub(" vs ", "_", pair), ".png"),
+  # Save directly to the folder
+  png(file.path(out_dir, paste0("Scatterplot_Matrix_", gsub(" vs ", "_", pair), ".png")),
       width = 4800, height = 3600, res = 300)
   print(scatterplot_matrix)
   dev.off()
@@ -310,7 +301,7 @@ for (pair in pairwise_comparisons) {
   
   # Print and save the plot
   print(scatterplot_matrix)
-  png(filename = paste0("Scatterplot_Matrix_", gsub(" ", "_", site1), "_vs_", gsub(" ", "_", site2), ".png"),
+  png(file.path(out_dir, paste0("Scatterplot_Matrix_", gsub(" vs ", "_", pair), ".png")),
       width = 4800, height = 3600, res = 300)
   print(scatterplot_matrix)
   dev.off()
@@ -318,6 +309,7 @@ for (pair in pairwise_comparisons) {
 
 
 # -----------------------select biplots from pairwise comp----------------------
+setwd("./")
 
 database_group_BUK_BUKA <- database_group %>%
   filter(`NAA Group` %in% c("BUK", "BUK A"))
@@ -338,7 +330,7 @@ BUK_BUKA_site_comp <- ggplot(database_group_BUK_BUKA, aes(x = Sr, y = Fe,
   )
 BUK_BUKA_site_comp
 
-png(filename = "./Figures/Table_4/BUK_BUKA_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Central_Asia_islamic_ceramics/Figures/Table_4/BUK_BUKA_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_BUKA_site_comp)
 dev.off()
 

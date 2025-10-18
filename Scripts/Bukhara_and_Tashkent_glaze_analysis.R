@@ -2,7 +2,7 @@
 # C. Klesner
 # 2025
 
-#load necessary packages
+install.packages(c("rio", "dplyr", "ggplot2", "ggtern", "scales"))
 
 library(rio)
 library(dplyr)
@@ -310,7 +310,8 @@ unique_samples_per_Site
 Comp_Glaze <- filter(comparative_normalized_data, `Component` %in% c('Glaze'))
 Comp_Glaze <- Comp_Glaze %>% filter(!Glaze_or_slip_color == "Weathered")
 Comp_slip <- filter(comparative_normalized_data, `Component` %in% c('White Slip'))
-
+Comp_colored_slip <- filter(comparative_normalized_data, `Component` %in% 
+                              c('Red Slip','Brown Slip', 'Black Slip', 'Olive Slip'))
 
 # calculate mean compositions for samples with multiple measurements 
 Comp_Glaze <- Comp_Glaze %>%
@@ -327,6 +328,14 @@ Comp_slip <- Comp_slip %>%
     Count = sum(Count, na.rm = TRUE),
     .groups = "drop"
   )
+Comp_colored_slip <- Comp_colored_slip %>%
+  group_by(Sample, Site, Region, Glaze_or_slip_color, Ware, Provenance) %>%
+  summarise(
+    across(all_of(oxide_columns_master), ~ mean(.x, na.rm = TRUE)),
+    Count = sum(Count, na.rm = TRUE),
+    .groups = "drop"
+  )
+
 
 # clean averaged data
 Comp_Glaze <- Comp_Glaze %>%
@@ -369,7 +378,7 @@ print(unique_glaze_type_per_Site, n=36)
 
 write.csv(Comp_Glaze, "./Data/Comp_Glaze.csv", row.names = FALSE)
 write.csv(Comp_slip, "./Data/Comp_Slip.csv", row.names = FALSE)
-
+write.csv(Comp_colored_slip, "./Data/Comp_colored_Slip.csv", row.names = FALSE)
 
 # visualising glaze typs across 
 
@@ -487,7 +496,7 @@ print(pc_contributions)
 ##subset data for plotting
 
 NAA_pc.dataframe <- pc.dataframe %>% 
-  filter(Provenance %in% c("BUK", "TASH", "SAMK", "TAZ - Group 3"))
+  filter(Provenance %in% c("BUK", "TASH", "SAMK", "TAZ - Group 3", "PAY 2", "N/A"))
 
 Site_pc.dataframe <- pc.dataframe %>% 
   filter(Site %in% c("Akhsiket", "Dandanakan", "Kuva", "Termez", "Aktobe", "Bektobe",
