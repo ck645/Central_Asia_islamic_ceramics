@@ -236,6 +236,12 @@ for (i in seq_len(nrow(significant_df))) {
   database_group_site_comp <- database_group %>%
     filter(`NAA Group` %in% c(site1, site2))
   
+  valid_elements <- elements[elements %in% colnames(database_group_site_comp)]
+  if (length(valid_elements) == 0) {
+    message("No valid elements for pair: ", pair)
+    next
+  }
+  
   # Prepare plot data
   plot_data <- database_group_site_comp %>%
     select(all_of(valid_elements <- elements[elements %in% colnames(database_group_site_comp)]), `NAA Group`) %>%
@@ -309,7 +315,6 @@ for (pair in pairwise_comparisons) {
 
 
 # -----------------------select biplots from pairwise comp----------------------
-setwd("./")
 
 database_group_BUK_BUKA <- database_group %>%
   filter(`NAA Group` %in% c("BUK", "BUK A"))
@@ -330,7 +335,7 @@ BUK_BUKA_site_comp <- ggplot(database_group_BUK_BUKA, aes(x = Sr, y = Fe,
   )
 BUK_BUKA_site_comp
 
-png(filename = "./Central_Asia_islamic_ceramics/Figures/Table_4/BUK_BUKA_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_4/BUK_BUKA_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_BUKA_site_comp)
 dev.off()
 
@@ -692,5 +697,5 @@ citation("rio")
 citation("dplyr")
 citation("ggplot2")
 citation("GGally")
-citation("dendextend")
+
 
