@@ -122,19 +122,19 @@ The code was run using R version 4.5.1 (2025-06-13 ucrt)
 
 The following R packages are required to execute the code:
 
-*scales_1.4.0 (Wickham, Pedersen, and Seidel, 2025)
+* scales_1.4.0 (Wickham, Pedersen, and Seidel, 2025)
 
-*ggtern_3.5.0  (Wickham and Ferry, 2018)
+* ggtern_3.5.0  (Wickham and Ferry, 2018)
 
-*ggplot2_3.5.2 (Wickham, 2016)
+* ggplot2_3.5.2 (Wickham, 2016)
 
-*dplyr_1.1.4   (Wickham et al., 2023)
+* dplyr_1.1.4   (Wickham et al., 2023)
 
-*rio_1.2.4  (Chan et al., 2023)  
+* rio_1.2.4  (Chan et al., 2023)  
 
-*GGally_2.4.0  (Schloerke et al., 2025)
+* GGally_2.4.0  (Schloerke et al., 2025)
 
-*tidyr_1.3.1   (Wickham et al., 2024)
+* tidyr_1.3.1   (Wickham et al., 2024)
 
 Citations: 
 
