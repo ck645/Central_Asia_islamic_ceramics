@@ -118,6 +118,46 @@ supplementary_figures/ - Contains ternary diagrams showing glaze compositions ge
 
 ## R Session Info
 
+The code was run using R version 4.5.1 (2025-06-13 ucrt)
+
+The following R packages are required to execute the code:
+
+scales_1.4.0 (Wickham, Pedersen, and Seidel, 2025)
+ggtern_3.5.0  (Wickham and Ferry, 2018)
+ggplot2_3.5.2 (Wickham, 2016)
+dplyr_1.1.4   (Wickham et al., 2023)
+rio_1.2.4  (Chan et al., 2023)  
+GGally_2.4.0  (Schloerke et al., 2025)
+tidyr_1.3.1   (Wickham et al., 2024)
+
+Citations: 
+
+  Chan C, Leeper T, Becker J, Schoch D (2023). _rio: A Swiss-army knife for data file I/O_.
+  <https://cran.r-project.org/package=rio>.
+
+  Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A Grammar of Data
+  Manipulation_. doi:10.32614/CRAN.package.dplyr <https://doi.org/10.32614/CRAN.package.dplyr>, R
+  package version 1.1.4, <https://CRAN.R-project.org/package=dplyr>.
+
+  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+
+  Hamilton NE, Ferry M (2018). “ggtern: Ternary Diagrams Using ggplot2.” _Journal of Statistical
+  Software, Code Snippets_, *87*(3), 1-17. doi:10.18637/jss.v087.c03
+  <https://doi.org/10.18637/jss.v087.c03>.
+
+  Wickham H, Pedersen T, Seidel D (2025). _scales: Scale Functions for Visualization_.
+  doi:10.32614/CRAN.package.scales <https://doi.org/10.32614/CRAN.package.scales>, R package version
+  1.4.0, <https://CRAN.R-project.org/package=scales>.
+
+  Schloerke B, Cook D, Larmarange J, Briatte F, Marbach M, Thoen E, Elberg A, Crowley J (2025).
+  _GGally: Extension to 'ggplot2'_. doi:10.32614/CRAN.package.GGally
+  <https://doi.org/10.32614/CRAN.package.GGally>, R package version 2.4.0,
+  <https://CRAN.R-project.org/package=GGally>.
+
+  Wickham H, Vaughan D, Girlich M (2024). _tidyr: Tidy Messy Data_. doi:10.32614/CRAN.package.tidyr
+  <https://doi.org/10.32614/CRAN.package.tidyr>, R package version 1.3.1,
+  <https://CRAN.R-project.org/package=tidyr>.
+
 
 
 ## Funding 
