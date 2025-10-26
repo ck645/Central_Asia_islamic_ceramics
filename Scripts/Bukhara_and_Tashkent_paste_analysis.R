@@ -127,7 +127,8 @@ summary.aov(manova_model_clean)
 
 
 
-# pairwise t-tests (will receive warnings regarding NAs, but can proceed)
+# pairwise t-tests (will receive warnings regarding NAs due to missing values, however
+# you can proceed as this behavior is expected and does not affect the validity of the results.
 
 pairwise_t_test_results <- list()
 for (element in elements_Group) {
@@ -697,5 +698,6 @@ citation("rio")
 citation("dplyr")
 citation("ggplot2")
 citation("GGally")
+citation("tidyr")
 
 

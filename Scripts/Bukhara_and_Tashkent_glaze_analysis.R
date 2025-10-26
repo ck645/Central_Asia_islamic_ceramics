@@ -2,7 +2,7 @@
 # C. Klesner
 # 2025
 
-install.packages(c("rio", "dplyr", "ggplot2", "ggtern", "scales"))
+install.packages(c("ggtern", "scales"))
 
 library(rio)
 library(dplyr)
@@ -96,9 +96,9 @@ combined_ternary <- ggtern(data=O_db, aes(x=PbO, y=SiO2, z=alkali, fill=Color, s
     tern.panel.background = element_rect(fill = "transparent", color = NA),
     tern.plot.background = element_rect(fill = "transparent", color = NA), # ternary plot background
     plot.title = element_text(hjust = 0.5),
-    tern.axis.line.T = element_line(color = "black", size = 1.2),
-    tern.axis.line.L = element_line(color = "black", size = 1.2),
-    tern.axis.line.R = element_line(color = "black", size = 1.2),
+    tern.axis.line.T = linewidth(color = "black", size = 1.2),
+    tern.axis.line.L = linewidth(color = "black", size = 1.2),
+    tern.axis.line.R = linewidth(color = "black", size = 1.2),
     tern.panel.grid.major.T = element_blank(),
     tern.panel.grid.major.L = element_blank(),
     tern.panel.grid.major.R = element_blank(),
@@ -329,7 +329,7 @@ Comp_slip <- Comp_slip %>%
     .groups = "drop"
   )
 Comp_colored_slip <- Comp_colored_slip %>%
-  group_by(Sample, Site, Region, Glaze_or_slip_color, Ware, Provenance) %>%
+  group_by(Sample, Site, Region, Glaze_or_slip_color, Ware, Provenance, Component) %>%
   summarise(
     across(all_of(oxide_columns_master), ~ mean(.x, na.rm = TRUE)),
     Count = sum(Count, na.rm = TRUE),
@@ -496,12 +496,15 @@ print(pc_contributions)
 ##subset data for plotting
 
 NAA_pc.dataframe <- pc.dataframe %>% 
-  filter(Provenance %in% c("BUK", "TASH", "SAMK", "TAZ - Group 3", "PAY 2", "N/A"))
+  filter(Provenance %in% c("BUK", "TASH", "SAMK", "TAZ - Group 3", "PAY 2"))
+NAA_pc.dataframe <- NAA_pc.dataframe %>% 
+  filter(Site %in% c("Bukhara", "Tashkent", "Paykend", "Taraz"))
 
 Site_pc.dataframe <- pc.dataframe %>% 
-  filter(Site %in% c("Akhsiket", "Dandanakan", "Kuva", "Termez", "Aktobe", "Bektobe",
+  filter(Site %in% c("Akhsiket", "Dandanakan", "Kuva", "Paykend", "Termez", "Aktobe", "Bektobe",
                      "Kulan", "Lower Barskhan", "Tamdy", "Taraz", "Laskhar-i Bazar",
                      "Bust")| Provenance == "N/A")
+Site_pc.dataframe <- Site_pc.dataframe %>% filter(!(Provenance %in% c("BUK", "TASH", "TAZ - Group 3", "SAMK", "PAY 2")))
 
 ellipse_NAA_pc.dataframe <- pc.dataframe %>% 
   filter(Provenance %in% c("BUK", "TASH")) 
@@ -509,8 +512,12 @@ ellipse_NAA_pc.dataframe <- pc.dataframe %>%
 ellipse_region_pc.dataframe <- pc.dataframe %>% 
   filter(Region %in% c("Chach", "Transoxiana")) 
 
-ellipse_ware_pc.dataframe <- ellipse_NAA_pc.dataframe %>% 
+ellipse_ware_pc.dataframe <- pc.dataframe %>% 
+  filter(Provenance %in% c("BUK", "TASH", "SAMK", "TAZ - Group 3", "PAY 2", "N/A")) 
+ellipse_ware_pc.dataframe <- ellipse_ware_pc.dataframe %>% 
   filter(Ware %in% c("Slipware - Samanid", "Slipware - Qarakhanid")) 
+ellipse_ware_pc.dataframe <- ellipse_ware_pc.dataframe %>% 
+  filter(Site %in% c("Bukhara", "Tashkent", "Paykend", "Taraz"))
 
 
 #plot by paste compositional group with element loadings
@@ -540,7 +547,7 @@ PCregion <- ggplot() +
   ) +
   scale_shape_manual(
     name = "Provenance/Site",
-    values = c(17, 15, 16, 18, 1,2,3,4,5,6,8,9,10,11,12,13,14,7,0)
+    values = c(17, 1, 15, 16, 18, 2,3,4,5,6,8,9,10,11,12,13,14,7,0, 20)
   ) +
   scale_color_manual(
     name = "Ware",
@@ -552,7 +559,7 @@ PCregion <- ggplot() +
   )
 
 PCregion
-jpeg(filename = "./Figures/Figure6a.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure9a.jpg", width = 2800, height = 1600, res=300)
 print(PCregion) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) +
   geom_segment(data = loadings_scaled, aes(x = 0, y = 0, xend = PC1, yend = PC2), arrow = arrow(length = unit(0.2, "cm")), color = "black") +
   geom_text(data = loadings_scaled, aes(x = PC1, y = PC2, label = Variable), hjust = 0.25, vjust = 1.25, size = 5, color = "black")
@@ -589,13 +596,86 @@ PCComp <- ggplot() +
 
 print(PCComp) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
 
-jpeg(filename = "./Figures/Figure6b.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure9b.jpg", width = 2800, height = 1600, res=300)
 print(PCComp) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
 dev.off()
 
 
 
 
+
+
+provenanced_glaze_data <- Comp_Glaze_transparent
+provenanced_glaze_data <- provenanced_glaze_data %>%
+  group_by(Sample, Site, Region, Ware, Provenance) %>%
+  summarise(
+    across(all_of(oxide_columns_master), ~ mean(.x, na.rm = TRUE)),
+    Count = sum(Count, na.rm = TRUE),
+    .groups = "drop"
+  )
+provenanced_glaze_data$Provenance <- as.factor(provenanced_glaze_data$Provenance)
+provenanced_glaze_data <- provenanced_glaze_data %>% 
+  filter(Provenance %in% c("BUK", "TASH", "TAZ - Group 3", "SAMK", "N/A"))
+provenanced_glaze_data <- provenanced_glaze_data %>% 
+  filter(Site %in% c("Bukhara", "Tashkent", "Paykend", "Taraz"))
+provenanced_glaze_data <- provenanced_glaze_data %>% 
+  filter(Ware %in% c("Slipware - Qarakhanid", "Slipware - Samanid", "Splashed", "Monochrome"))
+provenanced_glaze_data_ellipse <- provenanced_glaze_data %>% 
+  filter(Ware %in% c("Splashed"))
+
+
+recovery_glaze_data <- Comp_Glaze_transparent
+recovery_glaze_data <- recovery_glaze_data %>%
+  group_by(Sample, Site, Region, Ware, Provenance) %>%
+  summarise(
+    across(all_of(oxide_columns_master), ~ mean(.x, na.rm = TRUE)),
+    Count = sum(Count, na.rm = TRUE),
+    .groups = "drop"
+  )
+recovery_glaze_data$Site <- as.factor(recovery_glaze_data$Site)
+recovery_glaze_data <- recovery_glaze_data %>% filter(Site %in% c("Akhsiket", "Dandanakan", "Kuva", "Termez", "Aktobe", "Bektobe",
+                                                                        "Kulan", "Lower Barskhan", "Tamdy", "Taraz", "Laskhar-i Bazar",
+                                                                        "Bust"))
+recovery_glaze_data <- recovery_glaze_data %>% filter(!(Provenance %in% c("BUK", "TASH", "TAZ - Group 3", "SAMK", "N/A")))
+
+
+
+
+PbO_alkali <- ggplot() +
+  geom_point(data = recovery_glaze_data,
+             aes(x = Na2O+K2O+MgO+CaO, y = PbO, shape = Ware, color = "comparative site"),
+             size = 3) +
+  geom_point(data = provenanced_glaze_data,
+             aes(x = Na2O+K2O+MgO+CaO, y = PbO, shape = Ware, color = Provenance),
+             size = 3) +
+  labs(x = "Alkali (Na2O + K2O + MgO + CaO wt%)", 
+       y = "PbO (wt%)") +
+  coord_cartesian(ylim = c(38,72), xlim = c(0, 8)) +
+  scale_shape_manual(name = "Ware",
+                     values = c(8,1,2,16,3,4,5,6,8,9,10,11,12,13,14,7,0))  +
+  scale_color_manual(
+    name   = " ",
+    breaks = c("BUK", "SAMK", "TASH", "TAZ - Group 3", "N/A", "comparative site"), 
+    values = c("BUK" = "#CC6677",
+               "SAMK" = "#882255",
+               "TASH" = "#44AA99",
+               "TAZ - Group 3" = "#117733",
+               "N/A" = "black",
+               "comparative site" = "gray")) +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line = element_line(color = "black", linewidth = 1),
+        legend.position = "right",
+        legend.box = "horizontal") +
+  guides(color = guide_legend(order = 2, direction = "vertical"),
+         shape = guide_legend(order = 1, direction = "vertical"))
+
+PbO_alkali
+
+jpeg(filename = "./Figures/Figure10_a.jpg", width = 2800, height = 1600, res=300)
+print(PbO_alkali) 
+dev.off()
 
 
 
@@ -678,8 +758,14 @@ wide_slip_data <- wide_slip_data %>%
 
 provenanced_ceramics_data <- wide_slip_data
 provenanced_ceramics_data$Provenance <- as.factor(provenanced_ceramics_data$Provenance)
-provenanced_ceramics_data <- provenanced_ceramics_data %>% filter(Provenance %in% c("BUK", "TASH", "TAZ - Group 3", "SAMK"))
-provenanced_ceramics_data_ellipse <- provenanced_ceramics_data %>% filter(Provenance %in% c("BUK", "TASH"))
+provenanced_ceramics_data <- provenanced_ceramics_data %>% 
+                              filter(Provenance %in% c("BUK", "TASH", "TAZ - Group 3", "SAMK"))
+provenanced_ceramics_data <- provenanced_ceramics_data %>% 
+                              filter(Site %in% c("Bukhara", "Tashkent", "Paykend", "Taraz"))
+provenanced_ceramics_data <- provenanced_ceramics_data %>% 
+  filter(Ware %in% c("Slipware - Qarakhanid", "Slipware - Samanid", "Splashed", "Monochrome"))
+provenanced_ceramics_data_ellipse <- provenanced_ceramics_data %>% 
+                              filter(Provenance %in% c("BUK", "TASH"))
 
 
 recovery_ceramics_data <- wide_slip_data
@@ -728,7 +814,7 @@ combined_plot_Al2O3 <- ggplot() +
 
 print(combined_plot_Al2O3) 
 
-jpeg(filename = "./Figures/Figure9a.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure7a.jpg", width = 2800, height = 1600, res=300)
 print(combined_plot_Al2O3) 
 dev.off()
 
@@ -770,7 +856,7 @@ combined_plot_SiO2 <- ggplot() +
 
 print(combined_plot_SiO2)
 
-jpeg(filename = "./Figures/Figure9b.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure7b.jpg", width = 2800, height = 1600, res=300)
 print(combined_plot_SiO2) 
 dev.off()
 
@@ -789,11 +875,10 @@ combined_plot_CaO_Al2O3 <- ggplot() +
   scale_shape_manual(name = "Provenance/Site",
                      values = c(17,15,16,18,1,2,3,4,5,6,8,9,10,11,12,13,14,7,0)) +
   scale_color_manual(name = "Ware",
-                     values = c("#4DAF4A","#377EB8","#984EA3","#FF7F00",
-                                "#a65628","#E41A1C","#999999","#000000")) +
+                     values = c("#4DAF4A","#377EB8","#984EA3","#a65628",
+                                "#E41A1C","#999999","#FF7F00","#000000")) +
   scale_x_log10(
-    breaks = c(0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 40),   # pick ticks that fit your data
-    labels = label_number(accuracy = 0.1, trim = TRUE)
+    breaks = c(0.1, 0.2, 0.5, 1, 2, 5, 10),  
   ) +
   theme_minimal() +
   theme(panel.grid.major = element_blank(),
@@ -806,7 +891,7 @@ combined_plot_CaO_Al2O3 <- ggplot() +
 
 combined_plot_CaO_Al2O3
 
-jpeg(filename = "./Figures/Figure9c.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure7c.jpg", width = 2800, height = 1600, res=300)
 print(combined_plot_CaO_Al2O3) 
 dev.off()
 
