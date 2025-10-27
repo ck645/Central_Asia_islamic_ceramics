@@ -100,9 +100,9 @@ As well as those prepared by other means:
 
 `Figure6.png` - Compiled and annotated images of slipware glazed ceramics obtained through optical and electron microscopy.
 
-Figure7.jpg - Compiled version of generated plots.
+`Figure7.jpg` - Compiled version of generated plots.
 
-Figure8.jpg - Compiled and annotated Backscattered electron (BSE) images of slipware glazed ceramics show casing different colored slip applications.
+`Figure8.jpg` - Compiled and annotated Backscattered electron (BSE) images of slipware glazed ceramics show casing different colored slip applications.
 
 `Figure9.jpg` - Compiled version of generated plots.
 
