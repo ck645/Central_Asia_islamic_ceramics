@@ -2,7 +2,11 @@
 # C. Klesner
 # 2025
 
-install.packages(c("ggtern", "scales"))
+install.packages(c("remotes"))
+
+remotes::install_version("scales", version = "1.4.0", repos = "https://cran.r-project.org")
+remotes::install_version("ggtern", version = "3.5.0", repos = "https://cran.r-project.org")
+remotes::install_version("ggplot2", version = "3.5.2", repos = "https://cran.r-project.org")
 
 library(rio)
 library(dplyr)
@@ -96,9 +100,9 @@ combined_ternary <- ggtern(data=O_db, aes(x=PbO, y=SiO2, z=alkali, fill=Color, s
     tern.panel.background = element_rect(fill = "transparent", color = NA),
     tern.plot.background = element_rect(fill = "transparent", color = NA), # ternary plot background
     plot.title = element_text(hjust = 0.5),
-    tern.axis.line.T = linewidth(color = "black", size = 1.2),
-    tern.axis.line.L = linewidth(color = "black", size = 1.2),
-    tern.axis.line.R = linewidth(color = "black", size = 1.2),
+    tern.axis.line.T = element_line(color = "black", size = 1.2),
+    tern.axis.line.L = element_line(color = "black", size = 1.2),
+    tern.axis.line.R = element_line(color = "black", size = 1.2),
     tern.panel.grid.major.T = element_blank(),
     tern.panel.grid.major.L = element_blank(),
     tern.panel.grid.major.R = element_blank(),
