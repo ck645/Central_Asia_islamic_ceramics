@@ -2,7 +2,7 @@
 
 This repository contains the data and scripts used in the manuscript:
 
-Klesner, C.E., Ilyasova, S.R., Ilyasov, J., Torgoev, A., Parchuto, V., Mirzaakhmedov, J. K., Mirzaakhmedov, S. J., MacDonald, B.L., and Stark, S. Production of Glazed Ceramics across Mā Warāʾ an-Nahr: a compositional analysis
+Klesner, C.E., Ilyasova, S.R., Ilyasov, J., Torgoev, A., Parchuto, V., Mirzaakhmedov, J. K., Mirzaakhmedov, S. J., MacDonald, B.L., and Stark, S. Production of Glazed Ceramics across Mawarannahr: a compositional analysis
 
 The repository is organised into four main directories: 
 
