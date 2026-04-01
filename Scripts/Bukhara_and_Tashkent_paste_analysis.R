@@ -1,6 +1,6 @@
 ##Uzbekistan glazed ceramics - Paste analysis
 # C. Klesner
-# 2025
+# 2026
 
 install.packages(c("rio", "dplyr", "ggplot2", "tidyr", "GGally", "stats"))
 
@@ -336,7 +336,7 @@ BUK_BUKA_site_comp <- ggplot(database_group_BUK_BUKA, aes(x = Sr, y = Fe,
   )
 BUK_BUKA_site_comp
 
-png(filename = "./Figures/Table_4/BUK_BUKA_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/BUK_BUKA_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_BUKA_site_comp)
 dev.off()
 
@@ -360,7 +360,7 @@ BUK_TASH_site_comp <- ggplot(database_group_BUK_TASH, aes(x = La, y = Sc,
   )
 BUK_TASH_site_comp
 
-png(filename = "./Figures/Table_4/BUK_TASH_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/BUK_TASH_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_TASH_site_comp)
 dev.off()
 
@@ -384,7 +384,7 @@ BUK_TAZ_site_comp <- ggplot(database_group_BUK_TAZ, aes(x = Sb, y = Ce,
   )
 BUK_TAZ_site_comp
 
-png(filename = "./Figures/Table_4/BUK_TAZ_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/BUK_TAZ_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_TAZ_site_comp)
 dev.off()
 
@@ -409,7 +409,7 @@ BUK_SAMK_site_comp <- ggplot(database_group_BUK_SAMK, aes(x = Cr, y = Sc,
   )
 BUK_SAMK_site_comp
 
-png(filename = "./Figures/Table_4/BUK_SAMK_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/BUK_SAMK_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_SAMK_site_comp)
 dev.off()
 
@@ -434,7 +434,7 @@ BUK_NISH_site_comp <- ggplot(database_group_BUK_NISH, aes(x = Th, y = Sb,
   )
 BUK_NISH_site_comp
 
-png(filename = "./Figures/Table_4/BUK_NISH_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/BUK_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUK_NISH_site_comp)
 dev.off()
 
@@ -459,7 +459,7 @@ BUKA_TASH_site_comp <- ggplot(database_group_BUKA_TASH, aes(x = La, y = Th,
   )
 BUKA_TASH_site_comp
 
-png(filename = "./Figures/Table_4/BUKA_TASH_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/BUKA_TASH_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUKA_TASH_site_comp)
 dev.off()
 
@@ -483,7 +483,7 @@ BUKA_TAZ_site_comp <- ggplot(database_group_BUKA_TAZ, aes(x = Sr, y = Sm,
   )
 BUKA_TAZ_site_comp
 
-png(filename = "./Figures/Table_4/BUKA_TAZ_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/BUKA_TAZ_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUKA_TAZ_site_comp)
 dev.off()
 
@@ -508,7 +508,7 @@ BUKA_SAMK_site_comp <- ggplot(database_group_BUKA_SAMK, aes(x = Cr, y = Co,
   )
 BUKA_SAMK_site_comp
 
-png(filename = "./Figures/Table_4/BUKA_SAMK_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/BUKA_SAMK_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUKA_SAMK_site_comp)
 dev.off()
 
@@ -534,7 +534,7 @@ BUKA_NISH_site_comp <- ggplot(database_group_BUKA_NISH, aes(x = Cr, y = Sb,
   )
 BUKA_NISH_site_comp
 
-png(filename = "./Figures/Table_4/BUKA_NISH_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/BUKA_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(BUKA_NISH_site_comp)
 dev.off()
 
@@ -559,7 +559,7 @@ TASH_TAZ_site_comp <- ggplot(database_group_TASH_TAZ, aes(x = Sb, y = As,
   )
 TASH_TAZ_site_comp
 
-png(filename = "./Figures/Table_4/TASH_TAZ_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/TASH_TAZ_site_comp.png", width = 1200, height = 800, res=300)
 plot(TASH_TAZ_site_comp)
 dev.off()
 
@@ -585,7 +585,7 @@ TASH_SAMK_site_comp <- ggplot(database_group_TASH_SAMK, aes(x = Th, y = Cr,
   )
 TASH_SAMK_site_comp
 
-png(filename = "./Figures/Table_4/TASH_SAMK_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/TASH_SAMK_site_comp.png", width = 1200, height = 800, res=300)
 plot(TASH_SAMK_site_comp)
 dev.off()
 
@@ -610,7 +610,7 @@ TASH_NISH_site_comp <- ggplot(database_group_TASH_NISH, aes(x = Th, y = Cr,
   )
 TASH_NISH_site_comp
 
-png(filename = "./Figures/Table_4/TASH_NISH_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/TASH_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(TASH_NISH_site_comp)
 dev.off()
 
@@ -637,7 +637,7 @@ SAMK_NISH_site_comp <- ggplot(database_group_SAMK_NISH, aes(x = Co, y = Sc,
   )
 SAMK_NISH_site_comp
 
-png(filename = "./Figures/Table_4/SAMK_NISH_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/SAMK_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(SAMK_NISH_site_comp)
 dev.off()
 
@@ -662,7 +662,7 @@ TAZ_NISH_site_comp <- ggplot(database_group_TAZ_NISH, aes(x = Sb, y = Mn,
   )
 TAZ_NISH_site_comp
 
-png(filename = "./Figures/Table_4/TAZ_NISH_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/TAZ_NISH_site_comp.png", width = 1200, height = 800, res=300)
 plot(TAZ_NISH_site_comp)
 dev.off()
 
@@ -687,7 +687,7 @@ TAZ_SAMK_site_comp <- ggplot(database_group_TAZ_SAMK, aes(x = Hf, y = Mn,
   )
 TAZ_SAMK_site_comp
 
-png(filename = "./Figures/Table_4/TAZ_SAMK_site_comp.png", width = 1200, height = 800, res=300)
+png(filename = "./Figures/Table_3/TAZ_SAMK_site_comp.png", width = 1200, height = 800, res=300)
 plot(TAZ_SAMK_site_comp)
 dev.off()
 

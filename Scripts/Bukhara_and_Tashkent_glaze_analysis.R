@@ -2,11 +2,7 @@
 # C. Klesner
 # 2025
 
-install.packages(c("remotes"))
-
-remotes::install_version("scales", version = "1.4.0", repos = "https://cran.r-project.org")
-remotes::install_version("ggtern", version = "3.5.0", repos = "https://cran.r-project.org")
-remotes::install_version("ggplot2", version = "3.5.2", repos = "https://cran.r-project.org")
+install.packages(c("rio", "dplyr", "ggplot2", "ggtern", "scales"))
 
 library(rio)
 library(dplyr)
@@ -115,7 +111,7 @@ combined_ternary <- ggtern(data=O_db, aes(x=PbO, y=SiO2, z=alkali, fill=Color, s
 
 plot(combined_ternary)
 
-jpeg(filename = "./Figures/Figure4.jpg", width = 3600, height = 2400, res=300)
+jpeg(filename = "./Figures/Figure9.jpg", width = 3600, height = 2400, res=300)
 plot(combined_ternary)
 dev.off()
 
@@ -563,7 +559,7 @@ PCregion <- ggplot() +
   )
 
 PCregion
-jpeg(filename = "./Figures/Figure9a.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure7a.jpg", width = 2800, height = 1600, res=300)
 print(PCregion) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) +
   geom_segment(data = loadings_scaled, aes(x = 0, y = 0, xend = PC1, yend = PC2), arrow = arrow(length = unit(0.2, "cm")), color = "black") +
   geom_text(data = loadings_scaled, aes(x = PC1, y = PC2, label = Variable), hjust = 0.25, vjust = 1.25, size = 5, color = "black")
@@ -600,7 +596,7 @@ PCComp <- ggplot() +
 
 print(PCComp) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1)) 
 
-jpeg(filename = "./Figures/Figure9b.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure7b.jpg", width = 2800, height = 1600, res=300)
 print(PCComp) + theme(axis.line = element_line(color = "black", linewidth = 1, linetype = 1))
 dev.off()
 
@@ -677,7 +673,7 @@ PbO_alkali <- ggplot() +
 
 PbO_alkali
 
-jpeg(filename = "./Figures/Figure10_a.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure8_a.jpg", width = 2800, height = 1600, res=300)
 print(PbO_alkali) 
 dev.off()
 
@@ -818,7 +814,7 @@ combined_plot_Al2O3 <- ggplot() +
 
 print(combined_plot_Al2O3) 
 
-jpeg(filename = "./Figures/Figure7a.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure5a.jpg", width = 2800, height = 1600, res=300)
 print(combined_plot_Al2O3) 
 dev.off()
 
@@ -860,7 +856,7 @@ combined_plot_SiO2 <- ggplot() +
 
 print(combined_plot_SiO2)
 
-jpeg(filename = "./Figures/Figure7b.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure5b.jpg", width = 2800, height = 1600, res=300)
 print(combined_plot_SiO2) 
 dev.off()
 
@@ -895,7 +891,7 @@ combined_plot_CaO_Al2O3 <- ggplot() +
 
 combined_plot_CaO_Al2O3
 
-jpeg(filename = "./Figures/Figure7c.jpg", width = 2800, height = 1600, res=300)
+jpeg(filename = "./Figures/Figure5c.jpg", width = 2800, height = 1600, res=300)
 print(combined_plot_CaO_Al2O3) 
 dev.off()
 
