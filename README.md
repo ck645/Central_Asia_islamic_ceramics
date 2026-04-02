@@ -22,7 +22,7 @@ The script [**Bukhara_and_Tashkent_paste_analysis.R**](Scripts/Bukhara_and_Tashk
 
 *Statistical Analysis* including summary Statistics for each compositional group, saved as [**NAA_group_stats.csv**](Data/NAA_group_stats.csv) and Pairwise t-tests for each element between different compositional groups to identify statistically significant differences in means, saved as [**Data/pairwise_t_test_results.txt**](Data/pairwise_t_test_results.txt)
 
-*Data Visualization* of the relationships between elements for each compositional groups, a summary compositonal biplot ([**Figure3.jpg**](Figures/Figure3.jpg)) and pairwise biplots within [**Table_4**](Figures/Table_4), the latter of which were selected after examining pairwise scatterplot matrices between compositional groups contained in [**Supplementary_materials/supplementary_materials_pairwise_comparisons**](Supplementary_materials/supplementary_materials_pairwise_comparisons). 
+*Data Visualization* of the relationships between elements for each compositional groups, a summary compositonal biplot ([**Figure3.jpg**](Figures/Figure3.jpg)) and pairwise biplots within [**Table_3**](Figures/Table_3), the latter of which were selected after examining pairwise scatterplot matrices between compositional groups contained in [**Supplementary_materials/supplementary_materials_pairwise_comparisons**](Supplementary_materials/supplementary_materials_pairwise_comparisons). 
 
 
 The script [**Bukhara_and_Tashkent_glaze_analysis.R**](Scripts/Bukhara_and_Tashkent_glaze_analysis.R)  performs the following tasks: 
@@ -31,7 +31,7 @@ The script [**Bukhara_and_Tashkent_glaze_analysis.R**](Scripts/Bukhara_and_Tashk
 
 *Statistical Analysis* including generation of summary statistics of glaze and slip types, including the distribution of transparent and opaque glaze technologies by site and ware type. 
 
-*Data Visualization* of glaze types using Ternary diagrams ([**Figure4.jpg**](Figures/Figure4.jpg) and those found in [**supplementary_figures**](Supplementary_materials/supplementary_figures)), and a PCA applied to major glaze oxides for transparent glazes to assess technological variability across sites, ware types, and provenance groups identified in this study ([**Figure9a.jpg**](Figures/Figure9a.jpg) and [**Figure9b.jpg**](Figures/Figure9b.jpg)). Enrichment-Depletion plots of normalised glaze and slip concentrations were generated to visualize technological relationships between slip and glaze layers ([**Figure7a.jpg**](Figures/Figure7a.jpg) and [**Figure7b.jpg**](Figures/Figure7b.jpg)), as well as slip compositional data ([**Figure7c.jpg**](Figures/Figure7c.jpg)). 
+*Data Visualization* of glaze types using Ternary diagrams ([**Figure9.jpg**](Figures/Figure9.jpg) and those found in [**supplementary_figures**](Supplementary_materials/supplementary_figures)), and a PCA applied to major glaze oxides for transparent glazes to assess technological variability across sites, ware types, and provenance groups identified in this study ([**Figure7a.jpg**](Figures/Figure7a.jpg) and [**Figure7b.jpg**](Figures/Figure7b.jpg)). Enrichment-Depletion plots of normalised glaze and slip concentrations were generated to visualize technological relationships between slip and glaze layers ([**Figure5a.jpg**](Figures/Figure5a.jpg) and [**Figure5b.jpg**](Figures/Figure5b.jpg)), as well as slip compositional data ([**Figure5c.jpg**](Figures/Figure5c.jpg)). 
 
 
 ### Analysis
@@ -76,17 +76,17 @@ Contains generated visualizations:
 
 `Figure3.png` – PNG version of the biplot (same as Figure3.jpg).
 
-`Table_4/` – Contains pairwise scatterplot matrices and additional biplots.
+`Table_3/` – Contains pairwise scatterplot matrices and additional biplots.
 
-`Figure4.jpg` - Ternary diagram of opaque glaze compositions
+`Figure5a.jpg` and `Figure5b.jpg` - Enrichment-depletion plot of glaze compositions, versus underlying white slip compositions, after subtraction of PbO and colorants and normalization to 100 wt% for major elements: SiO2 and Al2O3
 
-`Figure7a.jpg` and `Figure7b.jpg` - Enrichment-depletion plot of glaze compositions, versus underlying white slip compositions, after subtraction of PbO and colorants and normalization to 100 wt% for major elements: SiO2 and Al2O3
+`Figure5c.jpg` - Biplot of the measured composition of Al2O3 versus CaO for the white slips identified by their production/recovery site and ware type.   
 
-`Figure7c.jpg` - Biplot of the measured composition of Al2O3 versus CaO for the white slips identified by their production/recovery site and ware type.   
+`Figure7a.jpg` and `Figure7b.jpg` - biplots of the PCA of transparent glaze compositions 
 
-`Figure9a.jpg` and `Figure9b.jpg` - biplots of the PCA of transparent glaze compositions 
+`Figure8_a.jpg` - Biplot of the measured alkali versus PbO concentration for the glazes identified by their producttion group and ware type, highlighting the splashed ceramics.
 
-`Figure10_a.jpg` - Biplot of the measured alkali versus PbO concentration for the glazes identified by their producttion group and ware type, highlighting the splashed ceramics.
+`Figure9.jpg` - Ternary diagram of opaque glaze compositions
 
 As well as those prepared by other means: 
 
@@ -94,19 +94,19 @@ As well as those prepared by other means:
 
 `Figure2.jpg` - Figure showing ths different types of glazes in this study, compiled from images of samples under investigation.
 
-`Figure4_amended.jpg` - Annotated version of generated Figure4.
+`Figure4.png` - Compiled and annotated images of slipware glazed ceramics obtained through optical and electron microscopy.
 
-`Figure5.jpg` - Compiled Backscattered electron (BSE) images obtained from SEM analysis of opaque glazes.
+`Figure5.jpg` - Compiled version of generated plots.
 
-`Figure6.png` - Compiled and annotated images of slipware glazed ceramics obtained through optical and electron microscopy.
+`Figure6.jpg` - Compiled and annotated Backscattered electron (BSE) images of slipware glazed ceramics show casing different colored slip applications.
 
 `Figure7.jpg` - Compiled version of generated plots.
 
-`Figure8.jpg` - Compiled and annotated Backscattered electron (BSE) images of slipware glazed ceramics show casing different colored slip applications.
+`Figure8.png` - Compiled generated biplot with the Backscattered electron (BSE) images obtained from SEM analysis of splashed sgraffiato wares.
 
-`Figure9.jpg` - Compiled version of generated plots.
+`Figure9_amended.jpg` - Annotated version of generated Figure4.
 
-`Figure10.png` - Compiled generated biplot with the Backscattered electron (BSE) images obtained from SEM analysis of splashed sgraffiato wares.
+`Figure10.jpg` - Compiled Backscattered electron (BSE) images obtained from SEM analysis of opaque glazes.
 
 `Figure11.jpg` - Map of sites in this study showing the circulation of glazed ceramics as determined through paste compositional analysis. 
 
@@ -139,9 +139,9 @@ The following R packages are required to execute the code:
 
 * scales_1.4.0 (Wickham, Pedersen, and Seidel, 2025)
 
-* ggtern_3.5.0  (Wickham and Ferry, 2018)
+* ggtern_4.0.0  (Wickham and Ferry, 2018)
 
-* ggplot2_3.5.2 (Wickham, 2016)
+* ggplot2_4.0.2 (Wickham, 2016)
 
 * dplyr_1.1.4   (Wickham et al., 2023)
 
@@ -149,7 +149,7 @@ The following R packages are required to execute the code:
 
 * GGally_2.4.0  (Schloerke et al., 2025)
 
-* tidyr_1.3.1   (Wickham et al., 2024)
+* tidyr_1.3.2   (Wickham et al., 2024)
 
 Citations: 
 
