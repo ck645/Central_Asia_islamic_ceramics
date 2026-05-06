@@ -22,8 +22,9 @@ The script [**Bukhara_and_Tashkent_paste_analysis.R**](Scripts/Bukhara_and_Tashk
 
 *Statistical Analysis* including summary Statistics for each compositional group, saved as [**NAA_group_stats.csv**](Data/NAA_group_stats.csv) and Pairwise t-tests for each element between different compositional groups to identify statistically significant differences in means, saved as [**Data/pairwise_t_test_results.txt**](Data/pairwise_t_test_results.txt)
 
-*Data Visualization* of the relationships between elements for each compositional groups, a summary compositonal biplot ([**Figure3.jpg**](Figures/Figure3.jpg)) and pairwise biplots within [**Table_3**](Figures/Table_3), the latter of which were selected after examining pairwise scatterplot matrices between compositional groups contained in [**Supplementary_materials/supplementary_materials_pairwise_comparisons**](Supplementary_materials/supplementary_materials_pairwise_comparisons). 
+*Data Visualization* of the relationships between elements for each compositional groups, a summary compositonal biplot ([**Figure3.jpg**](Figures/Figure3.jpg)) and pairwise biplots within [**Table_3**](Figures/Table_3), the latter of which were selected after examining pairwise scatterplot matrices between compositional groups contained in [**Supplementary_materials/supplementary_materials_pairwise_comparisons**](Supplementary_materials/supplementary_materials_pairwise_comparisons). Trace element and rare earth element (REE) patterns were also visualised by spidergrams, which are contained in [**Supplementary_materials/Spidergrams**](Supplementary_materials/Spidergrams).
 
+*Fabric appearance* is also examined through Munsell color values. The recordings are imported from [**munsell_values.csv**](Data/munsell_values.csv). Munsell pie charts for each compositional group are generated, and contained in [**Supplementary_materials/Munsell**](Supplementary_materials/Munsell), which also contains a frequency table saved as [**Supplementary_materials/Munsell/munsell_by_group_table.csv**](Supplementary_materials/Munsell/munsell_by_group_table.csv).
 
 The script [**Bukhara_and_Tashkent_glaze_analysis.R**](Scripts/Bukhara_and_Tashkent_glaze_analysis.R)  performs the following tasks: 
 
@@ -62,6 +63,8 @@ Contains output files including summary statistics and statistical test results:
 As well as data files used in the analysis: 
 
 `paste_compositional_data.csv` - Compositional data obtained through Neutron Activation Analysis.
+
+`munsell_values.csv` - Contains recorded color observations of the individual samples. 
 
 `glaze_data.csv` - Glaze compositional data obtained through electron dispersive spectroscopy.  
 
@@ -116,6 +119,10 @@ Contains supplementary analysis files, including data generated through R:
 
 `supplementary_materials_pairwise_comparisons/` – Contains pairwise comparison scatterplot matrices.
 
+`Spidergrams/` – Contains spidergrams exploring trace and REE element patterns by NAA compositional group.
+
+`Munsell/` – Contains piecharts visualising fabric color as recorded using munsell color charts. 
+
 and data obtained through other methods: 
 
 `Supplementary_Abstracts_Russian_and_Uzbek.pdf` contains the translated abstract of this article into Russian and Uzbek for accessibility.
@@ -139,7 +146,7 @@ The following R packages are required to execute the code:
 
 * scales_1.4.0 (Wickham, Pedersen, and Seidel, 2025)
 
-* ggtern_4.0.0  (Wickham and Ferry, 2018)
+* ggtern_4.0.0  (Hamilton and Ferry, 2018)
 
 * ggplot2_4.0.2 (Wickham, 2016)
 
@@ -151,34 +158,50 @@ The following R packages are required to execute the code:
 
 * tidyr_1.3.2   (Wickham et al., 2024)
 
+* aqp_2.3   (Beaudette et al., 2023)
+
+* tibble_3.3.0  (Müller and Wickham, 2025)  
+
+* purrr_1.1.0  (Wickham and Henry, 2025)
+
+  
 Citations: 
 
+  Beaudette, D., Roudier, P., Brown, A. (2023). aqp: Algorithms for
+  Quantitative Pedology. R package version 2.0.
+  <https://CRAN.R-project.org/package=aqp>
+  
   Chan C, Leeper T, Becker J, Schoch D (2023). _rio: A Swiss-army knife for data file I/O_.
   <https://cran.r-project.org/package=rio>.
-
-  Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A Grammar of Data
-  Manipulation_. doi:10.32614/CRAN.package.dplyr <https://doi.org/10.32614/CRAN.package.dplyr>, R
-  package version 1.1.4, <https://CRAN.R-project.org/package=dplyr>.
-
-  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
 
   Hamilton NE, Ferry M (2018). “ggtern: Ternary Diagrams Using ggplot2.” _Journal of Statistical
   Software, Code Snippets_, *87*(3), 1-17. doi:10.18637/jss.v087.c03
   <https://doi.org/10.18637/jss.v087.c03>.
 
-  Wickham H, Pedersen T, Seidel D (2025). _scales: Scale Functions for Visualization_.
-  doi:10.32614/CRAN.package.scales <https://doi.org/10.32614/CRAN.package.scales>, R package version
-  1.4.0, <https://CRAN.R-project.org/package=scales>.
-
+  Müller K, Wickham H (2025). _tibble: Simple Data Frames_. R package version
+  3.3.0, <https://CRAN.R-project.org/package=tibble>.
+  
   Schloerke B, Cook D, Larmarange J, Briatte F, Marbach M, Thoen E, Elberg A, Crowley J (2025).
   _GGally: Extension to 'ggplot2'_. doi:10.32614/CRAN.package.GGally
   <https://doi.org/10.32614/CRAN.package.GGally>, R package version 2.4.0,
   <https://CRAN.R-project.org/package=GGally>.
 
+  Wickham H. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+
+  Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A Grammar of Data
+  Manipulation_. doi:10.32614/CRAN.package.dplyr <https://doi.org/10.32614/CRAN.package.dplyr>, R
+  package version 1.1.4, <https://CRAN.R-project.org/package=dplyr>.
+
   Wickham H, Vaughan D, Girlich M (2024). _tidyr: Tidy Messy Data_. doi:10.32614/CRAN.package.tidyr
   <https://doi.org/10.32614/CRAN.package.tidyr>, R package version 1.3.1,
   <https://CRAN.R-project.org/package=tidyr>.
 
+  Wickham H, Henry L (2025). _purrr: Functional Programming Tools_. R package
+  version 1.1.0, <https://CRAN.R-project.org/package=purrr>.
+
+  Wickham H, Pedersen T, Seidel D (2025). _scales: Scale Functions for Visualization_.
+  doi:10.32614/CRAN.package.scales <https://doi.org/10.32614/CRAN.package.scales>, R package version
+  1.4.0, <https://CRAN.R-project.org/package=scales>.
 
 
 ## Funding 
