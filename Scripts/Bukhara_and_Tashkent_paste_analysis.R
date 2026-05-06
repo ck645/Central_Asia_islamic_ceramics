@@ -10,6 +10,11 @@ library(ggplot2)
 library(tidyr)
 library(GGally)
 library(stats)
+library(tidyverse)
+library(aqp)
+library(tibble)
+library(purrr)
+library(scales)
 
 shape_values <- c(18, 15, 1, 16, 2, 0, 3, 17, 4, 5, 6)
 
@@ -217,6 +222,232 @@ dev.off()
 jpeg(filename = "./Figures/Figure3.jpg", width = 3600, height = 2400, res = 300)
 plot(La_vs_Fe_ellipse)
 dev.off()
+
+
+
+#---------------------------Trace element patterns ------------------------
+
+elements_Group <- c("Ce", "Co", "Cr", "Cs", "Eu", "Fe", "Hf", "Rb", "Sb", "Sc",
+                    "Sr", "Ta", "Tb", "Th", "Zn", "As", "La", "Lu", "Nd", "Sm", "U", 
+                    "Yb", "Al", "Ba", "Ca", "Dy", "K", "Mn", "Na", "Ti", "V")
+
+ree_elements <- c("Sc", "La", "Ce", "Nd", "Sm", "Eu", "Tb", "Dy", "Yb", "Lu")
+
+all_elements <- c("V", "Co", "As", "Rb", "Sr", "Sb", "Cs", 
+                  "La", "Ce", "Nd", "Sm", "Eu", "Tb", "Dy", "Yb", "Lu",
+                  "Hf", "Ta", "Th", "U", "Sc", "Cr", "Mn", "Zn")
+all_elements <- all_elements[all_elements %in% elements_Group]
+
+# --- Remove zero/NA samples ---
+database_group_subset <- database_group_subset %>%
+  filter(if_all(all_of(elements_Group), ~ . != 0 & !is.na(.)))
+
+# --- Output directory ---
+dir.create("./Supplementary_Materials/Spidergrams", recursive = TRUE, showWarnings = FALSE)
+
+# --- Color scales ---
+unassigned_site_colors <- c(
+  "Bukhara"  = "#C1440E",
+  "Paykend"  = "#E8A95C",
+  "Tashkent" = "#2E6EA6",
+  "Taraz"    = "#7BB8D4",
+  "BUK"      = "#CC6677",
+  "TASH"     = "#44AA99"
+)
+buk_site_colors  <- unassigned_site_colors[c("Bukhara", "Paykend", "BUK", "TASH")]
+tash_site_colors <- unassigned_site_colors[c("Tashkent", "Taraz", "BUK", "TASH")]
+
+save_plot <- function(plot, filename, width = 3600, height = 2400, res = 300) {
+  png(filename = file.path("./Supplementary_Materials/Spidergrams", filename),
+      width = width, height = height, res = res)
+  print(plot)
+  dev.off()
+}
+
+spidergram_theme <- function() {
+  list(
+    theme_minimal(),
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.line = element_line(color = "black", linewidth = 1, linetype = 1),
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      legend.position = "right"
+    )
+  )
+}
+
+### REE SPIDERGRAMS (raw ppm)
+ree_long <- database_group_subset %>%
+  filter(`NAA Group` %in% c("BUK", "TASH")) %>%
+  select(ANID, `NAA Group`, all_of(ree_elements)) %>%
+  pivot_longer(cols = all_of(ree_elements), names_to = "Element", values_to = "Concentration") %>%
+  mutate(Element = factor(Element, levels = ree_elements))
+
+ree_long_2 <- database_group_subset %>%
+  select(ANID, `NAA Group`, all_of(ree_elements)) %>%
+  pivot_longer(cols = all_of(ree_elements), names_to = "Element", values_to = "Concentration") %>%
+  mutate(Element = factor(Element, levels = ree_elements))
+
+ree_avg   <- ree_long   %>% group_by(`NAA Group`, Element) %>% summarise(Concentration = mean(Concentration, na.rm = TRUE), .groups = "drop")
+ree_avg_2 <- ree_long_2 %>% group_by(`NAA Group`, Element) %>% summarise(Concentration = mean(Concentration, na.rm = TRUE), .groups = "drop")
+
+build_ree_plot <- function(data, avg_data, facet = FALSE) {
+  p <- ggplot(data, aes(x = Element, y = Concentration, color = `NAA Group`, group = ANID)) +
+    geom_line(alpha = 0.15, linewidth = 0.5) +
+    geom_point(size = 1.0, alpha = 0.15) +
+    geom_line(data = avg_data, aes(group = `NAA Group`), linewidth = 1.2, alpha = 1) +
+    geom_point(data = avg_data, aes(group = `NAA Group`), size = 2.5, alpha = 1) +
+    scale_y_log10() +
+    scale_color_manual(name = "Compositional Group", values = Group_colors) +
+    labs(x = "REE Element", y = "Concentration (ppm)") +
+    spidergram_theme()
+  if (facet) p <- p + facet_wrap(~ `NAA Group`, nrow = 6)
+  p
+}
+
+ree_spidergram   <- build_ree_plot(ree_long,   ree_avg,   facet = FALSE)
+ree_spidergram_2 <- build_ree_plot(ree_long_2, ree_avg_2, facet = FALSE)
+ree_spidergram_3 <- build_ree_plot(ree_long_2, ree_avg_2, facet = TRUE)
+
+save_plot(ree_spidergram,   "REE_Spidergram.png")
+save_plot(ree_spidergram_2, "REE_Spidergram_2.png")
+save_plot(ree_spidergram_3, "REE_Spidergram_3.png")
+
+
+
+### TRACE ELEMENT SPIDERGRAMS (raw ppm)
+trace_long <- database_group_subset %>%
+  filter(`NAA Group` %in% c("BUK", "TASH")) %>%
+  select(ANID, `NAA Group`, all_of(all_elements)) %>%
+  pivot_longer(cols = all_of(all_elements), names_to = "Element", values_to = "Concentration") %>%
+  mutate(Element = factor(Element, levels = all_elements))
+
+trace_long_2 <- database_group_subset %>%
+  select(ANID, `NAA Group`, all_of(all_elements)) %>%
+  pivot_longer(cols = all_of(all_elements), names_to = "Element", values_to = "Concentration") %>%
+  mutate(Element = factor(Element, levels = all_elements))
+
+trace_avg   <- trace_long   %>% group_by(`NAA Group`, Element) %>% summarise(Concentration = mean(Concentration, na.rm = TRUE), .groups = "drop")
+trace_avg_2 <- trace_long_2 %>% group_by(`NAA Group`, Element) %>% summarise(Concentration = mean(Concentration, na.rm = TRUE), .groups = "drop")
+
+build_trace_plot <- function(data, avg_data, facet = FALSE) {
+  p <- ggplot(data, aes(x = Element, y = Concentration, color = `NAA Group`, group = ANID)) +
+    geom_line(alpha = 0.15, linewidth = 0.5) +
+    geom_point(size = 1.0, alpha = 0.15) +
+    geom_line(data = avg_data, aes(group = `NAA Group`), linewidth = 1.2, alpha = 1) +
+    geom_point(data = avg_data, aes(group = `NAA Group`), size = 2.5, alpha = 1) +
+    scale_y_log10() +
+    scale_color_manual(name = "Compositional Group", values = Group_colors) +
+    labs(x = "Element", y = "Concentration (ppm)") +
+    spidergram_theme()
+  if (facet) p <- p + facet_wrap(~ `NAA Group`, nrow = 6)
+  p
+}
+
+trace_spidergram   <- build_trace_plot(trace_long,   trace_avg,   facet = FALSE)
+trace_spidergram_2 <- build_trace_plot(trace_long_2, trace_avg_2, facet = FALSE)
+trace_spidergram_3 <- build_trace_plot(trace_long_2, trace_avg_2, facet = TRUE)
+
+save_plot(trace_spidergram,   "Trace_Spidergram.png")
+save_plot(trace_spidergram_2, "Trace_Spidergram_2.png")
+save_plot(trace_spidergram_3, "Trace_Spidergram_3.png")
+
+
+### NORMALISED SPIDERGRAMS (dataset mean)
+
+norm_long_2 <- trace_long_2  # reuse - same data
+
+element_means <- norm_long_2 %>%
+  group_by(Element) %>%
+  summarise(mean_conc = mean(Concentration, na.rm = TRUE), .groups = "drop")
+
+normalise <- function(df) {
+  df %>%
+    left_join(element_means, by = "Element") %>%
+    mutate(Concentration_norm = Concentration / mean_conc)
+}
+
+norm_long   <- normalise(trace_long)
+norm_long_2 <- normalise(trace_long_2)
+
+norm_avg   <- norm_long   %>% group_by(`NAA Group`, Element) %>% summarise(Concentration_norm = mean(Concentration_norm, na.rm = TRUE), .groups = "drop")
+norm_avg_2 <- norm_long_2 %>% group_by(`NAA Group`, Element) %>% summarise(Concentration_norm = mean(Concentration_norm, na.rm = TRUE), .groups = "drop")
+
+build_norm_plot <- function(data, avg_data, colors = Group_colors, 
+                            color_var = "`NAA Group`", facet = FALSE, ylim_max = NA) {
+  p <- ggplot(data, aes(x = Element, y = Concentration_norm,
+                        color = .data[[gsub("`", "", color_var)]], group = ANID)) +
+    geom_hline(yintercept = 1, linetype = "dashed", color = "grey50", linewidth = 0.5) +
+    geom_line(alpha = 0.15, linewidth = 0.5) +
+    geom_point(size = 1.0, alpha = 0.15) +
+    geom_line(data = avg_data, aes(group = `NAA Group`, color = `NAA Group`), linewidth = 1.2, alpha = 1) +
+    geom_point(data = avg_data, aes(group = `NAA Group`, color = `NAA Group`), size = 2.5, alpha = 1) +
+    scale_color_manual(name = "Compositional Group", values = colors) +
+    labs(x = "Element", y = "Concentration / Dataset Mean") +
+    coord_cartesian(ylim = c(NA, ylim_max)) +
+    spidergram_theme()
+  if (facet) p <- p + facet_wrap(~ `NAA Group`, nrow = 6)
+  p
+}
+
+norm_spidergram   <- build_norm_plot(norm_long,   norm_avg,   ylim_max = NA)
+norm_spidergram_2 <- build_norm_plot(norm_long_2, norm_avg_2, ylim_max = NA)
+norm_spidergram_3 <- build_norm_plot(norm_long_2, norm_avg_2, ylim_max = NA, facet = TRUE)
+
+save_plot(norm_spidergram,   "Norm_Spidergram.png")
+save_plot(norm_spidergram_2, "Norm_Spidergram_2.png")
+save_plot(norm_spidergram_3, "Norm_Spidergram_3.png")
+
+
+### OUTLIER & UNASSIGNED SPIDERGRAMS
+ou_long <- database_group %>%
+  filter(`NAA Group` %in% c("Outlier", "unassigned")) %>%
+  select(ANID, `NAA Group`, `Site Name`, all_of(all_elements)) %>%
+  pivot_longer(cols = all_of(all_elements), names_to = "Element", values_to = "Concentration") %>%
+  mutate(Element = factor(Element, levels = all_elements)) %>%
+  left_join(element_means, by = "Element") %>%
+  mutate(Concentration_norm = Concentration / mean_conc)
+
+outlier_long        <- ou_long %>% filter(`NAA Group` == "Outlier")
+unassigned_long     <- ou_long %>% filter(`NAA Group` == "unassigned")
+unassigned_buk_long <- unassigned_long %>% filter(`Site Name` %in% c("Bukhara", "Paykend"))
+unassigned_tash_long <- unassigned_long %>% filter(`Site Name` %in% c("Tashkent", "Taraz"))
+
+bt_avg <- database_group %>%
+  filter(`NAA Group` %in% c("BUK", "TASH")) %>%
+  select(ANID, `NAA Group`, all_of(all_elements)) %>%
+  pivot_longer(cols = all_of(all_elements), names_to = "Element", values_to = "Concentration") %>%
+  mutate(Element = factor(Element, levels = all_elements)) %>%
+  left_join(element_means, by = "Element") %>%
+  mutate(Concentration_norm = Concentration / mean_conc) %>%
+  group_by(`NAA Group`, Element) %>%
+  summarise(Concentration_norm = mean(Concentration_norm, na.rm = TRUE), .groups = "drop")
+
+build_ou_plot <- function(data, colors, ylim_max = 2, color_col = "Site Name") {
+  ggplot(data, aes(x = Element, y = Concentration_norm,
+                   color = .data[[color_col]], group = ANID)) +
+    geom_hline(yintercept = 1, linetype = "dashed", color = "grey50", linewidth = 0.5) +
+    geom_line(alpha = 0.3, linewidth = 0.5) +
+    geom_point(size = 1.0, alpha = 0.5) +
+    geom_line(data = bt_avg, aes(group = `NAA Group`, color = `NAA Group`), linewidth = 1.2, alpha = 1) +
+    geom_point(data = bt_avg, aes(group = `NAA Group`, color = `NAA Group`), size = 2.5, alpha = 1) +
+    scale_color_manual(name = "Group / Site", values = colors) +
+    labs(x = "Element", y = "Concentration / Dataset Mean") +
+    coord_cartesian(ylim = c(NA, ylim_max)) +
+    spidergram_theme()
+}
+
+outlier_spidergram        <- build_ou_plot(outlier_long,        Group_colors,      ylim_max = 5, color_col = "NAA Group")
+unassigned_spidergram     <- build_ou_plot(unassigned_long,     unassigned_site_colors, ylim_max = 2.5)
+unassigned_buk_spidergram <- build_ou_plot(unassigned_buk_long, buk_site_colors,   ylim_max = 2.5)
+unassigned_tash_spidergram <- build_ou_plot(unassigned_tash_long, tash_site_colors, ylim_max = 2)
+
+save_plot(outlier_spidergram,         "Outlier_Spidergram.png")
+save_plot(unassigned_spidergram,      "Unassigned_Spidergram.png")
+save_plot(unassigned_buk_spidergram,  "Unassigned_BUK_Spidergram.png")
+save_plot(unassigned_tash_spidergram, "Unassigned_TASH_Spidergram.png")
+
 
 # ---------------------------Pairwise analysis ---------------------------------
 
@@ -692,6 +923,171 @@ plot(TAZ_SAMK_site_comp)
 dev.off()
 
 
+
+
+
+
+# ------------------------- MUNSELL COLOUR ANALYSIS ----------------------------
+
+library(tidyverse)
+library(aqp)
+library(tibble)
+library(purrr)
+library(scales)
+
+# --- Load data ---
+munsell_data <- rio::import("./Data/munsell_values.csv")
+
+# --- Clean column names ---
+munsell_data <- munsell_data %>%
+  rename(
+    ANID        = ANID,
+    NAA_Group   = `NAA Group`,
+    Munsell     = `Munsell value`,
+    Color_desc  = `Color description`
+  ) %>%
+  mutate(
+    Munsell   = trimws(Munsell),
+    NAA_Group = trimws(NAA_Group)
+  )
+
+
+# Get unique valid Munsell codes
+munsell_values <- munsell_data %>%
+  filter(!is.na(Munsell), Munsell != "") %>%
+  pull(Munsell) %>%
+  unique()
+
+# Clean: replace "/" with " " for aqp parsing
+munsell_values_clean <- gsub("/", " ", munsell_values)
+
+# Split into hue, value, chroma
+munsell_split <- str_split(munsell_values_clean, " ")
+
+hues   <- sapply(munsell_split, function(x) x[1])
+values <- sapply(munsell_split, function(x) as.numeric(x[2]))
+chroma <- sapply(munsell_split, function(x) ifelse(length(x) > 2, as.numeric(x[3]), NA_real_))
+
+# Convert to hex
+munsell_hex_codes <- munsell2rgb(the_hue = hues, the_value = values, the_chroma = chroma)
+
+# Build lookup table
+munsell_lookup <- tibble(
+  Munsell       = munsell_values,
+  Munsell_clean = munsell_values_clean,
+  munsell_hex   = munsell_hex_codes
+)
+
+# Join hex codes onto main data
+munsell_data <- munsell_data %>%
+  left_join(munsell_lookup, by = "Munsell")
+
+# Sanity check - any missing hex?
+missing_hex <- munsell_data %>%
+  filter(is.na(munsell_hex), !is.na(Munsell), Munsell != "") %>%
+  distinct(Munsell)
+if (nrow(missing_hex) > 0) message("Missing hex for: ", paste(missing_hex$Munsell, collapse = ", "))
+
+# Count Munsell values per NAA Group
+munsell_long <- munsell_data %>%
+  filter(
+    !is.na(Munsell),    Munsell != "",
+    !is.na(munsell_hex),
+    !is.na(NAA_Group),  NAA_Group != ""
+  ) %>%
+  count(NAA_Group, Munsell, munsell_hex, name = "Freq") %>%
+  group_by(NAA_Group) %>%
+  mutate(
+    n_total = sum(Freq),
+    prop    = Freq / n_total
+  ) %>%
+  ungroup()
+
+# Named palette: Munsell code -> hex
+munsell_palette <- munsell_long %>%
+  distinct(Munsell, munsell_hex) %>%
+  deframe()
+
+# Facet labels with n totals
+facet_labs <- munsell_long %>%
+  distinct(NAA_Group, n_total) %>%
+  mutate(label = paste0(NAA_Group, " (n=", n_total, ")")) %>%
+  select(NAA_Group, label) %>%
+  deframe()
+
+munsell_pie_facets <- ggplot(munsell_long, aes(x = 1, y = prop, fill = Munsell)) +
+  geom_col(width = 1, color = NA) +
+  coord_polar(theta = "y") +
+  facet_wrap(~ NAA_Group, labeller = labeller(NAA_Group = facet_labs)) +
+  scale_fill_manual(values = munsell_palette) +
+  theme_void() +
+  theme(legend.position = "none") +
+  labs(title = "Munsell Value Distribution by NAA Compositional Group")
+
+munsell_pie_facets
+
+munsell_pie_plots <- munsell_long %>%
+  split(.$NAA_Group) %>%
+  imap(~ {
+    df <- .x %>%
+      arrange(desc(Munsell)) %>%
+      mutate(
+        lab  = if_else(
+          prop >= 0.02,
+          paste0(Munsell, "\n", scales::percent(prop, accuracy = 1)),
+          NA_character_
+        ),
+        ypos = cumsum(prop) - 0.5 * prop
+      )
+    
+    n_tot <- unique(df$n_total)[1]
+    
+    ggplot(df, aes(x = 1, y = prop, fill = Munsell)) +
+      geom_col(width = 1, color = NA) +
+      coord_polar(theta = "y", clip = "off") +
+      scale_fill_manual(values = munsell_palette) +
+      theme_void() +
+      theme(
+        legend.position = "none",
+        plot.margin = margin(10, 60, 10, 10)
+      ) +
+      geom_text(
+        aes(y = ypos, label = lab),
+        x = 1.7,
+        hjust = 0.5,
+        size = 3, lineheight = 0.9, na.rm = TRUE
+      ) +
+      labs(title = paste0(.y, " (n=", n_tot, ")"))
+  })
+
+dir.create("./Supplementary_Materials/Munsell", recursive = TRUE, showWarnings = FALSE)
+
+# Save faceted overview
+png(filename = "./Supplementary_Materials/Munsell/Munsell_by_group_facets.png",
+    width = 4800, height = 4800, res = 300)
+print(munsell_pie_facets)
+dev.off()
+
+# Save individual group pies
+walk2(munsell_pie_plots, names(munsell_pie_plots), ~ {
+  filename <- paste0("./Supplementary_Materials/Munsell/Munsell_",
+                     gsub(" ", "_", .y), ".png")
+  png(filename = filename, width = 1600, height = 1600, res = 300)
+  print(.x)
+  dev.off()
+})
+
+munsell_summary_wide <- munsell_long %>%
+  select(NAA_Group, Munsell, Freq) %>%
+  pivot_wider(names_from = Munsell, values_from = Freq, values_fill = 0) %>%
+  arrange(NAA_Group)
+
+write.csv(munsell_summary_wide,
+          "./Supplementary_Materials/Munsell/munsell_by_group_table.csv",
+          row.names = FALSE)
+
+
+
 # ------------------------------ citations -------------------------------------
 
 citation("rio")
@@ -699,5 +1095,8 @@ citation("dplyr")
 citation("ggplot2")
 citation("GGally")
 citation("tidyr")
-
-
+citation("aqp")
+citation("purrr")
+citation("tibble")
+citation("scales")
+citation("ggtern")
